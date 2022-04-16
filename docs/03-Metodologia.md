@@ -10,17 +10,12 @@ Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Defini�
 Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos 
 ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
-|Ambiente          |Plataforma e Link de Acesso                                                                                |
-|------------------|-----------------------------------------------------------------------------------------------------------|
-|Repositório de    |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/)          |
-|código fonte      |                                                                                                           |
-|Documentos do     |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/)          |
-|projeto           |                                                                                                           |
-|Projeto de        |[Figma](https://www.figma.com/file/oozZQHuorZlecy5xe68dPR/Projeto-E-Sports-User-Flow?node-id=0%3A1)        |
-|Interface e       |                                                                                                           |
-|Wireframes        |                                                                                                           |
-|Gerenciamento     |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/projects/1)|
-|do Projeto        |                                                                                                           |
+|Ambiente                         |Plataforma e Link de Acesso                                                                                |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------|
+|Repositório de código fonte      |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/)          |
+|Documentos do projeto            |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/)          |
+|Projeto de Interface e Wireframes|[Figma](https://www.figma.com/file/oozZQHuorZlecy5xe68dPR/Projeto-E-Sports-User-Flow?node-id=0%3A1)        |
+|Gerenciamento do Projeto         |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/projects/1)|
 
 
 ## Controle de Versão
