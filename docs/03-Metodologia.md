@@ -25,7 +25,7 @@ processo  baseado  no  Git  Flow  abordado  por  Vietro  (2015),  mostrado  na  
 Desta  forma,  todas  as  manutenções  no  código  são  realizadas  em  branches  separados, 
 identificados  como  Hotfix,  Release,  Develop  e  Feature.
 
-![Gestão de código fonte](img/Gestao de codigo fonte.jpg)
+![Gestão de código fonte](img/gestao_de_codigo_fonte.jpg)
 
 ## Controle de Versão
 
