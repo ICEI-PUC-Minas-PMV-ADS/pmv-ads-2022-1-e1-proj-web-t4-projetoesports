@@ -54,11 +54,11 @@ estruturado com as seguintes listas:
 
 O quadro kanban do grupo no [GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/projects/1) é apresentado, no estado atual, na Figura X. A definição desta estrutura se baseou na proposta feita por Littlefield (2016).
 
-![Tela do kanban utilizada pelo grupo](img/kanben_github.jpg)
+![Tela do kanban utilizada pelo grupo](img/kanban_github.jpg)
 
 As tarefas são, ainda, etiquetadas em função da natureza da atividade e seguem o seguinte esquema de cores/categorias:
 
-![Tela do kanban utilizada pelo grupo](img/kanben_etiquetas.jpg)
+![Tela do kanban utilizada pelo grupo](img/kanban_etiquetas.jpg)
 
 ## Controle de Versão
 
