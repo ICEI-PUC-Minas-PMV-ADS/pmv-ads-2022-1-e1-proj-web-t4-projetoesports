@@ -66,11 +66,29 @@ A tela de login permite que o usuário acesse a plataforma, inserindo o nome de 
 
 ![Tela Log in](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/3abea04e2b4d580dd46ddd118592908f6baabb95/docs/img/Modal%20-%20Log%20in.jpg)
 
+ ### Tela - Sign up
+ 
+A tela de cadastro é uma janela modal e permite cadastrar um usuário com o mínimo de informações possíveis. O usuário deve digitar seu nome, e-mail, senha, confirmação de senha e por fim pressionar o botão registrar. O e-mail deve ser o único registrado no sistema e a senha deve ter no mínimo 6 caracteres. 
 
+![Tela de cadastro](img/modal_sign_up.jpg)
 
+### Tela - Recuperar senha
 
+A tela para recuperar senha é uma página que permite ao usuário, recuperar sua senha. Para isso ele deve digitar o e-mail cadastrado e pressionar o botão recuperar senha. Um e-mail com todas as instruções necessárias será encaminhado para o e-mail de cadastro.
 
+![Tela para recuperar senha](img/desktop_recuperar_senha.jpg)
 
+### Tela - Perfil
+
+A tela de perfil é uma página que permite visualizar as informações de um determinado usuário, se o usuário em questão está autenticado, será possível editar alguns desses dados. Uma imagem do perfil e exibida no cabeçalho da página, ao lado é possivel visualizar seu nome. No parte direita do cabeçalho, há um botão (três pontinhos) que permite abrir o menu de contexto, onde o usuário pode alterar sua imagem de perfil ou entrar no modo de edição. 
+
+As informações do perfil, estão divididas por seções: sobre, estatísticas e função. Abaixo segue uma descrição de cada uma delas.  
+
+- `Sobre`: está seção exibe as informações pessoais do usuário: biografia, os times das quais ele já participou e informações para contato; 
+- `Estatísticas`: está seção alguns links para sites, especializados em gerar estatísticas de jogos relacionados ao perfil; 
+- `Funçôes`: Exibe uma coleção de funções que o jogador pode exercer em determinado jogo. 
+
+![Tela de perfil](img/desktop_perfil.jpg)
 
 
 
