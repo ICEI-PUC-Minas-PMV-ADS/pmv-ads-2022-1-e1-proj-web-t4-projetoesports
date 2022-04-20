@@ -12,7 +12,7 @@ em desktops e dispositivos móveis.
 
 Segue o fluxo para usuários não autenticados.
 
-![Fluxo para usuário não autenticado](img/userflow_n_auth.jpg)
+![Fluxo para usuário não autenticado](img/userflow_not_auth.jpg)
 
 Em seguida o fluxo para usuários autenticados.
 
