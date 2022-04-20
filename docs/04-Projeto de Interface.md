@@ -34,14 +34,14 @@ descritos a seguir. São eles:
 ### Tela - Home-Page
 
 Com base na estrutura padrão, o bloco de Conteúdo traz as notícias, torneios e vagas em destaque (título, resumo, imagem). 
-O bloco barra de navegação esquerda traz cinco componentes disitintos:
-- `Componente Notícias`: leva o usuário para a tela de notícias ;
+O bloco barra de navegação esquerda traz cinco elementos disitintos:
+- `Componente Notícias`: leva o usuário para a tela de notícias;
 - `Componente Jogadores`: leva o usuário para a tela de busca de jogadores;
 - `Componente Vagas`: leva o usuário para a tela de vagas disponíveis em equipes;
 - `Componente Equipes `: leva o usuário para a tela de busca por equipes;
 - `Componente Torneios `: leva o usuário para a tela de busca por torneios;
  
-Quando o usuário estiver deslogado, a barra de navegacão de topo traz o componenente "Entrar" que posibilita o usuário realizar login.
+Quando o usuário estiver deslogado, a barra de navegacão de topo traz o componenente `Entrar` que leva o usuário a tela de login.
  
 ![Home page para usuário deslogado](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/main/docs/img/Desktop%20-%20home.jpg)
  
@@ -53,3 +53,38 @@ Quando o usuário estiver logado, a barra de navegação de topo traz quatro ele
 
 ![Home page para usuário logado](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/main/docs/img/Desktop%20-%20home%20autenticada.png)
  
+ ### Tela - Log in
+
+A tela de login permite que o usuário acesse a plataforma, inserindo o nome de usuário e senha adquiridos através de um cadastro feito pelo usuário ou um administrador. A tela contém os seguintes elementos:
+- `Componente Email`: caixa de texto onde o usuário digitará seu email para autenticação;
+- `Componente Senha`: caixa de texto onde o usuário digitará sua senha para autenticação;
+- `Componente Esqueceu sua senha?`: redireciona o usuário para a tela de recuperação de senha;
+- `Componente Entrar`: botão que confirma a autenticação do usuário e redireciona o usuário para a tela Home-Page;
+- `Componente Google`: botão que leva ao usuário a tela de log in do Google;
+- `Componente Facebook`: botão que redireciona o usuário a tela de log in do Facebook;
+- `Componente Criar nova conta`: leva o usuário a tela de Sign up.
+
+![Tela Log in](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/3abea04e2b4d580dd46ddd118592908f6baabb95/docs/img/Modal%20-%20Log%20in.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
