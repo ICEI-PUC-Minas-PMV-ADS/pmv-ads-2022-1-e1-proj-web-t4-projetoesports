@@ -35,12 +35,12 @@ descritos a seguir. São eles:
 
  Com base na estrutura padrão, o bloco de Conteúdo traz as notícias, torneios e vagas em destaque (título, resumo, imagem).
  Quando o usuário se encontra deslogado, a barra de navegacão de topo traz o componenente "Entrar" que posibilita o usuário realizar login.
- ![Home page para usuário deslogado](img/Desktop - home.jpg)
+ ![Home page para usuário deslogado](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/main/docs/img/Desktop%20-%20home.jpg)
  
  Quando o usuário se encontra logado, a barra de navegação de topo traz quatro elementos distintos:
 - `Componente sair`: desloga o usuário do sistema;
 - `Componente perfil`: leva o usuário para a sua tela de perfil;
 - `Componente minhas equipes`: leva o usuário para sua tela de minhas equipes;
 - `Componente notificações `: exibe ao usuário uma janela contendo as últimas notificações;
-![Home page para usuário logado](img/Desktop - home autenticada.png)
+![Home page para usuário logado](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/main/docs/img/Desktop%20-%20home%20autenticada.png)
  
