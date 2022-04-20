@@ -22,7 +22,16 @@ Em seguida o fluxo para usuários autenticados.
 
 ![Exemplo de Wireframe](img/wireframe-example.png)
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
+Conforme  fluxo  de  telas  do  projeto,  apresentado  no  item  anterior,  as  telas  do  sistema  são 
+apresentadas em detalhes nos itens que se seguem. As telas do sistema apresentam uma 
+estrutura comum que é apresentada na Figura X. Nesta estrutura, existem 3 grandes blocos, 
+descritos a seguir. São eles:
+
+> `Barra de navegação de topo`:  local onde estão dispostos todos as funcionalidades ligadas ao usuário;
+> `Barra de navegação esquerda`: local onde estão dispostos todos os elementos que auxiliam na navegação pelo site;
+> `Conteúdo`: apresenta o conteúdo da tela em questão.
+
+![Layout padrão](img/standard_layout.jpg)
  
 > **Links Úteis**:
 > - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
