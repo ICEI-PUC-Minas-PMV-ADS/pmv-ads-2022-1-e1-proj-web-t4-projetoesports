@@ -43,7 +43,7 @@ O bloco barra de navegação esquerda traz cinco elementos disitintos:
  
 Quando o usuário estiver deslogado, a barra de navegacão de topo traz o componenente `Entrar` que leva o usuário a tela de login.
  
-![Home page para usuário deslogado](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/main/docs/img/Desktop%20-%20home.jpg)
+![Home page para usuário deslogado](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/65b8895aa5bb406e58642bda079c3678ce26aace/docs/img/Desktop%20-%20home.jpg)
  
 Quando o usuário estiver logado, a barra de navegação de topo traz quatro elementos distintos:
 - `Componente Sair`: desloga o usuário do sistema;
@@ -51,7 +51,7 @@ Quando o usuário estiver logado, a barra de navegação de topo traz quatro ele
 - `Componente Minhas equipes`: leva o usuário para sua tela de minhas equipes;
 - `Componente Notificações `: exibe ao usuário uma janela contendo as últimas notificações.
 
-![Home page para usuário logado](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/main/docs/img/Desktop%20-%20home%20autenticada.png)
+![Home page para usuário logado](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/65b8895aa5bb406e58642bda079c3678ce26aace/docs/img/Desktop%20-%20home%20autenticada.png)
  
  ### Tela - Log in
 
