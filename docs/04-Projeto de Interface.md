@@ -30,3 +30,17 @@ descritos a seguir. São eles:
 - `Conteúdo`: apresenta o conteúdo da tela em questão.
 
 ![Layout padrão](img/standard_layout.jpg)
+
+### Tela - Home-Page
+
+ Com base na estrutura padrão, o bloco de Conteúdo traz as notícias, torneios e vagas em destaque (título, resumo, imagem).
+ Quando o usuário se encontra deslogado, a barra de navegacão de topo traz o componenente "Entrar" que posibilita o usuário realizar login.
+ ![Home page para usuário deslogado](img/Desktop - home.jpg)
+ 
+ Quando o usuário se encontra logado, a barra de navegação de topo traz quatro elementos distintos:
+- `Componente sair`: desloga o usuário do sistema;
+- `Componente perfil`: leva o usuário para a sua tela de perfil;
+- `Componente minhas equipes`: leva o usuário para sua tela de minhas equipes;
+- `Componente notificações `: exibe ao usuário uma janela contendo as últimas notificações;
+![Home page para usuário logado](img/Desktop - home autenticada.png)
+ 
