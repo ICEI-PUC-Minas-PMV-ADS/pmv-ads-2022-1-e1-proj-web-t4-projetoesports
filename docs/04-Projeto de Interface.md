@@ -64,7 +64,7 @@ A tela de login permite que o usuário acesse a plataforma, inserindo o nome de 
 - `Componente Facebook`: botão que redireciona o usuário para a tela de log in do Facebook;
 - `Componente Criar nova conta`: redireciona o usuário a tela de Sign up.
 
-![Tela Log in](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/3abea04e2b4d580dd46ddd118592908f6baabb95/docs/img/Modal%20-%20Log%20in.jpg)
+![Tela Log in](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/3abea04e2b4d580dd46ddd118592908f6baabb95/docs/img/Modal%20-%20Log%20in.jpg | width=60)
 
  ### Tela - Sign up
  
