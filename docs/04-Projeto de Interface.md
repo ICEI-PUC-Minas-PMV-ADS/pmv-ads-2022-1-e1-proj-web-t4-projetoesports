@@ -82,7 +82,7 @@ A tela para recuperar senha é uma página que permite ao usuário, recuperar su
 
 A tela de perfil é uma página que permite visualizar as informações de um determinado usuário, se o usuário em questão está autenticado, será possível editar alguns desses dados. Uma imagem do perfil e exibida no cabeçalho da página, ao lado é possivel visualizar seu nome. No parte direita do cabeçalho, há um botão (três pontinhos) que permite abrir o menu de contexto, onde o usuário pode alterar sua imagem de perfil ou entrar no modo de edição. 
 
-As informações do perfil, estão divididas por seções: sobre, estatísticas e função. Abaixo segue uma descrição de cada uma delas.  
+As informações do perfil, estão divididas por seções: sobre, estatísticas e funções. Abaixo segue uma descrição de cada uma delas.  
 
 - `Sobre`: está seção exibe as informações pessoais do usuário: biografia, os times das quais ele já participou e informações para contato; 
 - `Estatísticas`: está seção alguns links para sites, especializados em gerar estatísticas de jogos relacionados ao perfil; 
