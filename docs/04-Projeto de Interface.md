@@ -33,16 +33,23 @@ descritos a seguir. São eles:
 
 ### Tela - Home-Page
 
- Com base na estrutura padrão, o bloco de Conteúdo traz as notícias, torneios e vagas em destaque (título, resumo, imagem).
- Quando o usuário se encontra deslogado, a barra de navegacão de topo traz o componenente "Entrar" que posibilita o usuário realizar login.
+Com base na estrutura padrão, o bloco de Conteúdo traz as notícias, torneios e vagas em destaque (título, resumo, imagem). 
+O bloco barra de navegação esquerda traz cinco componentes disitintos:
+- `Componente Notícias`: leva o usuário para a tela de notícias ;
+- `Componente Jogadores`: leva o usuário para a tela de busca de jogadores;
+- `Componente Vagas`: leva o usuário para a tela de vagas disponíveis em equipes;
+- `Componente Equipes `: leva o usuário para a tela de busca por equipes;
+- `Componente Torneios `: leva o usuário para a tela de busca por torneios;
  
- ![Home page para usuário deslogado](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/main/docs/img/Desktop%20-%20home.jpg)
+Quando o usuário estiver deslogado, a barra de navegacão de topo traz o componenente "Entrar" que posibilita o usuário realizar login.
  
- Quando o usuário se encontra logado, a barra de navegação de topo traz quatro elementos distintos:
-- `Componente sair`: desloga o usuário do sistema;
-- `Componente perfil`: leva o usuário para a sua tela de perfil;
-- `Componente minhas equipes`: leva o usuário para sua tela de minhas equipes;
-- `Componente notificações `: exibe ao usuário uma janela contendo as últimas notificações.
+![Home page para usuário deslogado](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/main/docs/img/Desktop%20-%20home.jpg)
+ 
+Quando o usuário estiver logado, a barra de navegação de topo traz quatro elementos distintos:
+- `Componente Sair`: desloga o usuário do sistema;
+- `Componente Perfil`: leva o usuário para a sua tela de perfil;
+- `Componente Minhas equipes`: leva o usuário para sua tela de minhas equipes;
+- `Componente Notificações `: exibe ao usuário uma janela contendo as últimas notificações.
 
 ![Home page para usuário logado](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/main/docs/img/Desktop%20-%20home%20autenticada.png)
  
