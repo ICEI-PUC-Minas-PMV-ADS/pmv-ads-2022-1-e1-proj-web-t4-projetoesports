@@ -91,7 +91,15 @@ As informações do perfil, estão divididas por seções: sobre, estatísticas 
 ![Tela de perfil](img/desktop_perfil.jpg)
 
 
+### Tela - Equipe
 
+A tela de Equipes permite visualizar o perfil da equipe escolhida e ter acesso a informações dispostas em três abas denominadas "Sobre, Equipe e Vagas".
+
+- `sobre`: Está seção exibe as informações gerais como objetivo e contato.
+- `equipe`: Está seção mostra todos os jogadores e reservas candidatados do time.
+- `Vagas`: Exibe as vagas disponíveis conforme a necessidade do time.
+
+![Tela de perfil](img/Desktop_Equipe.jpg)
 
 
 
