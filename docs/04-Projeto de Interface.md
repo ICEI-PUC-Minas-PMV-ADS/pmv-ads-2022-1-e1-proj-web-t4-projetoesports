@@ -106,7 +106,7 @@ O usuário tambem tera acesso a um menu de contexto com as opções criar nova v
 
 Na tela criar vaga basta selecionar a função para a qual se deseja criar a vaga e pressionar o botão criar vaga. Neste momento os jogadores que em seu perfil habilitaram a opção de notificação, receberão o aviso do sistema.
 
-<img src="img/desktop_criar_vaga.jpg" width="800">
+<img src="img/desktop_criar_vaga_n.jpg" width="800">
 
 ### Tela - Vagas
 
