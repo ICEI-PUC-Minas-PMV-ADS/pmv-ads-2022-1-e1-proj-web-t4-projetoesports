@@ -10,7 +10,7 @@ em desktops e dispositivos móveis.
 
 ## User Flow
 
-Segue o fluxo para usuários não autenticados.
+O fluxo da aplicação pode ser representado por dois pontos de vista diferentes, para usuários autenticados e usuários não autenticados. Usuários não autenticados possuem basicamente funções de visualização de informações, usuários autenticados podem interagir de outras formas, incluindo criação de times, cadastro de vagas, entre outras. Segue baixo o fluxo da aplicação para usuários não autenticados.
 
 <img src="img/userflow_not_auth.jpg" width="950">
 
