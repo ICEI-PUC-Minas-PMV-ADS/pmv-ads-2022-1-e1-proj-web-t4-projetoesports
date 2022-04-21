@@ -156,9 +156,10 @@ Na tela de jogadores, estão listados todos os jogadores do site, sendo possíve
 
 ### Tela - Notícias
 
-Em Notícias é possivel visualizar as principais notícias sobre o mundo dos E-sports, tal como torneios, informações técnicas sobre jogos e coisas do gênero.
+Em Notícias é possivel visualizar os principais assuntos sobre o mundo dos E-sports, tal como torneios, informações técnicas sobre jogos e coisas do gênero.
 
-- `cards personalizados`: Cards personalizados com notícias que direcionam o usuário aos principais veículos de informações sobre E-sports. (links externos)
+- `Cards personalizados`: Cards personalizados com notícias que direcionam o usuário aos principais veículos de informações sobre E-sports. (links externos)
+- `Carrossel`: Notícias mais recentes sempre estarão dispostas em um carroçel para manter o usuário informado.
 
 ![Tela de perfil](img/Desktop_Noticias.jpg)
 
