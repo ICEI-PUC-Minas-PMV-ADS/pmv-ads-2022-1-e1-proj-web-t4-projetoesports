@@ -142,7 +142,7 @@ descrição sobre o time.
 
 - `plano de fundo`: Clicando no logo da câmera alem da logo do time pudera ser enviado um plano de fundo da escolha do administrador que ficara visível no perfil do time.
 
-![Tela de perfil](img/Desktop _Criar equipe.jpg)
+![Tela de perfil](img/Desktop_Criar_equipe.jpg)
 
 
 
