@@ -114,7 +114,11 @@ Em Vagas, podemos visualizar quais times estão solicitando jogadores. Os times 
 
 ### tela - Inscrição para a vaga
 
-Na tela de Inscrição, podemos observar funcionalidades como a possibilidade de criar uma descrição para vaga
+Na tela de Inscrição, podemos observar funcionalidades. Para o usuário visitante, temos possibilidade de analisar o perfil do time que esta ofertando a vaga,
+solicitar ou remover candidatura e visualizar descrição da vaga. Para administradores é possível visualizar cada candidato com a possibilidade de visitar
+cada perfil do jogador apenas clicando no ícone dos mesmos. Após o administrador do time clicar em aceitar abaixo do ícone de um dos candidatos, o menu será limpo
+e a vaga fechada.
+
 ![Tela de perfil](img/Desktop_Vaga.png)
 
 
