@@ -149,10 +149,20 @@ descrição sobre o time.
 
 ### Tela - Jogadores
 
-Na tela de jogadores, estão listados todos os jogadores do site, sendo possivel inspecionar o perfil dos mesmos.
+Na tela de jogadores, estão listados todos os jogadores do site, sendo possível inspecionar o perfil dos mesmos.
 
 
 ![Tela de perfil](img/Desktop_Jogadores.jpg)
+
+### Tela - Notícias
+
+Em Notícias é possivel visualizar as principais notícias sobre o mundo dos E-sports, tal como torneios, informações técnicas sobre jogos e coisas do gênero.
+
+- `cards personalizados`: Cards personalizados com notícias que direcionam o usuário aos principais veículos de informações sobre E-sports. (links externos)
+
+![Tela de perfil](img/Desktop_Noticias.jpg)
+
+
 
 
 
