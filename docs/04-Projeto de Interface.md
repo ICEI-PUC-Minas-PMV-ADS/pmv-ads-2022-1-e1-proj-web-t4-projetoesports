@@ -120,6 +120,13 @@ e a vaga fechada.
 
 ![Tela de perfil](img/Desktop_Vaga.png)
 
+### Tela - Minhas Equipes
+
+Em Minhas Equipes, é possivel visualizar todos os times criados pelo próprio usuário.
+
+![Tela de perfil](img/Desktop_Minhas_Equipes.jpg)
+
+
 
 
 
