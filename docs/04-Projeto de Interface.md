@@ -130,7 +130,7 @@ Em Minhas Equipes, é possivel criar e visualizar todos os times gerenciados pel
 
 Na tela de Equipes é possível visualizar uma lista de times criados por outros usuários podendo buscar e inspecionar perfis alvos.
 
-![Tela de perfil](img/Desktop_Equipes)
+![Tela de perfil](img/Desktop_Equipe.jpg)
 
 
 
