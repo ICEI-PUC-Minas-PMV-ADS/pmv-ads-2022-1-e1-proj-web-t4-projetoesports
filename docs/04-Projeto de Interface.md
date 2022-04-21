@@ -12,11 +12,11 @@ em desktops e dispositivos móveis.
 
 Segue o fluxo para usuários não autenticados.
 
-<img src="img/userflow_not_auth.jpg" width="900" height="600">
+<img src="img/userflow_not_auth.jpg" width="950">
 
 Em seguida o fluxo para usuários autenticados.
 
-<img src="img/userflow_auth.jpg" width="900" height="600">
+<img src="img/userflow_auth.jpg" width="950">
 
 ## Wireframes
 
@@ -29,7 +29,7 @@ descritos a seguir. São eles:
 - `Barra de navegação esquerda`: local onde estão dispostos todos os elementos que auxiliam na navegação pelo site;
 - `Conteúdo`: apresenta o conteúdo da tela em questão.
 
-<img src="img/standard_layout.jpg" width="700" height="500">
+<img src="img/standard_layout.jpg" width="800">
 
 ### Tela - Home-Page
 
@@ -43,14 +43,15 @@ O bloco barra de navegação esquerda traz cinco elementos disitintos:
  
 Quando o usuário estiver deslogado, a barra de navegacão de topo traz o componenente `Entrar` que leva o usuário a tela de login.
  
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/65b8895aa5bb406e58642bda079c3678ce26aace/docs/img/Desktop%20-%20home.jpg" width="500" height="500">
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/65b8895aa5bb406e58642bda079c3678ce26aace/docs/img/Desktop%20-%20home.jpg" width="800">
  
 Quando o usuário estiver logado, a barra de navegação de topo traz quatro elementos distintos:
 - `Componente Sair`: desloga o usuário do sistema;
 - `Componente Perfil`: leva o usuário para a sua tela de perfil;
 - `Componente Minhas equipes`: leva o usuário para sua tela de minhas equipes;
 - `Componente Notificações `: exibe ao usuário uma janela contendo as últimas notificações.
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/65b8895aa5bb406e58642bda079c3678ce26aace/docs/img/Desktop%20-%20home%20autenticada.png" width="500" height="500">
+
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/65b8895aa5bb406e58642bda079c3678ce26aace/docs/img/Desktop%20-%20home%20autenticada.png" width="800">
  
  ### Tela - Log in
 
@@ -63,19 +64,19 @@ A tela de login permite que o usuário acesse a plataforma, inserindo o nome de 
 - `Componente Facebook`: botão que redireciona o usuário para a tela de log in do Facebook;
 - `Componente Criar nova conta`: redireciona o usuário a tela de Sign up.
 
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/3abea04e2b4d580dd46ddd118592908f6baabb95/docs/img/Modal%20-%20Log%20in.jpg" width="400" height="500">
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/3abea04e2b4d580dd46ddd118592908f6baabb95/docs/img/Modal%20-%20Log%20in.jpg" width="350">
 
  ### Tela - Sign up
  
 A tela de cadastro é uma janela modal e permite cadastrar um usuário com o mínimo de informações possíveis. O usuário deve digitar seu nome, e-mail, senha, confirmação de senha e por fim pressionar o botão registrar. O e-mail deve ser o único registrado no sistema e a senha deve ter no mínimo 6 caracteres. 
 
-<img src="img/modal_sign_up.jpg" width="500" height="500">
+<img src="img/modal_sign_up.jpg" width="400">
 
 ### Tela - Recuperar senha
 
 A tela para recuperar senha é uma página que permite ao usuário, recuperar sua senha. Para isso ele deve digitar o e-mail cadastrado e pressionar o botão recuperar senha. Um e-mail com todas as instruções necessárias será encaminhado para o e-mail de cadastro.
 
-<img src="img/desktop_recuperar_senha.jpg" width="500" height="500">
+<img src="img/desktop_recuperar_senha.jpg" width="800">
 
 ### Tela - Perfil
 
@@ -87,7 +88,7 @@ As informações do perfil, estão divididas por seções: sobre, estatísticas 
 - `Estatísticas`: está seção alguns links para sites, especializados em gerar estatísticas de jogos relacionados ao perfil; 
 - `Funçôes`: Exibe uma coleção de funções que o jogador pode exercer em determinado jogo. 
 
-<img src="img/desktop_perfil.jpg" width="500" height="500">
+<img src="img/desktop_perfil.jpg" width="800">
 
 
 ### Tela - Equipe
@@ -99,7 +100,7 @@ O usuário tambem tera acesso a um menu de contexto com as opções criar nova v
 - `Equipe`: Está seção mostra todos os jogadores e reservas candidatados do time.
 - `Vagas`: Exibe as vagas disponíveis conforme a necessidade do time.
 
-<img src="img/Desktop_Equipe.jpg" width="500" height="500">
+<img src="img/Desktop_Equipe.jpg" width="800">
 
 
 ### Tela - Vagas
@@ -109,7 +110,7 @@ Em Vagas, podemos visualizar quais times estão solicitando jogadores. Os times 
 
 - `Barra de pesquisa`: Permite o usuário buscar um time específico de seu interesse.
 
-<img src="img/Desktop_Vagas.jpg" width="500" height="500">
+<img src="img/Desktop_Vagas.jpg" width="800">
 
 ### Tela - Inscrição para a vaga
 
@@ -117,7 +118,7 @@ Na tela de Inscrição, podemos observar diversas funcionalidades. Para o usuár
 seus respectivos perfis apenas clicando no ícone dos mesmos. Após o administrador do time clicar em aceitar abaixo do ícone de um dos candidatos, o menu será limpo
 e a vaga fechada.
 
-<img src="img/Desktop_Vaga.png" width="500" height="500">
+<img src="img/Desktop_Vaga.png" width="800">
 
 ### Tela - Minhas Equipes
 
@@ -125,7 +126,7 @@ Em Minhas Equipes, é possivel visualizar todos os times gerenciados pelo própr
 
 - `Criar Equipe`: Direciona o usuário a tela de criação de equipes.
 
-<img src="img/Desktop_Minhas_Equipes.jpg" width="500" height="500">
+<img src="img/Desktop_Minhas_Equipes.jpg" width="800">
 
 ### Tela - Equipes
 
@@ -133,7 +134,7 @@ Na tela de Equipes é possível visualizar uma lista de times criados por outros
 
 - `Numeração de páginas`: Os excedentes de times que não aparecem devido a falta de espaço são transferidos para novas páginas que são listadas e enumeradas para uma melhor navegação do usuário.
 
-<img src="img/Desktop_Equipes.jpg" width="500" height="500">
+<img src="img/Desktop_Equipes.jpg" width="800">
 
 
 ### Tela - Criar Equipe
@@ -143,7 +144,7 @@ descrição sobre o time.
 
 - `Plano de fundo`: Clicando no logo da câmera alem da logo do time pudera ser enviado um plano de fundo da escolha do administrador que ficara visível no perfil do time.
 
-<img src="img/Desktop_Criar_equipe.jpg" width="500" height="500">
+<img src="img/Desktop_Criar_equipe.jpg" width="800">
 
 
 ### Tela - Jogadores
@@ -151,16 +152,31 @@ descrição sobre o time.
 Na tela de jogadores, estão listados todos os jogadores do site, sendo possível inspecionar o perfil dos mesmos.
 
 
-<img src="img/Desktop_Jogadores.jpg" width="500" height="500">
+<img src="img/Desktop_Jogadores.jpg" width="800">
 
 ### Tela - Notícias
 
-Em Notícias é possivel visualizar os principais assuntos sobre o mundo dos E-sports, tal como torneios, informações técnicas sobre jogos e coisas do gênero.
+Na tela de Notícias é possivel visualizar os principais assuntos sobre o mundo dos E-sports, tal como torneios, informações técnicas sobre jogos e coisas do gênero.
 
 - `Cards personalizados`: Cards personalizados com notícias que direcionam o usuário aos principais veículos de informações sobre E-sports.
 - `Carrossel`: Notícias mais recentes sempre estarão dispostas em um carroçel para manter o usuário informado.
 
-<img src="img/Desktop_Noticias.jpg" width="500" height="500">
+<img src="img/Desktop_Noticias.jpg" width="800">
+
+### Tela - Torneios
+
+Na tela de torneio é possível visualizar os principais torneios de E-sports e efetuar buscas por torneios anterioes.
+
+<img src="img/desktop_torneios.jpg" alt="Tela de torneios" />
+
+### Tela - Notificações
+
+Na tela de notificações o usuário tem acesso a informações atualizadas sobre o sistema ou processos das quais está participando.
+
+<img src="img/modal_notificacoes.jpg" alt="Tela de notificações" />
+
+
+
 
 
 
