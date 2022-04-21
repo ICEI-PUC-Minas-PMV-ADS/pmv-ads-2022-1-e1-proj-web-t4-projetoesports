@@ -105,7 +105,7 @@ A tela de Equipes permite visualizar o perfil da equipe escolhida e ter acesso a
 ### Tela - Vagas
 
 Em Vagas, podemos visualizar quais times estão solicitando jogadores. Os times ficam divididos em pequenos cards e dentro desses cards temos informações como
-ícone e nome do time anunciante, posição de jogador solicitado em forma temática de ícone e um botão para direcionar o usuário a página de inscrição.
+ícone, nome do time anunciante, posição de jogador solicitado em forma temática de ícone e um botão para direcionar o usuário a página de inscrição.
 
 - `Barra de pesquisa`: Permite o usuário buscar um time específico de seu interesse.
 
