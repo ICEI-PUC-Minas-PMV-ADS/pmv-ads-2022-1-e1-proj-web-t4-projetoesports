@@ -122,7 +122,9 @@ e a vaga fechada.
 
 ### Tela - Minhas Equipes
 
-Em Minhas Equipes, é possivel criar e visualizar todos os times gerenciados pelo próprio usuário.
+Em Minhas Equipes, é possivel visualizar todos os times gerenciados pelo próprio usuário.
+
+- `Criar Equipe`: Direciona o usuário a tela de criação de equipes.
 
 ![Tela de perfil](img/Desktop_Minhas_Equipes.jpg)
 
@@ -132,6 +134,15 @@ Na tela de Equipes é possível visualizar uma lista de times criados por outros
 
 ![Tela de perfil](img/Desktop_Equipes.jpg)
 
+
+### Tela - Criar Equipe
+
+A tela Criar Equipe é onde ocorre a criação dos times. Nela o usuário deve inserir o nome do time um email a ser vinculado, o game alvo, a logo e uma breve
+descrição sobre o time.
+
+- `plano de fundo`: Clicando no logo da câmera alem da logo do time pudera ser enviado um plano de fundo da escolha do administrador que ficara visível no perfil do time.
+
+![Tela de perfil](img/Desktop _Criar equipe.jpg)
 
 
 
