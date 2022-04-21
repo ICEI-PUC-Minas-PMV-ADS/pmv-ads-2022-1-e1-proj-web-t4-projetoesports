@@ -111,6 +111,11 @@ Em Vagas, podemos visualizar quais times estão solicitando jogadores. Os times 
 
 ![Tela de perfil](img/Desktop_Vagas.jpg)
 
+### tela - Inscrição para a vaga
+
+Na tela de Inscrição, podemos observar funcionalidades como a possibilidade de criar uma descrição para vaga
+![Tela de perfil](img/Desktop_Vaga.jpg)
+
 
 
 
