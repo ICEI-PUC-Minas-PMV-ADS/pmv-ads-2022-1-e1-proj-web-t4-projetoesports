@@ -142,7 +142,7 @@ Na tela de Equipes é possível visualizar uma lista de times criados por outros
 A tela Criar Equipe é onde ocorre a criação dos times. Nela o usuário deve inserir o nome do time, um email a ser vinculado, o game alvo, a logo e uma breve
 descrição sobre o time.
 
-- `plano de fundo`: Clicando no logo da câmera alem da logo do time pudera ser enviado um plano de fundo da escolha do administrador que ficara visível no perfil do time.
+- `Plano de fundo`: Clicando no logo da câmera alem da logo do time pudera ser enviado um plano de fundo da escolha do administrador que ficara visível no perfil do time.
 
 ![Tela de perfil](img/Desktop_Criar_equipe.jpg)
 
@@ -158,7 +158,7 @@ Na tela de jogadores, estão listados todos os jogadores do site, sendo possíve
 
 Em Notícias é possivel visualizar os principais assuntos sobre o mundo dos E-sports, tal como torneios, informações técnicas sobre jogos e coisas do gênero.
 
-- `Cards personalizados`: Cards personalizados com notícias que direcionam o usuário aos principais veículos de informações sobre E-sports. (links externos)
+- `Cards personalizados`: Cards personalizados com notícias que direcionam o usuário aos principais veículos de informações sobre E-sports.
 - `Carrossel`: Notícias mais recentes sempre estarão dispostas em um carroçel para manter o usuário informado.
 
 ![Tela de perfil](img/Desktop_Noticias.jpg)
