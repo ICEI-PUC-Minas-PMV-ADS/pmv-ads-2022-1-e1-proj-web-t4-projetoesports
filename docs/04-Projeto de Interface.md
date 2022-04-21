@@ -132,6 +132,8 @@ Em Minhas Equipes, é possivel visualizar todos os times gerenciados pelo própr
 
 Na tela de Equipes é possível visualizar uma lista de times criados por outros usuários possibilitando a busca e inspecionamento de perfis alvo.
 
+- `Numeração de páginas`: Os excedentes de times que não aparecem devido a falta de espaço são transferidos para novas páginas que são listadas e enumeradas para uma melhor navegação do usuário.
+
 ![Tela de perfil](img/Desktop_Equipes.jpg)
 
 
