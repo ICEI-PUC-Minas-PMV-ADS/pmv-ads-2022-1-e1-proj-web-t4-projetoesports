@@ -147,7 +147,12 @@ descrição sobre o time.
 ![Tela de perfil](img/Desktop_Criar_equipe.jpg)
 
 
+### Tela - Jogadores
 
+Na tela de jogadores, estão listados todos os jogadores do site, sendo possivel inspecionar o perfil dos mesmos.
+
+
+![Tela de perfil](img/Desktop_Jogadores.jpg)
 
 
 
