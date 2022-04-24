@@ -32,14 +32,16 @@ identificados  como  Hotfix,  Release,  Develop  e  Feature.
 A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do 
 processo de desenvolvimento.
 
-- Scrum Master: 'xxx'
-- Product Owner: 'xxx'
+- Scrum Master: Vitor Alexandre Gomes Pinto
+- Product Owner: Vitor Alexandre Gomes Pinto
 - Equipe de Desenvolvimento
-  - xxx
-  - xxx
-  - xxx
+  - Carlos Eduardo Favilla Lobo
+  - Jéssica Serqueira Pereira
+  - João Lucas Pinheiro Torres
+  - Pedro Henrique De Freitas Santos
+  - Vitor Alexandre Gomes Pinto
 - Equipe de Design
-  - xxx
+  - Carlos Eduardo Favilla Lobo
 
 Para  organização  e  distribuição  das  tarefas  do  projeto,  a  equipe  está  utilizando  o  GitHub 
 estruturado com as seguintes listas:
