@@ -8,11 +8,9 @@ Nesta seção são apresentados os detalhes técnicos da solução criada pela e
 
 Diagrama que permite a modelagem física de um sistema, através da visão dos seus componentes e relacionamentos entre os mesmos.
 
-Exemplo: 
-
 Os componentes que fazem parte da solução são apresentados na figura que segue.
 
-![Diagrama de Componentes](img/componentes.png)
+![Diagrama de Componentes](img/componentesD-diag.png)
 <center>Arquitetura da Solução</center>
 
 A solução implementada conta com os seguintes módulos:
