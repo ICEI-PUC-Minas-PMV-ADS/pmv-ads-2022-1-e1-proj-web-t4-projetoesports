@@ -6,6 +6,11 @@
   list-style: none;
 }
 
+.top-icon-size {
+  width: 4rem;
+  height: 4rem;
+}
+
 .icon-size {
   width: 2rem;
   height: 2rem;
