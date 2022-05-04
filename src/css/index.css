@@ -1,3 +1,7 @@
+.side-bar-btn {
+  padding: 1.25rem;
+}
+
 .bg-grey-100 {
   background-color: #888;
 }
@@ -17,8 +21,8 @@
 }
 
 .icon {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 1.5rem;
   background-color: #888;
   padding: 0.5rem;
@@ -34,16 +38,29 @@
   height: 3rem;
 }
 
-.nav-link {
+.nav-link-c {
   color: #888;
   font-size: 12px;
   padding: 0;
 }
 
-.nav-link:hover {
+.nav-link-c:hover {
   color: #777;
 }
 
-.nav-link:active {
+.nav-link-c:active {
   color: #666;
+}
+
+.nav-link-c-perfil {
+  font-size: 22px;
+  color: white;
+}
+
+.nav-link-c-perfil:hover {
+  color: #555;
+}
+
+.nav-link-c-perfil.active {
+  border-bottom: 5px solid black;
 }
