@@ -1,5 +1,7 @@
 import { State } from "../states/state.js";
 
+const _APP_KEY = "application";
+
 /***
  * BaseController
  * Classe responsavel por processar os eventos do sistema
@@ -9,6 +11,7 @@ import { State } from "../states/state.js";
 export class BaseController {
   constructor(_BASE_KEY) {
     this.state = new State(_BASE_KEY);
+    this.appState = new State(_APP_KEY);
   }
 
   onInitialize() {}
