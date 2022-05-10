@@ -13,25 +13,17 @@ export class State {
     }
   }
 
-  get state() {
-    return JSON.parse(this.storage.getItem(this._STATE_K));
-  }
-
-  set state(state) {
-    if (typeof index === "object") {
-      this.storage.setItem(this._STATE_K, JSON.stringify(state));
-    }
-  }
-
   /***
    * store
    * Guarda um estado key com valor no storage.
    */
 
   store(key, value) {
-    let state = this.state;
-    state[key] = value;
-    this.state = state;
+    if (typeof value === "object") {
+      const state = JSON.parse(this.storage.getItem(this._STATE_K));
+      state[key] = value;
+      this.storage.setItem(this._STATE_K, JSON.stringify({ ...state }));
+    }
   }
 
   /***
@@ -40,7 +32,7 @@ export class State {
    */
 
   load(key) {
-    return this.state[key];
+    return JSON.parse(this.storage.getItem(this._STATE_K));
   }
 
   /***
@@ -49,6 +41,6 @@ export class State {
    */
 
   exists(key) {
-    return this.state[key] !== undefined;
+    return JSON.parse(this.storage.getItem(this._STATE_K)) !== undefined;
   }
 }

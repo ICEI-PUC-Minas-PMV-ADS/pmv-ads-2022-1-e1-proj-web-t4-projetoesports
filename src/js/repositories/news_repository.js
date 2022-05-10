@@ -1,4 +1,4 @@
-import { BaseRepository } from "./repository.js";
+import { BaseRepository } from "../framework/repository.js";
 
 /***
  * NewsRepository
