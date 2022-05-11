@@ -3,7 +3,7 @@ import { div, img, mapTo } from '../../framework/elements.js';
 
 /***
  * HomeCarousel
- * Component responsavel por renderizar o carrocel de noticias.
+ * Component responsavel por renderizar o carrossel de noticias.
  * Props:
  *    news: Recebe o array com os objetos que representam a noticia.
  */
