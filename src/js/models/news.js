@@ -10,6 +10,6 @@ export class News {
     this.description = description;
     this.carousel_img_url = carousel_img_url;
     this.url = url;
-    this.created_at = created_at;
+    this.created_at = created_at || new Date().getTime();
   }
 }

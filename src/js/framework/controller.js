@@ -44,6 +44,7 @@ export class Controller {
   constructor(state) {
     this.__appState = new State(_APP_KEY);
 
+    this.onInitialize = this.onInitialize?.bind(this);
     this.buildComponentDatabase = this.buildComponentDatabase?.bind(this);
     this.registerComponent = this.registerComponent?.bind(this);
     
@@ -61,6 +62,8 @@ export class Controller {
 
   get state() { return JSON.parse(JSON.stringify(this.__state)); }  
   set state(newState) { this.__state = JSON.parse(JSON.stringify(newState)); }
+
+  get appState() { return this.__appState; }
 
   getState() {
     return this.state;
@@ -81,7 +84,7 @@ export class Controller {
 
       // Monta as props atualizadas a partir das dependencias.
       Object.keys(item.dependencies).forEach((depKey) => {
-        updatedProps[item.dependencies[depKey]] = newState[depKey];
+        updatedProps[item.dependencies[depKey]] = this.__state[depKey];
       });
 
       // Atualiza props.
@@ -89,7 +92,7 @@ export class Controller {
 
       // Atualiza arvore virtual.
       renderElementTree(
-        item.component.__virtual_element,
+        item.component.__children,
         item.component.render()
       );
     });
@@ -162,6 +165,7 @@ function evaluateParameters(controller, parameters) {
     }
 
     currentController = controller;
+    currentController?.onInitialize?.();
     currentController?.buildComponentDatabase?.();
 
     const componentsToRender = document.querySelectorAll('[data-component]');
@@ -188,9 +192,9 @@ function evaluateParameters(controller, parameters) {
         currentController.__cachedComponents.push({ component: obj, dependencies });
 
         if (obj instanceof Component) {
-          obj.__virtual_element = obj.render();
-          renderElementTree(obj.__virtual_element);
-          component.replaceChildren(obj.__virtual_element.__element);
+          obj.__children = obj.render();
+          obj.__element = renderElementTree(obj.__children);
+          component.replaceChildren(obj.__element);
         }
       }
     });

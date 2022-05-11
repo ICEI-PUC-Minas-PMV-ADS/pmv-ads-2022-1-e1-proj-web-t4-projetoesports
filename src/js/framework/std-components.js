@@ -10,11 +10,11 @@ import { VirtualElement } from './template.js';
 export class If extends Component {
   constructor(cond, elemA, elemB) {
     super();
-    this.__renderElement = cond ? elemA : elemB;
+    this.__children = cond ? elemA : elemB;
   }
 
   render() {
-    return this.__renderElement;
+    return this.__children;
   }
 }
 
@@ -27,10 +27,10 @@ export class If extends Component {
   constructor(value, options, fallbackOption) {
     super();
     if (options[value] !== undefined && options[value] !== null) {
-      this.__renderElement = options[value];
+      this.__children = options[value];
     } else {
       if (fallbackOption !== undefined && fallbackOption !== null) {
-        this.__renderElement = fallbackOption;
+        this.__children = fallbackOption;
       } else {
         throw new Error("Swith must be fallback option");
       }
@@ -38,7 +38,7 @@ export class If extends Component {
   }
 
   render() {
-    return this.__renderElement;
+    return this.__children;
   }
 }
 
@@ -67,7 +67,7 @@ export class If extends Component {
     this.__entries = [];
 
     // Renderiza a lista de elementos.
-    this.__renderElement = list.map((value) => {
+    this.__children = list.map((value) => {
       const element = callback(value);
       const key = element.__props['key'];
 
@@ -97,6 +97,6 @@ export class If extends Component {
   }
 
   render() {
-    return this.__renderElement;
+    return this.__children;
   }
 }

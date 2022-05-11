@@ -1,3 +1,8 @@
+/***
+ * processWindowSearch
+ * Função responsavel por processar os parametros de busca na URL da pagina.
+ */
+
 export function processWindowSearch() {
   const normalized_search = window.location.search.substring(1, window.location.search.length);
   const search_array = normalized_search.split('&');
