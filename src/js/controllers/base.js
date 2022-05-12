@@ -12,6 +12,11 @@ import { USER_INFO } from '../framework/state.js';
 
 export class BaseController extends Controller
 {
+  /***
+   * O construtor é indicado para iniciar as variaveis do controlador,
+   * ele é chamado antes de onInitialize.
+   */
+
   constructor()
   {
     super();
@@ -21,12 +26,26 @@ export class BaseController extends Controller
     this.criarPerfilModal = new bootstrap.Modal(document.getElementById('criarPerfilModal'));
   }
 
+  /***
+   * onInitialize
+   * Este metodo e chamado quando o controlador esta iniciando, antes de
+   * qualquer componente ser adicionado ao DOM. Nele é possivel carregar
+   * os dados no sistema para alimentar os componentes.
+   */
+
   onInitialize()
   {
     this.setState({
       userInfo: this.appState.load(USER_INFO),
     });
   }
+
+  /***
+   * actions
+   * Este metodo retorna um objeto que é anexado ao "window"(o objeto global da pagina).
+   * Neste objeto retornado são incluidos os metodos que serão "passados" aos eventos dos elementos
+   * do DOM.
+   */
 
   actions()
   {
@@ -145,6 +164,11 @@ export class BaseController extends Controller
       }
     };
   }
+
+  /***
+   * buildComponentDatabase
+   * Este metodo registrar os componentes que serão renderizadas na pagina.
+   */
 
   buildComponentDatabase()
   {
