@@ -1,16 +1,17 @@
 import { Controller } from '../framework/controller.js';
 import { UserRepository } from '../repositories/user_repository.js';
 import { Navbar } from '../components/navbar.js';
+import { PerfilPage, SECTION_DEFAULT } from '../components/pages/perfil.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
 
 /***
- * BaseController
+ * PerfilController
  * Controlador responsavel por gerenciar a parte logica da pagina.
  */
 
-export class BaseController extends Controller
+export class PerfilController extends Controller
 {
   /***
    * O construtor é indicado para iniciar as variaveis do controlador,
@@ -37,6 +38,7 @@ export class BaseController extends Controller
   {
     this.setState({
       userInfo: this.appState.load(USER_INFO),
+      section: SECTION_DEFAULT,
     });
   }
 
@@ -161,6 +163,12 @@ export class BaseController extends Controller
         ));
 
         this.criarPerfilModal.toggle();
+      },
+      onChangeSection: function (section)
+      {
+        this.setState({
+          section: section,
+        });
       }
     };
   }
@@ -173,5 +181,6 @@ export class BaseController extends Controller
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
+    this.registerComponent('perfil-page', PerfilPage);
   }
 }
