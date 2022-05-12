@@ -77,15 +77,22 @@
   font-size: 60px;
   color: #FFFFFF;
   background: #949494;
-  padding: 0px
+  
 }
 
 .formequipes {
-  border: 1px solid #000000;
   background: #D5D5D5;
 }
 
-#nameequipe {
+form, label {
+  text-align: left;
+  font-family: 'Carme';
+  font-style: normal;
+  font-size: 20px;
+  color: #000000;
+}
+
+input {
   box-sizing: border-box;
   width: 574.48px;
   height: 46.93px;
@@ -93,51 +100,33 @@
   border: 1px solid #000000;
   border-radius: 5px;
 }
-
-#email {  
-  box-sizing: border-box;
-  width: 574.48px; 
-  height: 46.93px;
-  background: rgba(251, 251, 251, 0.35);
-  border: 1px solid #000000;
-  border-radius: 5px;
-  border-spacing: 10rem;
-}
-
-#jogo {
-  box-sizing: border-box;
-  width: 574.48px;
-  height: 46.93px;
-  background: rgba(251, 251, 251, 0.35);
-  border: 1px solid #000000;
-  border-radius: 5px;
-}
-
-#logo {
-  box-sizing: border-box;
-  width: 574.48px;
-  height: 46.93px;
-  background: rgba(251, 251, 251, 0.35);
-  border: 1px solid #000000;
-  border-radius: 5px;
-}
-
-
 
 #objetivo {
-  box-sizing: border-box;
   width: 574.48px;
   height: 178.98px;
-  background: rgba(251, 251, 251, 0.35);
+}
+
+::placeholder{
+  box-sizing: border-box;
+  position: absolute;
+  width: 162px;
+  height: 100%;
+  left: 13.69px;
+  top: 15.54px;
+  background: #C4C4C4;
   border: 1px solid #000000;
   border-radius: 5px;
 }
 
 button {
-  position: absolute;
   width: 235.3px;
   height: 62.58px;
   background: #949494;
   border-radius: 5px;
+  color: #FFFFFF !important;
+}
 
+button {
+  position: absolute;
+  left:  1100.46px;;
 }
