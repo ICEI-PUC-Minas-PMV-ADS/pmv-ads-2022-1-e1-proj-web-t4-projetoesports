@@ -18,9 +18,10 @@ export class Component {
       state:    currentController?.state,
       setState: currentController?.setState,
       actions:  currentController?.actions,
+      appState: currentController?.appState,
     };
 
-    this.__virtual_element = null;
+    this.__children = null;
     this.__props = props;
             
     this.updateProps = (newProps) => {
@@ -48,7 +49,7 @@ export class Component {
       
       if (this.checkUpdate(this.__state, updatedState)) {
         this.state = updatedState;
-        renderElementTree(this.__virtual_element, this.render?.());
+        renderElementTree(this.__children, this.render?.());
       }
     };
 

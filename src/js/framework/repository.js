@@ -1,6 +1,6 @@
 /***
  * BaseRepository
- * Classe base para manipular os repositorios do sistema.
+ * Classe base para manipular os repositorios do modelos.
  */
 
 export class BaseRepository {

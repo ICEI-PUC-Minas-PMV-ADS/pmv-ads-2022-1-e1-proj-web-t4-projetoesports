@@ -19,7 +19,8 @@ export class State {
    */
 
   store(key, value) {
-    if (typeof value === "object") {
+    if (typeof value === "object")
+    {
       const state = JSON.parse(this.storage.getItem(this._STATE_K));
       state[key] = value;
       this.storage.setItem(this._STATE_K, JSON.stringify({ ...state }));
@@ -32,7 +33,7 @@ export class State {
    */
 
   load(key) {
-    return JSON.parse(this.storage.getItem(this._STATE_K));
+    return JSON.parse(this.storage.getItem(this._STATE_K))[key];
   }
 
   /***
@@ -41,6 +42,12 @@ export class State {
    */
 
   exists(key) {
-    return JSON.parse(this.storage.getItem(this._STATE_K)) !== undefined;
+    return JSON.parse(this.storage.getItem(this._STATE_K))[key] !== undefined;
   }
 }
+
+/***
+ * Estados da aplicação.
+ */
+
+export const USER_INFO = 'user_info';

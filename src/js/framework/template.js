@@ -254,6 +254,13 @@ function updateElementProps(velem, elem, props)
 
 /***
  * renderElementTree
+ * Parametros
+ * elem:    VirtualElement
+ *          VirtualElementMap
+ *          Component
+ * newElem: VirtualElement
+ *          VirtualElementMap
+ *          Component
  * 
  */
 
@@ -267,7 +274,6 @@ export function renderElementTree(elem, newElem)
        elem && elem instanceof Component
     ) && !newElem
   ) {
-
     // Processa: VirtualElement
     if (isVirtualElement(elem))
     {
@@ -349,86 +355,67 @@ export function renderElementTree(elem, newElem)
         throw new Error("VirtualElementMap: 'template' must be 'function'");
       }
 
+      let index = 0, isFirst = true;
+
       // Gera a arvore de filho com base no template.
       elem.__children.forEach((child) => {
-        const renderizedChild = elem.__template(child);
+        const renderizedChild = elem.__template(child, index++, isFirst);
 
-        // Processa: VirtualElement
-        if (renderizedChild instanceof VirtualElement)
-        {
-          // Valida se o elemento gerado pelo template possui key
-          if (!renderizedChild.__props['key']) {
-            throw new Error("VirtualElementMap: 'children' must 'key' props");
-          }
-
-          // Verifica se a chave existe.
-          if (
-            elem.__entries.find(
-              (entry) => (
-                entry.key === renderizedChild.__props['key']
-              )
-            )
-          ) {
-            throw new Error("VirtualElementMap: 'children' must have unique 'key' props");
-          }
-
-          // Processa o filho renderizado.
-          renderElementTree(renderizedChild)
-
-          // Adiciona entrada.
-          elem.__entries.push({
-            key: renderizedChild.__props['key'],
-            value: renderizedChild,
-          });
-
-          return;
-        }
-
-        // Processa: Component
-        if (renderizedChild instanceof Component)
-        {
-          // Valida se o elemento gerado pelo template possui key
-          if (!renderizedChild.props['key']) {
-            throw new Error("VirtualElementMap: 'children' must 'key' props");
-          }
-
-          // Verifica se a chave existe.
-          if (
-            elem.__entries.find(
-              (entry) => (
-                entry.key === renderizedChild.props['key']
-              )
-            )
-          ) {
-            throw new Error("VirtualElementMap: 'children' must have unique 'key' props");
-          }
-
-          // Rendeiza componente.
-          renderizedChild.__virtual_element = renderizedChild.render();
-          renderElementTree(renderizedChild.__virtual_element)
-
-          // Adiciona entrada.
-          elem.__entries.push({
-            key: renderizedChild.props['key'],
-            value: renderizedChild.__virtual_element,
-          });
-          return;
-        }
+        // Atualiza o flag que indica ser o primeiro filho.
+        isFirst = false;
 
         // Valida elemento gerado pelo template.
-        throw new Error("VirtualElementMap: 'template' must return 'VirtualElement' or 'Component'");
+        if (
+          renderizedChild instanceof VirtualElement === false &&
+          renderizedChild instanceof Component === false
+        ) {
+          // Valida elemento gerado pelo template.
+          throw new Error("VirtualElementMap: 'template' must return 'VirtualElement' or 'Component'");
+        }
+
+        // Valida se o elemento gerado pelo template possui key
+        if (!renderizedChild.__props['key']) {
+          throw new Error("VirtualElementMap: 'children' must 'key' props");
+        }
+
+        // Verifica se a chave existe.
+        if (
+          elem.__entries.find(
+            (entry) => entry.key === renderizedChild.__props['key']
+          )
+        ) {
+          throw new Error("VirtualElementMap: 'children' must have unique 'key' props");
+        }
+
+        // Adiciona entrada.
+        elem.__entries.push({
+          key: renderizedChild.__props['key'],
+          value: renderElementTree(renderizedChild),
+        });
+
+        return;
       });
 
       // Adiciona os elementos ao DOM.
-      elem.__element.replaceChildren(...elem.__entries.map((entry) => entry.value.__element));
+      elem.__element.replaceChildren(...elem.__entries.map((entry) => entry.value));
       return elem.__element;
     }
 
     // Processa: Component.
     if (isComponent(elem))
     {
-      elem.__virtual_element = elem.render();
-      return renderElementTree(elem.__virtual_element);
+      elem.__children = elem.render();
+
+      // Valida elemento gerado pelo template.
+      if (
+        elem.__children instanceof VirtualElement === false &&
+        elem.__children instanceof Component === false
+      ) {
+        throw new Error("Component: 'render' must return 'VirtualElement' or 'Component'");
+      }
+
+      elem.__element = renderElementTree(elem.__children);
+      return elem.__element;
     }
   }
 
@@ -450,7 +437,7 @@ export function renderElementTree(elem, newElem)
     {
       if (!elem.__element)
       {
-        elem.__element = document.createElement(elem.__tag);
+        throw new Error("renderElementTree: to be updated element must be in DOM");
       }
 
       // Verifica se houve alguma mudança nos props.
@@ -469,7 +456,15 @@ export function renderElementTree(elem, newElem)
       // Se o filho e um elemento virtual atualiza o elemento filho.
       if (isVirtualElement(elem.__children))
       {
-        renderElementTree(elem.__children, newElem.__children);
+        if (!compareValues(elem.__children, newElem.__children))
+        {
+          elem.__children = newElem.__children;
+          elem.__element.replaceChildren(renderElementTree(elem.__children));
+        }
+        else
+        {
+          renderElementTree(elem.__children, newElem.__children);
+        }
         return null;
       }
 
@@ -478,9 +473,17 @@ export function renderElementTree(elem, newElem)
       {
         if (elem.__children.length === newElem.__children.length)
         {
-          for (let i = 0; i < elem.__children.length; i++)
+          if (!compareValues(elem.__children, newElem.__children))
           {
-            renderElementTree(elem.__children[i], newElem.__children[i]);
+            elem.__children = newElem.__children;
+            elem.__element.replaceChildren(...elem.__children.map((child) => renderElementTree(child)));
+          }
+          else
+          {
+            for (let i = 0; i < elem.__children.length; i++)
+            {
+              renderElementTree(elem.__children[i], newElem.__children[i]);
+            }
           }
           return null;
         }
@@ -493,15 +496,33 @@ export function renderElementTree(elem, newElem)
       // Atualiza o elemento se o filho for um componente.
       if (isComponent(elem.__children))
       {
-        renderElementTree(elem.__children, newElem.__children);
-        return elem.__element;
+        if (!compareValues(elem.__children, newElem.__children))
+        {
+          const parentElement = elem.__element.parentElement;
+          elem.__children = newElem.__children;
+          elem.__element = renderElementTree(elem.__children);
+          parentElement.replaceChildren(elem.__element);
+        }
+        else
+        {
+          renderElementTree(elem.__children, newElem.__children);
+        }
+        return null; // elem.__element;
       }
 
       // Atualiza o elemento se o filho for um map.
       if (isVirtualElementMap(elem.__children))
       {
-        renderElementTree(elem.__children, newElem.__children);
-        return elem.__element;
+        if (!compareValues(elem.__children, newElem.__children))
+        {
+          elem.__children = newElem.__children;
+          elem.__element.replaceChildren(renderElementTree(elem.__children));
+        }
+        else
+        {
+          renderElementTree(elem.__children, newElem.__children);
+        }
+        return null;
       }
     }
 
@@ -544,15 +565,7 @@ export function renderElementTree(elem, newElem)
         newElem.__children.forEach((child) => {
           const renderizedChild = newElem.__template(child);
 
-          let key;
-          if (renderizedChild instanceof VirtualElement)
-          {
-            key = renderizedChild.__props['key'];
-          }
-          else if (renderizedChild instanceof Component)
-          {
-            key = renderizedChild.props['key'];
-          }
+          let key = renderizedChild.__props['key'];
 
           // Valida se o elemento gerado pelo template possui key
           if (!key) {
@@ -562,9 +575,7 @@ export function renderElementTree(elem, newElem)
           // Valida se a chave esta duplicada.
           if (
             processedChildren.find(
-              (entry) => (
-                entry.key === key
-              )
+              (entry) => entry.key === key
             )
           ) {
             throw new Error("VirtualElementMap: 'children' must have unique 'key' props");
@@ -600,13 +611,13 @@ export function renderElementTree(elem, newElem)
           if (renderizedChild instanceof Component)
           {
             // Rendeiza componente.
-            renderizedChild.__virtual_element = renderizedChild.render();
-            renderElementTree(renderizedChild.__virtual_element);
+            renderizedChild.__children = renderizedChild.render();
+            renderElementTree(renderizedChild.__children);
 
             // Adiciona entrada.
             processedChildren.push({
               key: key,
-              value: renderizedChild.__virtual_element,
+              value: renderizedChild.__children,
             });
 
             return;
@@ -621,14 +632,27 @@ export function renderElementTree(elem, newElem)
 
         // Atualiza as entradas
         elem.__entries = processedChildren;
-        elem.__element.replaceChildren(...elem.__entries.map((entry) => entry.value.__element));
+        elem.__element.replaceChildren(...elem.__entries.map((entry) => entry.value));
       }
-      return;
+      return null;
     }
 
     // Processa: Component.
     if (isComponent(elem))
     {
+      if (!compareValues(elem.__children, newElem.__children))
+      {
+        // Atualiza props.
+        elem.props = newElem.props;
+
+        // Gera nova arvore e comuta alterações.
+        const parentElement = elem.__element.parentElement;
+        elem.__children = newElem.__children;
+        elem.__element = renderElementTree(elem.__children);
+        parentElement.replaceChildren(elem.__element);
+        return null;
+      }
+
       // Verifica se houve alguma mudança nos props.
       if (!compareValues(elem.props, newElem.props))
       {
@@ -636,9 +660,9 @@ export function renderElementTree(elem, newElem)
         elem.props = newElem.props;
 
         // Gera nova arvore e comuta alterações.
-        renderElementTree(elem.__virtual_element, elem.render());
+        renderElementTree(elem.__children, newElem.__children);
+        return null;
       }
-      return null;
     }
   }
   return null;

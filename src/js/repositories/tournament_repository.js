@@ -1,13 +1,13 @@
 import { BaseRepository } from "../framework/repository.js";
 
 /***
- * NewsRepository
- * Classe responsavel por manipular os dados das noticias.
+ * TournamentRepository
+ * Classe responsavel por manipular os dados dos torneios.
  */
 
-export class NewsRepository extends BaseRepository {
+export class TournamentRepository extends BaseRepository {
   constructor() {
-    super("news");
+    super("tournament");
   }
 
   serialize(data) {
