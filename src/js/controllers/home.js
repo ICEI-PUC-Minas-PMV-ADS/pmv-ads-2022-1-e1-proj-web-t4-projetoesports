@@ -151,19 +151,19 @@ export class HomeController extends Controller
 
           case 'notificações':
             {
-              
+              // TODO: Implementar recurso de notificações.
             }
             break;
 
           case 'minha equipe':
             {
-              
+              // TODO: Incluir link para pagina minha_equipe.
             }
             break;
 
           case 'perfil':
             {
-              
+              window.location.href = 'perfil.html';
             }
             break;
 
