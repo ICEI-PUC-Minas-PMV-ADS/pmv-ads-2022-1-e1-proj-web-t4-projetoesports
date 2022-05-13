@@ -173,6 +173,5 @@ export class BaseController extends Controller
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
-    this.registerComponent('teste', TestComponent);
   }
 }
