@@ -36,6 +36,13 @@ export class PerfilController extends Controller
 
   onInitialize()
   {
+    // Se o usuário não esta logado, redireciona para a home.
+    if (!this.appState.load(USER_INFO))
+    {
+      //window.location.href = 'index.html';
+      //return;
+    }
+
     this.setState({
       userInfo: this.appState.load(USER_INFO),
       section: SECTION_DEFAULT,

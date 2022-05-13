@@ -1,5 +1,5 @@
 import { Component } from "../../framework/component.js";
-import { div, component, h5, h4, nav, a, p, ul, li, img, mapTo } from '../../framework/elements.js';
+import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo } from '../../framework/elements.js';
 import { Switch } from '../../framework/std-components.js';
 
 /***
@@ -20,6 +20,10 @@ const SOBRE_SECTION_CONTATO    = 'Contato';
 
 const SOBRE_SECTION_DEFAULT    = SOBRE_SECTION_OBJETIVO;
 
+const OPTION_ALTERAR_FOTO      = 'alterar foto';
+const OPTION_ALTERAR_PERFIL    = 'alterar perfil';
+const OPTION_DELETAR_PERFIL    = 'deletar perfil';
+
 /***
  * PerfilPage
  * Component responsavel por renderizar o carrocel de noticias.
@@ -36,6 +40,7 @@ export class PerfilPage extends Component
     this.state = {
       section: SECTION_DEFAULT,
       sobreSection: SOBRE_SECTION_DEFAULT,
+      contextMenu: false,
     };
 
     this.renderSobreSection              = this.renderSobreSection?.bind(this);
@@ -49,7 +54,7 @@ export class PerfilPage extends Component
 
   render()
   {
-    const { section } = this.state;
+    const { contextMenu, section } = this.state;
 
     const img_url = this.props.userInfo?.img_url || PROFILE_IMG;
 
@@ -78,6 +83,45 @@ export class PerfilPage extends Component
       this.setState({ section: element_section })
     };
 
+    /***
+     * onContextMenuClick
+     * Mostra/esconde o menu de contexto.
+     */
+
+    const onContextMenuClick = (evt) => {
+      evt.preventDefault();
+      this.setState({ contextMenu: !contextMenu })
+    };
+
+    /***
+     * onContextOptionClick
+     * Evento disparado ao clicar em uma opção do menu de contexto.
+     */
+
+    const onContextOptionClick = (evt, option) => {
+      evt.preventDefault();
+      switch (option)
+      {
+        case OPTION_ALTERAR_FOTO:
+          {}
+          break;
+
+        case OPTION_ALTERAR_PERFIL:
+          {}
+          break;
+
+        case OPTION_DELETAR_PERFIL:
+          {
+            if (1)
+            {}
+          }
+          break;
+      }
+
+      // Esconde menu de contexto.
+      this.setState({ contextMenu: !contextMenu });
+    };
+
     return (
       div(null, [
         div({ className: "c-linear-header" },
@@ -96,10 +140,49 @@ export class PerfilPage extends Component
               ])
             ),
 
-            div({ className: "c-ret", style: { height: '3rem', borderBottom: '1px solid #888' } },
-              a({ href: "#", style: { fontSize: '2rem', float: 'right', color: 'white'} }, '...')
+            div({ className: 'clearfix', style: { borderBottom: '1px solid white' } },
+              div({ className: 'float-end', style: { height: '3rem', position: 'relative' } },
+                div({ className: 'd-flex justify-content-end flex-column'}, [
+                  div({ className: 'd-flex justify-content-end align-items-end' },
+                    a({
+                      href: "#",
+                      style: { textDecoration: 'none', fontSize: '2rem', color: 'white'},
+                      events: { click: (evt) => onContextMenuClick(evt) }
+                    }, '...')
+                  ),
+                  
+                  div({
+                    style: { display: contextMenu ? 'block' : 'none',
+                    width: '10rem', backgroundColor: 'white',
+                    borderRadius: '0 0px 5px 5px',
+                    padding: '0.5rem', zIndex: 10 } },[
+                      div(null,
+                        a({
+                          href: '#',
+                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_ALTERAR_FOTO) } },
+                          style: { textDecoration: 'none', color: 'black' },
+                        }, 'Alterar foto')
+                      ),
+                      div(null,
+                        a({
+                          href: '#',
+                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_ALTERAR_PERFIL) } },
+                          style: { textDecoration: 'none', color: 'black' },
+                        }, 'Alterar perfil')
+                      ),
+                      hr(),
+                      div(null,
+                        a({
+                          href: '#',
+                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_DELETAR_PERFIL) } },
+                          style: { textDecoration: 'none', color: 'black' },
+                        }, 'Deletar perfil')
+                      ),
+                  ])
+                ])
+              )
             ),
-            
+
             div(null,
               nav({ className: "nav" }, [
                 a({
@@ -124,7 +207,7 @@ export class PerfilPage extends Component
           ])
         ),
 
-        div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
+        div({ className: "flex-fill", style: { backgroundColor: '#591E55', zIndex: 5 } },
           component(Switch, section, section_components)
         ),
       ])
