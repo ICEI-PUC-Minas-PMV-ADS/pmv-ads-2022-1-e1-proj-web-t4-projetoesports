@@ -73,7 +73,8 @@ export class PerfilPage extends Component
      * Evento que altera o a section atual.
      */
 
-    const onSectionClick = (element_section) => {
+    const onSectionClick = (evt, element_section) => {
+      evt.preventDefault();
       this.setState({ section: element_section })
     };
 
@@ -103,19 +104,19 @@ export class PerfilPage extends Component
               nav({ className: "nav" }, [
                 a({
                   className: `nav-link c-nav-link-header ${checkSectionActive(SECTION_SOBRE)}`,
-                  events: { click: () => { onSectionClick(SECTION_SOBRE) } },
+                  events: { click: (evt) => { onSectionClick(evt, SECTION_SOBRE) } },
                   href: "#" 
                 }, 'Sobre'),
 
                 a({
                   className: `nav-link c-nav-link-header ${checkSectionActive(SECTION_ESTATISTICA)}`,
-                  events: { click: () => { onSectionClick(SECTION_ESTATISTICA) } },
+                  events: { click: (evt) => { onSectionClick(evt, SECTION_ESTATISTICA) } },
                   href: "#" 
                 }, 'Estatística'),
 
                 a({
                   className: `nav-link c-nav-link-header ${checkSectionActive(SECTION_FUNCOES)}`,
-                  events: { click: () => { onSectionClick(SECTION_FUNCOES) } },
+                  events: { click: (evt) => { onSectionClick(evt, SECTION_FUNCOES) } },
                   href: "#"
                 }, 'Funções')
               ])
@@ -161,7 +162,8 @@ export class PerfilPage extends Component
      * Executa o evento quando a seção for trocada.
      */
 
-    const onSectionClick = (section) => {
+    const onSectionClick = (evt, section) => {
+      evt.preventDefault();
       this.setState({ sobreSection: section });
     };
 
@@ -174,19 +176,19 @@ export class PerfilPage extends Component
               nav({ className: "nav flex-column nav-pills", style: { textAlign: 'center', marginTop: '3rem' } }, [
                 a({
                   className: `nav-link c-sobre-sidebar ${checkSelectedSection(SOBRE_SECTION_OBJETIVO)}`,
-                  events: { click: () => { onSectionClick(SOBRE_SECTION_OBJETIVO) } },
+                  events: { click: (evt) => { onSectionClick(evt, SOBRE_SECTION_OBJETIVO) } },
                   href: "#"
                 }, 'Objetivo'),
 
                 a({
                   className: `nav-link c-sobre-sidebar ${checkSelectedSection(SOBRE_SECTION_EQUIPES)}`,
-                  events: { click: () => { onSectionClick(SOBRE_SECTION_EQUIPES) } },
+                  events: { click: (evt) => { onSectionClick(evt, SOBRE_SECTION_EQUIPES) } },
                   href: "#"
                 }, 'Minhas Equipes'),
 
                 a({
                   className: `nav-link c-sobre-sidebar ${checkSelectedSection(SOBRE_SECTION_CONTATO)}`,
-                  events: { click: () => { onSectionClick(SOBRE_SECTION_CONTATO) } },
+                  events: { click: (evt) => { onSectionClick(evt, SOBRE_SECTION_CONTATO) } },
                   href: "#"
                 }, 'Contato')
               ])

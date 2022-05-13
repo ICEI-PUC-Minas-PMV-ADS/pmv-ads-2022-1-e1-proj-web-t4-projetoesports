@@ -76,7 +76,7 @@ export class PerfilController extends Controller
 
           case 'perfil':
             {
-              
+              window.location.href = 'perfil.html';
             }
             break;
 
