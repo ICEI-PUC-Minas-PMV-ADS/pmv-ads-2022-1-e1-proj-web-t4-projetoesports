@@ -62,19 +62,19 @@ export class BaseController extends Controller
 
           case 'notificações':
             {
-              
+              // TODO: Implementar recurso de notificações.
             }
             break;
 
           case 'minha equipe':
             {
-              
+              // TODO: Redirecionar para minha equipe.
             }
             break;
 
           case 'perfil':
             {
-              
+              window.location.href = 'perfil.html';
             }
             break;
 
