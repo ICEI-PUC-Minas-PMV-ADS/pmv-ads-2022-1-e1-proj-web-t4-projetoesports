@@ -4,9 +4,9 @@ import { UserRepository } from '../repositories/user_repository.js';
 import { TournamentRepository } from '../repositories/tournament_repository.js';
 import { VacancyRepository } from '../repositories/vacancy_repository.js';
 import { Navbar } from '../components/navbar.js';
-import { HomeCarousel } from '../components/pages/home_carousel.js';
-import { HomeTournament } from '../components/pages/home_tournament.js';
-import { HomeVacancy } from '../components/pages/home_vacancy.js';
+import { HomeCarousel } from '../components/pages/home/home_carousel.js';
+import { HomeTournament } from '../components/pages/home/home_tournament.js';
+import { HomeVacancy } from '../components/pages/home/home_vacancy.js';
 import { User } from '../models/user.js';
 import { News } from '../models/news.js';
 import { Sha256 } from '../helpers/crypto.js';
@@ -61,12 +61,11 @@ export class HomeController extends Controller
 
   initializeNews()
   {
-    this.newsRepository.create(new News('News #1', 'Descrição News #1', 'imgs/news/news_1.jpg', 'https://www.google.com', 1652282098729));
-    this.newsRepository.create(new News('News #2', 'Descrição News #2', 'imgs/news/news_2.jpg', 'https://www.google.com', 1652281098729));
-    this.newsRepository.create(new News('News #3', 'Descrição News #3', 'imgs/news/news_3.jpg', 'https://www.google.com', 1652282598729));
-    this.newsRepository.create(new News('News #4', 'Descrição News #4', 'imgs/news/news_4.jpg', 'https://www.google.com', 1652282298729));
-    this.newsRepository.create(new News('News #5', 'Descrição News #5', 'imgs/news/news_5.jpg', 'https://www.google.com', 1652281598729));
-    this.newsRepository.create(new News('News #6', 'Descrição News #6', 'imgs/news/news_6.jpg', 'https://www.google.com', 1652281798729));
+    this.newsRepository.create(new News('News #1', 'Descrição News #1', 'imgs/noticias_images/noticias_1.png', 'https://www.google.com', 1652282098729));
+    this.newsRepository.create(new News('News #2', 'Descrição News #2', 'imgs/noticias_images/noticias_2.png', 'https://www.google.com', 1652281098729));
+    this.newsRepository.create(new News('News #3', 'Descrição News #3', 'imgs/noticias_images/noticias_3.png', 'https://www.google.com', 1652282598729));
+    this.newsRepository.create(new News('News #4', 'Descrição News #4', 'imgs/noticias_images/noticias_4.png', 'https://www.google.com', 1652282298729));
+    this.newsRepository.create(new News('News #5', 'Descrição News #5', 'imgs/noticias_images/noticias_5.png', 'https://www.google.com', 1652281598729));
   }
   
   initializeTournament()
@@ -76,7 +75,6 @@ export class HomeController extends Controller
     this.tournamentRepository.create(new Tournament('Tournament #3', 'Descrição Tournament #3', 'url', 1652281898729));
     this.tournamentRepository.create(new Tournament('Tournament #4', 'Descrição Tournament #4', 'url', 1652282098729));
     this.tournamentRepository.create(new Tournament('Tournament #5', 'Descrição Tournament #5', 'url', 1652281858729));
-    this.tournamentRepository.create(new Tournament('Tournament #6', 'Descrição Tournament #6', 'url', 1652281798729));
   }
   
   initializeVacancies()
@@ -86,7 +84,6 @@ export class HomeController extends Controller
     this.vacancyRepository.create(new Vacancy('League of Legends', 'Team #3', 'Mid lane', 'imgs/role_lane_icons/MIDDLE.png', 1652212098729));
     this.vacancyRepository.create(new Vacancy('League of Legends', 'Team #4', 'Support', 'imgs/role_lane_icons/SUPPORT.png', 1652281598729));
     this.vacancyRepository.create(new Vacancy('League of Legends', 'Team #5', 'Jungle', 'imgs/role_lane_icons/JUNGLE.png', 1652281098729));
-    this.vacancyRepository.create(new Vacancy('League of Legends', 'Team #6', 'Top lane', 'imgs/role_lane_icons/TOP.png', 1652282698729));
   }
 
   onInitialize()
@@ -134,6 +131,8 @@ export class HomeController extends Controller
       vacancies: vacanciesNewest,
       userInfo: this.appState.load(USER_INFO),
     });
+
+    console.log(JSON.stringify(this.state));
   }
 
   actions()

@@ -22,7 +22,7 @@ export class HomeCarousel extends Component
         mapTo('div', { className: 'carousel-inner' }, this.props.news,
           (news, index, isFirst) => (
             div({ className: `carousel-item ${isFirst ? 'active' : ''}`, key: news.id },
-              img({ className: 'w-100', src: 'https://via.placeholder.com/800x350', style: { maxHeight: '30rem' } }))
+              img({ className: 'w-100', src: news.carousel_img_url, style: { maxHeight: '30rem' } }))
           )
         )
       )
