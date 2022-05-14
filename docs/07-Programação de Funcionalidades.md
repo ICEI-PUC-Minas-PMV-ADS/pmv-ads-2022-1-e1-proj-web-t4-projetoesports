@@ -18,6 +18,8 @@ Criar Equipe
 
 A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equipe. Para o cadastro é necessário preencher os dados: Nome, Email, Jogo, Logo e Objetivo.
 
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/main/docs/img/Criar_equipes.png
+
 
 Requisitos atendidos
 
