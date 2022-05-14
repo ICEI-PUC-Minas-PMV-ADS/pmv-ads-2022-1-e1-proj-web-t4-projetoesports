@@ -144,18 +144,17 @@ A tela "perfil do usuário" é dividida em três categorias. Sobre, estatística
 - src/js/models/user.js
 - src/img/RC.png
 
+```
 {
-
     "id":123321,
     "name":"jose",
     "email":"jose@gmail.com",
     "password":"Nankinjo",
     "img_url":"imgs/RC.png",
-    "objective":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitonsequuntur enim corporis tempora similique eum ut atque sunt quia magnam, reprehenderit ipsa? Fuga, debitis quia.",
+    "objective":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     "participated_teams":null,
     "contact_info":null,
     "game_statistics":null,
     "game_roles":null
-
-    }
-    ,,,
+}
+```
