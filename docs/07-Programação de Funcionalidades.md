@@ -87,7 +87,7 @@ Por este modal de registro, por ela é possível se cadastrar no sistema.
   }
 ```
 
-Criar Equipe
+## Criar Equipe
 
 A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equipe. Para o cadastro é necessário preencher os dados: Nome, Email, Jogo, Logo e Objetivo.
 
@@ -95,12 +95,12 @@ A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equip
 
 
 
-Requisitos atendidos
+### Requisitos atendidos
 
 - RF-08
 - RF-09
 
-Artefatos da funcionalidade
+### Artefatos da funcionalidade
 
 - feature_equipes.html
 - equipe.css
@@ -108,7 +108,7 @@ Artefatos da funcionalidade
 - models.js
 - team.js
 
-Estrutura de Dados
+### Estrutura de Dados
 
 ```
 {
