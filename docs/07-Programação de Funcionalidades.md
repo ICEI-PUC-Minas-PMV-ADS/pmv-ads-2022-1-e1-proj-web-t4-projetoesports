@@ -16,4 +16,33 @@ Para cada requisito funcional, pode ser entregue um artefato desse tipo
 
 Criar Equipe
 
-A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equipe, ela contém 
+A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equipe. Para o cadastro é necessário preencher os dados: Nome, Email, Jogo, Logo e Objetivo.
+
+
+Requisitos atendidos
+
+RF - 08
+RF - 09
+
+Artefatos da funcionalidade
+
+feature_equipes.html
+equipe.css
+icon_time.png
+models.js
+team.js
+
+Estrutura de Dados
+
+{
+    "id":1,
+    "name":"",
+    "game_id":"",
+    "icon_url":"",
+    "objective":"",
+    "players":null,
+    "reserves":null,
+    "vacancies":null,
+    "contacts":null
+
+    }
