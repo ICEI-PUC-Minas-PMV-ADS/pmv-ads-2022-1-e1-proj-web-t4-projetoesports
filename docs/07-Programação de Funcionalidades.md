@@ -37,13 +37,13 @@ Por este modal de registro, por ela é possível se cadastrar no sistema.
   - RF-05
 
 ### Artefatos
-  index.html
-  js/controllers/home.js
-  js/components/pages/home/*
-  css/home.css
-  imgs/noticias_images/*
-  imgs/torneio_images/*
-  imgs/role_lane_icons/*
+  - index.html
+  - js/controllers/home.js
+  - js/components/pages/home/*
+  - css/home.css
+  - imgs/noticias_images/*
+  - imgs/torneio_images/*
+  - imgs/role_lane_icons/*
 
 ### Estrutura de dados
 
