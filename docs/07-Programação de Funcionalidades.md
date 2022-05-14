@@ -145,6 +145,7 @@ A tela "perfil do usuário" é dividida em três categorias. Sobre, estatística
 - src/img/RC.png
 
 {
+
     "id":123321,
     "name":"jose",
     "email":"jose@gmail.com",
