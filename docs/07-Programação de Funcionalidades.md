@@ -110,6 +110,7 @@ team.js
 
 Estrutura de Dados
 
+```
 {
     "id":1,
     "name":"",
@@ -120,5 +121,5 @@ Estrutura de Dados
     "reserves":null,
     "vacancies":null,
     "contacts":null
-
-    }
+}
+```
