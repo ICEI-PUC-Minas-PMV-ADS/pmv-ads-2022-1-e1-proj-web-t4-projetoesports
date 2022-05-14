@@ -97,16 +97,16 @@ A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equip
 
 Requisitos atendidos
 
-RF - 08
-RF - 09
+- RF-08
+- RF-09
 
 Artefatos da funcionalidade
 
-feature_equipes.html
-equipe.css
-icon_time.png
-models.js
-team.js
+- feature_equipes.html
+- equipe.css
+- icon_time.png
+- models.js
+- team.js
 
 Estrutura de Dados
 
