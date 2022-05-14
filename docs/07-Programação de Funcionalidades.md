@@ -13,3 +13,36 @@ Para cada requisito funcional, pode ser entregue um artefato desse tipo
 > - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
 > - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
 > - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+
+Criar Equipe
+
+A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equipe. Para o cadastro é necessário preencher os dados: Nome, Email, Jogo, Logo e Objetivo.
+
+
+Requisitos atendidos
+
+RF - 08
+RF - 09
+
+Artefatos da funcionalidade
+
+feature_equipes.html
+equipe.css
+icon_time.png
+models.js
+team.js
+
+Estrutura de Dados
+
+{
+    "id":1,
+    "name":"",
+    "game_id":"",
+    "icon_url":"",
+    "objective":"",
+    "players":null,
+    "reserves":null,
+    "vacancies":null,
+    "contacts":null
+
+    }
