@@ -160,7 +160,28 @@
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"
-      ></script>
+        crossorigin="anonymous"></script>
+
+        <script type="module">
+        import { BaseController } from './js/controllers/base.js';
+        import { initializeController } from './js/framework/controller.js';
+        import { Team } from './js/models/team.js';
+
+        const team = new Team();
+
+        team.id = 1;
+        team.name = '';
+        team.game_id = '';
+        team.icon_url = '';
+        team.objective = '';
+  
+        console.log(JSON.stringify(team));
+
+        //Inicia o Controller da pagina
+        const homeController = new BaseController();
+        initializeController(homeController)
+
+        </script>
+
   </body>
 </html>
