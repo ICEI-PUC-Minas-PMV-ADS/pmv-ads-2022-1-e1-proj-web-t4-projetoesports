@@ -124,7 +124,7 @@ A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equip
 }
 ```
 
-###Perfil do usuário
+### Perfil do usuário
 
 A tela "perfil do usuário" é dividida em três categorias. Sobre, estatísticas e função. Essas abas possuem informações diversas sobre o usuário. Facilitando a analise de perfil do mesmo por outros usuários que buscam por jogadores específicos. Após a criação de perfil o usuário poderá inserir informações tais como contato, um breve resumo do seu objetivo na área, histórico de equipes, links externos com estatísticas do usuário em determinado jogo e funções atualmente ocupadas.
 
@@ -132,20 +132,19 @@ A tela "perfil do usuário" é dividida em três categorias. Sobre, estatística
 <img src= "https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/main/docs/img/perfil_user_funções.png"/>
 <img src= "https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/main/docs/img/perfil_user_dois_estatisticas.png"/>
 
-###Requisitos atendidos
+### Requisitos atendidos
 
-RF-01
-RF-06
+- RF-01
+- RF-06
 
-###Artefatos da funcionalidade
+### Artefatos da funcionalidade
 
-src/css/perfil.css
-src/perfil.html
-src/js/models/user.js
-src/img/RC.png
+- src/css/perfil.css
+- src/perfil.html
+- src/js/models/user.js
+- src/img/RC.png
 
 {
-
     "id":123321,
     "name":"jose",
     "email":"jose@gmail.com",
