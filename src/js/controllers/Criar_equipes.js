@@ -10,7 +10,7 @@ import { USER_INFO } from '../framework/state.js';
  * Controlador responsavel por gerenciar a parte logica da pagina.
  */
 
-export class BaseController extends Controller
+export class CriarEquipesController extends Controller
 {
   /***
    * O construtor é indicado para iniciar as variaveis do controlador,
