@@ -24,7 +24,7 @@ Através do menu lateral, ele pode navegar por diferentes seções que fornecem 
 
 Por este modal de login, por ela é possível se autenticar no sistema. 
 
-<img src="img/funcionalidades_log_in.jpg" />
+<img src="img/funcionalidades_log_in.png" />
 
 Por este modal de registro, por ela é possível se cadastrar no sistema. 
 
