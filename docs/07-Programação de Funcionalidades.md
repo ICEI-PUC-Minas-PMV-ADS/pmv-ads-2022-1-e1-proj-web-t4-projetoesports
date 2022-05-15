@@ -178,7 +178,53 @@ $(function() {
     });
 });
 
+## Tela de busca por vagas em equipes
 
+A tela de buscas por vagas em equipes lista todas as vagas em aberto do site de forma paginada e permite ao usuário as filtrar através de uma barra de pesquisa e as consultar através do botão "Ir para vaga", que o redireciona para a Tela de Informação sobre a Vaga.
+
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/b922f08d30db352e1d00a277cd27204f31fd246c/docs/img/Captura%20de%20tela%20vagas%20equipes.png" width="800">
+
+### Requisitos atendidos
+
+- RF-02
+- RF-13
+- RF-19
+
+### Artefatos da funcionalidade
+
+- src/css/vagas_equipes.css
+- src/vagas_equipes.html
+- src/js/controllers/vagas_equipes.js
+
+### Estrutura de Dados
+
+```
+{
+  "teams": [
+      {
+        "id":1,
+        "name":"ASUS",
+        "game_id":"1",
+        "icon_url":"imgs/icone_time.png",
+        "objective":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "players":null,
+        "reserves":null,
+        "vacancies":null,
+        "contacts":null
+      }
+    ],
+"vacancies": [
+      {
+        "id":3,
+        "game":"League of Legends",
+        "team":"Team #1",
+        "role":"Top lane",
+        "icon_url":"imgs/icone_posicao_top.png",
+        "created_at":1652212098729
+      }
+    ]
+}
+```
 
 
 
