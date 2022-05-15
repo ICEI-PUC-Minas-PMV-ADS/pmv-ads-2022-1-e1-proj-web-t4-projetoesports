@@ -1,3 +1,4 @@
+import { currentController } from './controller.js';
 import { VirtualElement, VirtualElementMap } from './template.js';
 
 /***
@@ -5,7 +6,20 @@ import { VirtualElement, VirtualElementMap } from './template.js';
  */
 
 // Elemento customizado para renderizar components.
-export const component    = (_component, ...args) => new _component(...args);
+export const component    = (_component, ...args) => {
+  if (typeof _component === 'function')
+  {
+    return new _component(...args);
+  }
+  else if (typeof _component === 'string')
+  {
+    if (currentController.__components[_component])
+    {
+      return new currentController.__components[_component](...args);
+    }
+  }
+  throw new Error('Unexpected component');
+}
 
 export const mapTo        = (tag, props, children, template) => new VirtualElementMap(tag, props, children, template);
 
