@@ -10,7 +10,7 @@ Através do menu lateral, ele pode navegar por diferentes seções que fornecem 
 
 <img src="img/funcionalidades_home.jpg" />
 
-Este é o modal de login, por ele é possível se autenticar no sistema, fornecendo o e-mail e a senha de acesso. 
+Este é o modal de login, por ele é possível se autenticar no sistema, fornecendo o e-mail e a senha de acesso.
 
 <img src="img/funcionalidades_log_in.jpg.png" />
 
@@ -19,19 +19,21 @@ Este é o modal de registro, por ele é possível se cadastrar no sistema, forne
 <img src="img/funcionalidades_registro.jpg" />
 
 ### Requisitos atendidos
-  - RF-01
-  - RF-03
-  - RF-04
-  - RF-05
+
+- RF-01
+- RF-03
+- RF-04
+- RF-05
 
 ### Artefatos
-  - index.html
-  - js/controllers/home.js
-  - js/components/pages/home
-  - css/home.css
-  - imgs/noticias_images
-  - imgs/torneio_images
-  - imgs/role_lane_icons
+
+- index.html
+- js/controllers/home.js
+- js/components/pages/home
+- css/home.css
+- imgs/noticias_images
+- imgs/torneio_images
+- imgs/role_lane_icons
 
 ### Estrutura de dados
 
@@ -80,8 +82,6 @@ Este é o modal de registro, por ele é possível se cadastrar no sistema, forne
 A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equipe. Para o cadastro é necessário preencher os dados: Nome, Email, Jogo, Logo e Objetivo.
 
 <img src = "https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/main/docs/img/Criar_equipes.png"/>
-
-
 
 ### Requisitos atendidos
 
@@ -146,3 +146,21 @@ A tela "perfil do usuário" é dividida em três categorias. Sobre, estatística
     "game_roles":null
 }
 ```
+
+## Tela de busca por vagas em equipes
+
+A tela de buscas por vagas em equipes lista todas as vagas em aberto do site de forma paginada e permite ao usuário as filtrar através de uma barra de pesquisa e as consultar através do botão "Ir para vaga", que o redireciona para a Tela de Informação sobre a Vaga.
+
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/b922f08d30db352e1d00a277cd27204f31fd246c/docs/img/Captura%20de%20tela%20vagas%20equipes.png" width="800">
+
+### Requisitos atendidos
+
+- RF-02
+- RF-13
+- RF-19
+
+### Artefatos da funcionalidade
+
+- src/css/vagas_equipes.css
+- src/vagas_equipes.html
+- src/js/controllers/vagas_equipes.js
