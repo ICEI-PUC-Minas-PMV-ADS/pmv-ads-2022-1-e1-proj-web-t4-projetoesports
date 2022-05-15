@@ -10,11 +10,11 @@ Através do menu lateral, ele pode navegar por diferentes seções que fornecem 
 
 <img src="img/funcionalidades_home.jpg" />
 
-Por este modal de login, por ela é possível se autenticar no sistema. 
+Este é o modal de login, por ele é possível se autenticar no sistema, fornecendo o e-mail e a senha de acesso. 
 
 <img src="img/funcionalidades_log_in.jpg.png" />
 
-Por este modal de registro, por ela é possível se cadastrar no sistema. 
+Este é o modal de registro, por ele é possível se cadastrar no sistema, fornecendo apenas informações essenciais para cadastro.
 
 <img src="img/funcionalidades_registro.jpg" />
 
