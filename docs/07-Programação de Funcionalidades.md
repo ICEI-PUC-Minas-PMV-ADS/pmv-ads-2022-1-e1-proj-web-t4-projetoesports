@@ -164,3 +164,34 @@ A tela de buscas por vagas em equipes lista todas as vagas em aberto do site de 
 - src/css/vagas_equipes.css
 - src/vagas_equipes.html
 - src/js/controllers/vagas_equipes.js
+
+### Estrutura de Dados
+
+```
+{
+  "teams": [
+      {
+        "id":1,
+        "name":"ASUS",
+        "game_id":"1",
+        "icon_url":"imgs/icone_time.png",
+        "objective":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "players":null,
+        "reserves":null,
+        "vacancies":null,
+        "contacts":null
+      }
+    ],
+
+"vacancies": [
+      {
+        "id":3,
+        "game":"League of Legends",
+        "team":"Team #1",
+        "role":"Top lane",
+        "icon_url":"imgs/icone_posicao_top.png",
+        "created_at":1652212098729
+      }
+    ]
+}
+```
