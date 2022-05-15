@@ -168,6 +168,7 @@ A tela "perfil do usuário" é dividida em três categorias. Sobre, estatística
 ### Estrutura de Dados
 
 {
+
   "name": "equipe",
   
   "version": "1.0.0",
