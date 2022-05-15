@@ -169,9 +169,13 @@ A tela "perfil do usuário" é dividida em três categorias. Sobre, estatística
 
 $(function() {
     $(".toggle").on("click", function() {
+    
         if ($(".item").hasClass("active")) {
+        
             $(".item").removeClass("active");
+            
         } else {
+        
             $(".item").addClass("active");
         }
     });
