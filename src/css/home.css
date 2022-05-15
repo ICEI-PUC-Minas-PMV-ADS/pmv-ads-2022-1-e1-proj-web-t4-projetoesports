@@ -1,0 +1,77 @@
+/***
+ * Estilos usados na SideBar e TopBar
+ */
+
+.c-bar-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.c-logo-size {
+  width: 3rem;
+  height: 3rem;
+}
+
+.c-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.c-icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.c-side-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.c-side-icon > span {
+  font-size: 12px;
+}
+
+/***
+ * Cores padrões
+ */
+
+.c-text-primary { color: #591E55; }
+.c-text-primary-dark { color: #261423; }
+
+.c-text-grey-100 { color: #eee; }
+.c-text-grey-200 { color: #ddd; }
+.c-text-grey-300 { color: #ccc; }
+.c-text-grey-400 { color: #bbb; }
+.c-text-grey-500 { color: #aaa; }
+
+.c-text-secondary { color: #C5A769; }
+
+.c-text-white { color: white; }
+.c-text-black { color: black; }
+
+.c-bg-primary { background-color: #591E55; }
+.c-bg-primary-dark { background-color: #261423; }
+
+.c-bg-secondary { background-color: #C5A769; }
+
+
+/***
+ * Separator
+ * Usado no formulario de login e cadastro.
+ */
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.separator::before,
+.separator::after {
+  display: inline-block;
+  content: " ";
+  border-bottom: 1px solid #bbb;
+  height: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex: 1;
+}
