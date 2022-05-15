@@ -1,0 +1,40 @@
+.c-nav-link {
+  color: #888;
+  font-size: 12px;
+  padding: 0;
+}
+
+.c-nav-link:hover {
+  color: #777;
+}
+
+.c-nav-link:active {
+  color: #666;
+}
+
+.nav-link.c-sobre-sidebar {
+  color: white;
+  width: 100%;
+}
+
+.nav-link.c-sobre-sidebar.active {
+  background-color: white;
+  color: #261423;
+}
+
+.nav.c-sobre-sidebar {
+  min-width: 10rem;
+}
+
+.c-linear-header {
+  width: 100%;  
+  background: linear-gradient(0deg, #261423, #591e55);
+}
+
+.c-nav-link-header.nav-link {
+  color: white;
+}
+
+.c-nav-link-header.nav-link.active {
+  border-bottom: 3px solid white;
+}
