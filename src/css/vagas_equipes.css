@@ -130,7 +130,7 @@
     background-color: white;
     border: solid 1px;
     border-radius: 40px;
-    width: 25rem;
+    width: 90%;
     height: 40px;
     margin-bottom: 15px;
     margin-inline: auto;
@@ -144,7 +144,11 @@
     border: none;
     border-radius: 0px 40px 40px 0px;
     height: 38px;
-    width: 22rem;
+    width: 85%;
+  }
+  .icone_pesquisa {
+    width: 1.5rem;
+    margin: 9px;
   }
   .card_vaga {
     background-color: #491b46;
@@ -173,8 +177,12 @@
     margin: 1rem;
   }
   .buttom_card {
-    width: 50%;
-    margin-left: 2.5rem;
+    width: 8rem;
+    margin-left: 1.5rem;
+    border-radius: 4px;
+  }
+  .nome_time {
+    font-size: 3rem;
   }
 }
 @media screen and (min-width: 800px) {
@@ -247,8 +255,12 @@
     font-size: 18px;
     border: none;
     border-radius: 0px 40px 40px 0px;
-    height: 38px;
-    width: 210px;
+    height: 36px;
+    width: 205px;
+  }
+  .icone_pesquisa {
+    width: 1.5rem;
+    margin: 9px;
   }
   .cabecalho_flex {
     display: flex;
@@ -284,8 +296,12 @@
     margin: 1rem;
   }
   .buttom_card {
-    width: 50%;
-    margin-left: 2.5rem;
+    width: 8rem;
+    margin-left: 1.5rem;
+    border-radius: 4px;
+  }
+  .nome_time {
+    font-size: 3rem;
   }
 }
 
@@ -359,8 +375,12 @@
     font-size: 18px;
     border: none;
     border-radius: 0px 40px 40px 0px;
-    height: 38px;
-    width: 210px;
+    height: 36px;
+    width: 205px;
+  }
+  .icone_pesquisa {
+    width: 1.5rem;
+    margin: 9px;
   }
   .cabecalho_flex {
     display: flex;
@@ -395,7 +415,11 @@
     margin: 1rem;
   }
   .buttom_card {
-    width: 50%;
-    margin-left: 2.5rem;
+    width: 8rem;
+    margin-left: 1.5rem;
+    border-radius: 4px;
+  }
+  .nome_time {
+    font-size: 3rem;
   }
 }
