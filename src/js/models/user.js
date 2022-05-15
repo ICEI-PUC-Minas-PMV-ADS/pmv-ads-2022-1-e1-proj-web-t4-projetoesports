@@ -9,6 +9,7 @@ export class User {
     this.name = name;
     this.email = email;
     this.password = password;
+    this.img_url = null;
     this.objective = null;
     this.participated_teams = null;
     this.contact_info = null;

@@ -150,15 +150,15 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE`                                 |PARA ... `MOTIVO/VALOR`                                              |
 |--------------------|--------------------------------------------------------------------|---------------------------------------------------------------------|
 |José Alves          | criar um perfil de jogador                                         | chamar a atenção das equipes competitivas                           |
-|José Alves          | que o sistema se adapte a diferentes tipos de telas                | ter a liberdade de acessar o site no computador, telefone ou outro dispositivo compatível |
-|José Alves          | que o sistema seja acessível dos principais navegadores            | ter a facilidade de acesso sem ter que instalar aplicativos extras  |
-|José Alves          | acessar o sistema de qualquer lugar com acesso à internet          | me manter atualizado independentemente de onde estejam              |
+|José Alves          | que a página se adapte a diferentes tipos de telas                 | ter a liberdade de acessar o site no computador, telefone ou outro dispositivo compatível |
+|José Alves          | que o site seja acessível dos principais navegadores               | ter a facilidade de acesso sem ter que instalar aplicativos extras  |
+|José Alves          | acessar o site de qualquer lugar com acesso à internet          | me manter atualizado independentemente de onde estejam              |
 |José Alves          | ter segurança para fornecer alguma informação pessoal              | não ter problemas com vazamentos de dados                           |
 |José Alves          | encontrar um time para                                             | ingressar no time                                                   |
 |José Alves          | visualizar as notícias do cenário competitivo                      | estar sempre atualizado sobre notícias do cenário profissional      |
 |José Alves          | visualizar as últimas vagas notificadas no sistema                 | auxiliar a ingressar em uma equipe                                  |
 |José Alves          | ter acesso a informações sobre os torneios mais recentes           | me atualizar em relação ao cenário competitivo                      |
-|José Alves          | Navegar por todas as equipes do site                               | Localizar uma vaga que se enquadre em meu perfil                    | 
+|José Alves          | navegar por todas as equipes do site                               | Localizar uma vaga que se enquadre em meu perfil                    | 
 |Maria Santos        | receber notificações sobre os novos torneios                       | decidir em qual torneio minha equipe se encaixa melhor              |
 |Maria Santos        | analisar o perfil dos jogadores                                    | identificar o que melhor se adequa a minha equipe                   |
 |Maria Santos        | emitir notificações sobre vagas disponíveis                        | captar novos contatos para equipes futuras                          |
@@ -185,7 +185,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-03| O site deve listar até 5 notícias recentes sobre o cenário profissional de e-sports |  ALTA | 
 |RF-04| O site deve listar até 5 vagas recentes notificadas ao público |  ALTA | 
 |RF-05| O site deve listar informações de até 5 torneios recentes |  ALTA | 
-|RF-06| O sistema deve permitir visualizar algumas informações de outros jogadores |  BAIXA |
+|RF-06| O sistema deve permitir visualizar algumas informações de jogadores |  BAIXA |
 |RF-07| O site deve permitir envio de notificação a jogadores disponíveis que se enquadrem em determinado perfil |  MÉDIA | 
 |RF-08| O sistema deve possibilitar que o administrador possa manter uma equipe |  ALTA | 
 |RF-09| O sistema deve permitir a qualquer usuário visualizar informações sobre uma equipe |  BAIXA | 
