@@ -226,6 +226,42 @@ A tela de buscas por vagas em equipes lista todas as vagas em aberto do site de 
     ]
 }
 ```
+## Tela de Informações sobre Equipe
+
+A tela de Informações sobre Equipe permitirá que o usuário se atualize sobre o time, tendo acesso a informações gerais ou informações de contato.
+
+<img src="img/informacoes_gerais_equipe.png" />
+<img src="img/contato_equipe.png" />
+
+### Requisitos atendidos
+
+- RF-02
+- RF-09
+
+### Artefatos da funcionalidade
+
+- equipe_contato.html
+- equipe_informacoes_gerais.html
+- team.js
+- equipe.css
+- icon_time.png
+
+### Estrutura de Dados
+
+```
+{    
+  "id" = 1;
+  "name" = "ARMY";    
+  "email" = "teamArmy@email.com";
+  "game_id" = game_id;
+  "icon_url" = icon_url;
+  "objective" = null;
+  "players" = null;
+  "reserves" = null;
+  "vacancies" = null;
+  "contacts" = ["instagram.com/teamArmy", "@twitter_teamArmy"];
+}
+```
 
 
 
