@@ -167,6 +167,16 @@ A tela "perfil do usuário" é dividida em três categorias. Sobre, estatística
 
 ### Estrutura de Dados
 
+$(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+
 
 
 
