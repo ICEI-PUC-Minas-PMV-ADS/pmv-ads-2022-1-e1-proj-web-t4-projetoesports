@@ -185,7 +185,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-03| O site deve listar até 5 notícias recentes sobre o cenário profissional de e-sports |  ALTA | 
 |RF-04| O site deve listar até 5 vagas recentes notificadas ao público |  ALTA | 
 |RF-05| O site deve listar informações de até 5 torneios recentes |  ALTA | 
-|RF-06| O sistema deve permitir visualizar algumas informações de outros jogadores |  BAIXA |
+|RF-06| O sistema deve permitir visualizar algumas informações de jogadores |  BAIXA |
 |RF-07| O site deve permitir envio de notificação a jogadores disponíveis que se enquadrem em determinado perfil |  MÉDIA | 
 |RF-08| O sistema deve possibilitar que o administrador possa manter uma equipe |  ALTA | 
 |RF-09| O sistema deve permitir a qualquer usuário visualizar informações sobre uma equipe |  BAIXA | 
