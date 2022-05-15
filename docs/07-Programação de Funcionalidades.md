@@ -182,7 +182,7 @@ $(function() {
 
 A tela de buscas por vagas em equipes lista todas as vagas em aberto do site de forma paginada e permite ao usuário as filtrar através de uma barra de pesquisa e as consultar através do botão "Ir para vaga", que o redireciona para a Tela de Informação sobre a Vaga.
 
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/b922f08d30db352e1d00a277cd27204f31fd246c/docs/img/Captura%20de%20tela%20vagas%20equipes.png" width="800">
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports/blob/bb50f44d9bb8ec0d6960e793e7450955886cd372/docs/img/Captura%20de%20tela%20Vagas%20Equipes.png" width="800">
 
 ### Requisitos atendidos
 
@@ -195,6 +195,7 @@ A tela de buscas por vagas em equipes lista todas as vagas em aberto do site de 
 - src/css/vagas_equipes.css
 - src/vagas_equipes.html
 - src/js/controllers/vagas_equipes.js
+- src/imgs
 
 ### Estrutura de Dados
 
