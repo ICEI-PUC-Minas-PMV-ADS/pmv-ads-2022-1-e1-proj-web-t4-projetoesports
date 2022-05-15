@@ -27,11 +27,11 @@ Este é o modal de registro, por ele é possível se cadastrar no sistema, forne
 ### Artefatos
   - index.html
   - js/controllers/home.js
-  - js/components/pages/home/*
+  - js/components/pages/home
   - css/home.css
-  - imgs/noticias_images/*
-  - imgs/torneio_images/*
-  - imgs/role_lane_icons/*
+  - imgs/noticias_images
+  - imgs/torneio_images
+  - imgs/role_lane_icons
 
 ### Estrutura de dados
 
