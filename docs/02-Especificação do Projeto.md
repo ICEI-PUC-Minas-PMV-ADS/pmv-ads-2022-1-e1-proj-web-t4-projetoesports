@@ -150,15 +150,15 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE`                                 |PARA ... `MOTIVO/VALOR`                                              |
 |--------------------|--------------------------------------------------------------------|---------------------------------------------------------------------|
 |José Alves          | criar um perfil de jogador                                         | chamar a atenção das equipes competitivas                           |
-|José Alves          | que o sistema se adapte a diferentes tipos de telas                | ter a liberdade de acessar o site no computador, telefone ou outro dispositivo compatível |
-|José Alves          | que o sistema seja acessível dos principais navegadores            | ter a facilidade de acesso sem ter que instalar aplicativos extras  |
+|José Alves          | que a página se adapte a diferentes tipos de telas                 | ter a liberdade de acessar o site no computador, telefone ou outro dispositivo compatível |
+|José Alves          | que o site seja acessível dos principais navegadores               | ter a facilidade de acesso sem ter que instalar aplicativos extras  |
 |José Alves          | acessar o sistema de qualquer lugar com acesso à internet          | me manter atualizado independentemente de onde estejam              |
 |José Alves          | ter segurança para fornecer alguma informação pessoal              | não ter problemas com vazamentos de dados                           |
 |José Alves          | encontrar um time para                                             | ingressar no time                                                   |
 |José Alves          | visualizar as notícias do cenário competitivo                      | estar sempre atualizado sobre notícias do cenário profissional      |
 |José Alves          | visualizar as últimas vagas notificadas no sistema                 | auxiliar a ingressar em uma equipe                                  |
 |José Alves          | ter acesso a informações sobre os torneios mais recentes           | me atualizar em relação ao cenário competitivo                      |
-|José Alves          | Navegar por todas as equipes do site                               | Localizar uma vaga que se enquadre em meu perfil                    | 
+|José Alves          | navegar por todas as equipes do site                               | Localizar uma vaga que se enquadre em meu perfil                    | 
 |Maria Santos        | receber notificações sobre os novos torneios                       | decidir em qual torneio minha equipe se encaixa melhor              |
 |Maria Santos        | analisar o perfil dos jogadores                                    | identificar o que melhor se adequa a minha equipe                   |
 |Maria Santos        | emitir notificações sobre vagas disponíveis                        | captar novos contatos para equipes futuras                          |
