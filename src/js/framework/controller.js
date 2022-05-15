@@ -99,6 +99,10 @@ export class Controller {
   }
 
   registerComponent(componentId, component) {
+    if (this.__components[componentId])
+    {
+      throw new Error(`Failed to register component '${componentId}'`);
+    }
     this.__components[componentId] = component;
   }
 }
@@ -188,6 +192,8 @@ function evaluateParameters(controller, parameters) {
             dependencies[evaluatedParameters[key].name] = key;
           }
         });
+
+        obj.buildComponentDatabase?.();
 
         currentController.__cachedComponents.push({ component: obj, dependencies });
 
