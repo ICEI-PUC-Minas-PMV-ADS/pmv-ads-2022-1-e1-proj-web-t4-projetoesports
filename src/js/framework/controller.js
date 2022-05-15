@@ -60,7 +60,7 @@ export class Controller {
     this.__cachedComponents = [];
   }
 
-  get state() { return JSON.parse(JSON.stringify(this.__state)); }  
+  get state() { return JSON.parse(JSON.stringify(this.__state)); }
   set state(newState) { this.__state = JSON.parse(JSON.stringify(newState)); }
 
   get appState() { return this.__appState; }
