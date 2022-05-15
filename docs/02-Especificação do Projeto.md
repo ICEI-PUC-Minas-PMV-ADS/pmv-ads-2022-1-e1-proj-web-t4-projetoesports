@@ -152,7 +152,7 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 |José Alves          | criar um perfil de jogador                                         | chamar a atenção das equipes competitivas                           |
 |José Alves          | que a página se adapte a diferentes tipos de telas                 | ter a liberdade de acessar o site no computador, telefone ou outro dispositivo compatível |
 |José Alves          | que o site seja acessível dos principais navegadores               | ter a facilidade de acesso sem ter que instalar aplicativos extras  |
-|José Alves          | acessar o sistema de qualquer lugar com acesso à internet          | me manter atualizado independentemente de onde estejam              |
+|José Alves          | acessar o site de qualquer lugar com acesso à internet          | me manter atualizado independentemente de onde estejam              |
 |José Alves          | ter segurança para fornecer alguma informação pessoal              | não ter problemas com vazamentos de dados                           |
 |José Alves          | encontrar um time para                                             | ingressar no time                                                   |
 |José Alves          | visualizar as notícias do cenário competitivo                      | estar sempre atualizado sobre notícias do cenário profissional      |
