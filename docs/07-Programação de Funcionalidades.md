@@ -167,34 +167,17 @@ A tela "perfil do usuário" é dividida em três categorias. Sobre, estatística
 
 ### Estrutura de Dados
 
-{
+$(function() {
 
-  "name": "equipe",
-  
-  "version": "1.0.0",
-  
-  "lockfileVersion": 2,
-  
-  "requires": true,
-  
-  "packages": {
-  
-    "node_modules/@fortawesome/fontawesome-free": {
-    
-      "version": "6.1.1",
-      
-      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-6.1.1.tgz",
-      "integrity": "sha512-J/3yg2AIXc9wznaVqpHVX3Wa5jwKovVF0AMYSnbmcXTiL3PpRPfF58pzWucCwEiCJBp+hCNRLWClTomD8SseKg==",
-      
-      "hasInstallScript": true,
-      
-      "engines": {
-      
-        "node": ">=6"
-      }
-    }
-  }
-}
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+
 
 
 
