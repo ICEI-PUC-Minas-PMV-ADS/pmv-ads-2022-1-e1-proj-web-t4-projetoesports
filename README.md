@@ -6,6 +6,8 @@
 
 `1º semestre`
 
+O projeto consiste na criação de um site de gestão de equipes, uma rede que torne possível o engajamento de jogadores de diversos jogos eletrônicos, tornando possível que esses se reúnam em equipes, consequentemente, possam avançar com mais seriedade e competência em torneios. Vamos tornar possível a criação de novas equipe, a associação e desassociação de membros de uma forma organizada e eficiente.
+
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
 ## Integrantes
