@@ -60,7 +60,7 @@ export class Controller {
     this.__cachedComponents = [];
   }
 
-  get state() { return JSON.parse(JSON.stringify(this.__state)); }  
+  get state() { return JSON.parse(JSON.stringify(this.__state)); }
   set state(newState) { this.__state = JSON.parse(JSON.stringify(newState)); }
 
   get appState() { return this.__appState; }
@@ -99,6 +99,10 @@ export class Controller {
   }
 
   registerComponent(componentId, component) {
+    if (this.__components[componentId])
+    {
+      throw new Error(`Failed to register component '${componentId}'`);
+    }
     this.__components[componentId] = component;
   }
 }
@@ -188,6 +192,8 @@ function evaluateParameters(controller, parameters) {
             dependencies[evaluatedParameters[key].name] = key;
           }
         });
+
+        obj.buildComponentDatabase?.();
 
         currentController.__cachedComponents.push({ component: obj, dependencies });
 

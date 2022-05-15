@@ -54,6 +54,8 @@ export class Component {
     };
 
     this.render = this.render?.bind(this);
+    this.registerComponent = this.registerComponent?.bind(this);
+    this.buildComponentDatabase = this.buildComponentDatabase?.bind(this);
   }
 
   get state() { return JSON.parse(JSON.stringify(this.__state)); }  
@@ -63,4 +65,12 @@ export class Component {
   set props(newProps) { this.__props = newProps; }
 
   get ctrl() { return this.__ctrl; }
+
+  registerComponent(componentId, component)
+  {
+    if (currentController)
+    {
+      currentController.registerComponent(componentId, component);
+    }
+  }
 }
