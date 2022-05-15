@@ -148,7 +148,7 @@ A tela "perfil do usuário" é dividida em três categorias. Sobre, estatística
 ```
 ## Equipes
  
- tela de equipes essas são todas as equipes que o usuario está cadastrado.
+A tela  de equipes mostra todas as equipes que o usuario está cadastrado.
  
  ![image](https://user-images.githubusercontent.com/74870713/168475061-b71217eb-6d58-4f3b-b675-602507f2a797.png)
 
