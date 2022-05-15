@@ -124,7 +124,7 @@ A tela Criar Equipe possui um formulário onde o usuário pode castrar sua equip
 }
 ```
 
-### Perfil do usuário
+## Perfil do usuário
 
 A tela "perfil do usuário" é dividida em três categorias. Sobre, estatísticas e função. Essas abas possuem informações diversas sobre o usuário. Facilitando a analise de perfil do mesmo por outros usuários que buscam por jogadores específicos. Após a criação de perfil o usuário poderá inserir informações tais como contato, um breve resumo do seu objetivo na área, histórico de equipes, links externos com estatísticas do usuário em determinado jogo e funções atualmente ocupadas.
 
