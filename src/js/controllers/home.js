@@ -131,8 +131,6 @@ export class HomeController extends Controller
       vacancies: vacanciesNewest,
       userInfo: this.appState.load(USER_INFO),
     });
-
-    console.log(JSON.stringify(this.state));
   }
 
   actions()

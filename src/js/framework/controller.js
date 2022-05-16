@@ -65,8 +65,8 @@ export class Controller {
 
   get appState() { return this.__appState; }
 
-  getState() {
-    return this.state;
+  getState(key) {
+    return this.state[key];
   }
 
   setState(newState) {
