@@ -180,7 +180,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 
 |ID     | Descrição do Requisito  | Prioridade |
 |-------|-----------------------------------------|----|
-|RF-01| O sistema deve permitir ao jogador criar/alterar/excluir seu perfil de jogador | ALTA | 
+|RF-01| O sistema deve permitir ao usuário criar/alterar/excluir seu perfil de jogador | ALTA | 
 |RF-02| O site deve permitir a consulta de times com vagas disponíveis |  MÉDIA | 
 |RF-03| O site deve listar até 5 notícias recentes sobre o cenário profissional de e-sports |  ALTA | 
 |RF-04| O site deve listar até 5 vagas recentes notificadas ao público |  ALTA | 
