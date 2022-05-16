@@ -1,0 +1,89 @@
+.bg-grey-100 {
+  background-color: #888;
+}
+
+.menu > li {
+  list-style: none;
+}
+
+.top-icon-size {
+  width: 4rem;
+  height: 4rem;
+}
+
+.icon-size {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 1.5rem;
+  background-color: #888;
+  padding: 0.5rem;
+}
+
+.icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-size {
+  width: 3rem;
+  height: 3rem;
+}
+
+.c-nav-link {
+  color: #888;
+  font-size: 12px;
+  padding: 0;
+}
+
+.c-nav-link:hover {
+  color: #777;
+}
+
+.c-nav-link:active {
+  color: #666;
+}
+
+.sub-menu {
+  display: inline-block;
+}
+
+.c-nav {
+  display: inline-block;
+}
+
+.c-nav ul a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0.5rem;
+  margin: 0 auto;
+}
+
+.c-ret a {
+  text-decoration: none;
+}
+.nav-link.c-sobre-sidebar {
+  color: white;
+  width: 100%;
+}
+
+.nav-link.c-sobre-sidebar.active {
+  background-color: white;
+  color: #261423;
+}
+
+.nav.c-sobre-sidebar {
+  min-width: 10rem;
+}
+
+.c-linear-header {
+  background: linear-gradient(0deg, #261423, #591e55);
+}
+
+.c-nav-link-header.nav-link {
+  color: white;
+}
