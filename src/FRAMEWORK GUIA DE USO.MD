@@ -65,7 +65,10 @@ class HomeController extends Controller
   // Esta declaração e padrão e sempre deve existir.
   constructor()
   {
-    super();
+    // Aqui é possivel atribuir valores iniciais a um estado.
+    super({
+      mensagem: 'helloWorld!', // Aqui o estado 'mensagem' e criado com o valor 'helloWorld!'
+    });
 
     // Aqui são criadas as variaveis do controllador.
     this.variavelTexto = 'valor';
@@ -239,6 +242,123 @@ Você deve chamar o componente da seguinte forma:
 ```
 
 Desta forma o componente navbar vai ser desenhado dentro da div.
+
+#### Actions
+
+E possivel chamar 'actions' a partir dos elementos, considerando o seguinte controller:
+
+```
+class HomeController extends Controller
+{
+  // Esta declaração e padrão e sempre deve existir.
+  constructor()
+  {
+    super();
+  }
+
+  // Esta declaração é necessarios apenas se for necessario acionar algum evento ou coisa do tipo.
+  actions()
+  {
+    return {
+      // Exemplo de uma action que poderia ser acionado quando um botao for clicado.
+      onClick: function()
+      {
+        alert('Click');
+      }
+    };
+  }
+}
+```
+
+É possivel chamar a 'action onClick' da seguinte forma:
+
+```
+  <div onclick="controller.onClick(event)">Teste</div>
+```
+
+Desta forma, ao clicar na 'div' a mensagem de alerta será exibida.
+
+#### Componentes
+
+É possivel enviar dados da pagina/controller para o componente usando atributos, que desta forma:
+
+```
+  <div data-{nome da props do componente}="@state:{nome do state do controller}"></div>
+
+  Ex:
+    <div data-component="component" data-mensagem-component="@state:mensagemCtrl">
+
+  Desta forma se o componente possui o estado 'mensagemCtrl', ele seria repassado ao componente com o nome 'mensagemComponent'.
+  
+  IMPORTANTE: ao separar por hifen '-' no componente a palavra seguinte ira iniciar com letra maiuscula.
+    Ex:
+      user-id => userId
+      user-name => userName
+      user-name-local => userNameLocal
+
+  E ficam disponiveis no objeto 'props':
+```
+
+- Considerando o seguinte controller e o seguinte componente:
+
+```
+class HomeController extends Controller
+{
+  constructor()
+  {
+    super({
+      mensagem: 'helloWorld!',
+    });
+  }
+
+  buildComponentDatabase()
+  {
+    // Este comando registra o componente navbar
+    // ou seja ele pode ser criado na pagina(HTML).
+    this.registerComponent('simple-component', SimpleComponent);
+  }
+}
+
+class SimpleComponent extends Component
+{
+  constructor(props)
+  {
+    super(props);
+  }
+
+  render()
+  {
+    return div({ className: 'container' }, this.props.mensagemUser)
+  }
+}
+
+```
+
+- Podemos passar o valor de mensagem do controller para o componente da seguinte forma:
+
+```
+  <div data-componente="simple-component" data-mensagem-user="@state:mensagem"></div>
+```
+
+- No final o componente será desenhado desta forma:
+
+```
+  <div data-componente="simple-component" data-mensagem-user="@state:mensagem">
+    <div class="container">
+      helloWorld!
+    </div>
+  </div>
+```
+
+- Ao mudar o valor de 'mensagem' no controller para 'Vai Brasil!!!', o componente seria atualizado:
+
+```
+  <div data-componente="simple-component" data-mensagem-user="@state:mensagem">
+    <div class="container">
+      Vai Brasil!!!
+    </div>
+  </div>
+```
 
 ### Chamar um componente dentro de outro componente.
 
