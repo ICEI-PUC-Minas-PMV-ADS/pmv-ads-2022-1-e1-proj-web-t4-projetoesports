@@ -2,35 +2,98 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
 
-<table>
-  <thead>
-    <tr>
-      <th>Caso de Teste</th>
-      <th>Requisitos Associados</th>
-      <th>Objetivo do Teste</th>
-      <th>Passos</th>
-      <th>Critério de Exito</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>CT-01 - Criar um perfil de usuário</td>
-      <td>RF-001 - O sistema deve permitir ao usuário criar/alterar/excluir seu perfil de jogador</td>
-      <td>Verificar se a criação de perfil está acontecendo corretamente</td>
-      <td>
-        <p>1. Estar na home do sistema</p>
-        <p>2. Acessar o formulario de login, atraves da barra superior, pressionando botão da parte direita da barra</p>
-        <p>3. Acessar o formulario de cadastro, pressionando o botão Criar nova conta</p>
-        <p>4. Preencher devidamente todos os campos</p>
-        <p>5. Confirmar o cadastro, pressionando o botão de Criar perfil</p>
-      </td>
-      <td>
-        <p>O sistema deve fechar o formulario e exibir um alerta de sucesso.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<table cellspacing="0" border="0">
+	<colgroup width="189"></colgroup>
+	<colgroup width="20"></colgroup>
+	<colgroup width="549"></colgroup>
+	<tbody><tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Caso de Teste </font></b></td>
+		<td style="border-top: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">CT-001 - Criar um perfil de usuário </font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="36" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Requisitos Associados </font></b></td>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">RF-001 - O sistema deve permitir ao usuário criar/alterar/excluir seu perfil de jogador </font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Objetivo do Teste </font></b></td>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">Verificar se a criação de perfil está acontecendo corretamente </font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan="5" height="132" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Passos </font></b></td>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">1. Estar na home do sistema</font></td>
+	</tr>
+	<tr>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">2. Acessar o formulario de login, atraves da barra superior, pressionando botão da parte direita da barra </font></td>
+	</tr>
+	<tr>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">3. Acessar o formulario de cadastro, pressionando o botão Criar nova conta </font></td>
+	</tr>
+	<tr>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">4. Preencher devidamente todos os campos </font></td>
+	</tr>
+	<tr>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">5. Confirmar o cadastro, pressionando o botão de Criar perfil </font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Critério de Exito </font></b></td>
+		<td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">O sistema deve fechar o formulario e exibir um alerta de sucesso. </font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left"><font face="Arial" size="3"><br></font></td>
+		<td align="left"><font face="Arial" size="3"><br></font></td>
+		<td align="left"><font face="Arial" size="3"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Caso de Teste </font></b></td>
+		<td style="border-top: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">CT-002 - Criar um perfil de usuário </font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="36" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Requisitos Associados </font></b></td>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">RF-003 - O site deve listar até 5 notícias recentes sobre o cenário profissional de e-sports</font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Objetivo do Teste </font></b></td>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">Verificar se a criação de perfil está acontecendo corretamente </font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan="5" height="132" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Passos </font></b></td>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">1. Estar na home do sistema</font></td>
+	</tr>
+	<tr>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">2. Acessar o formulario de login, atraves da barra superior, pressionando botão da parte direita da barra </font></td>
+	</tr>
+	<tr>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">3. Acessar o formulario de cadastro, pressionando o botão Criar nova conta </font></td>
+	</tr>
+	<tr>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">4. Preencher devidamente todos os campos </font></td>
+	</tr>
+	<tr>
+		<td style="border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">5. Confirmar o cadastro, pressionando o botão de Criar perfil </font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="right" valign="middle" bgcolor="#FFFF00"><b><font face="Arial" size="3" color="#000000">Critério de Exito </font></b></td>
+		<td style="border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="right" valign="middle" bgcolor="#FFBF00"><b><font face="Arial" size="3" color="#000000"><br></font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFD7"><font face="Arial" size="3">O sistema deve fechar o formulario e exibir um alerta de sucesso. </font></td>
+	</tr>
+</tbody></table>
 
 Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
 
