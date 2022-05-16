@@ -280,10 +280,10 @@ Desta forma, ao clicar na 'div' a mensagem de alerta será exibida.
 
 #### Componentes
 
-É possivel enviar dados da pagina/controller para o componente usando atributos, que desta forma:
+É possivel enviar dados da pagina/controller para o componente usando atributos, desta forma:
 
 ```
-  <div data-{nome da props do componente}="@state:{nome do state do controller}"></div>
+<div data-{nome da props do componente}="@state:{nome do state do controller}"></div>
 
   Ex:
     <div data-component="component" data-mensagem-component="@state:mensagemCtrl">
@@ -343,7 +343,7 @@ class SimpleComponent extends Component
 - No final o componente será desenhado desta forma:
 
 ```
-  <div data-componente="simple-component" data-mensagem-user="@state:mensagem">
+  ```
     <div class="container">
       helloWorld!
     </div>
@@ -359,6 +359,15 @@ class SimpleComponent extends Component
     </div>
   </div>
 ```
+
+- E possivel tambem passa 'actions' para os componentes:
+
+```
+<div data-componente="simple-component" data-on-click="@action:onClick">
+```
+
+Desta forma, o evento 'onClick' do controller, seria acessivel no componente no props 'onClick'.
+E poderia ser chamado normalmente.
 
 ### Chamar um componente dentro de outro componente.
 
