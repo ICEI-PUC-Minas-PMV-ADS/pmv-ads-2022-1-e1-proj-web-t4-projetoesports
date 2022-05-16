@@ -247,6 +247,8 @@ export class HomeController extends Controller
         ));
 
         this.criarPerfilModal.toggle();
+
+        alert('O usuário foi cadastrado com sucesso!');
       }
     };
   }
