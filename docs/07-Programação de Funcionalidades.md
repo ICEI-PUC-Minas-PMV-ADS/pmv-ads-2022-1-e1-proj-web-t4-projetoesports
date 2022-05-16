@@ -2,7 +2,7 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
 
-## Tela home(RF-01, RF-03, RF-04, RF-05)
+## Tela home(RF-01, RF-03, RF-04, RF-05, RF-22)
 
 A tela principal do sistema tem como objetivo integrar o usuário ao ambiente competitivo, desta forma ela apresenta até 5 notícias recentes sobre o cenário, permite visualizar até 5 vagas recentes notificadas pelos times e listar até 5 torneios recentes que estão em andamento.
 Por ela também e possível se autenticar no sistema ou criar um novo usuário. Uma vez autenticado, o usuário pode navegar para a página com informações do perfil, visualizar as notificações recebidas, pode navegar para a página de suas equipes e também e possível sair do perfil.
@@ -23,6 +23,7 @@ Este é o modal de registro, por ele é possível se cadastrar no sistema, forne
   - RF-03
   - RF-04
   - RF-05
+  - RF-22
 
 ### Artefatos
   - index.html
