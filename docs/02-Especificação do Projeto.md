@@ -150,6 +150,7 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE`                                 |PARA ... `MOTIVO/VALOR`                                              |
 |--------------------|--------------------------------------------------------------------|---------------------------------------------------------------------|
 |José Alves          | criar um perfil de jogador                                         | chamar a atenção das equipes competitivas                           |
+|José Alves          | entrar no site com o perfil de jogador                             | salvar as informações e preferencias pessoais                       |
 |José Alves          | que a página se adapte a diferentes tipos de telas                 | ter a liberdade de acessar o site no computador, telefone ou outro dispositivo compatível |
 |José Alves          | que o site seja acessível dos principais navegadores               | ter a facilidade de acesso sem ter que instalar aplicativos extras  |
 |José Alves          | acessar o site de qualquer lugar com acesso à internet          | me manter atualizado independentemente de onde estejam              |
@@ -201,6 +202,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-19| O sistema deve permitir ao usuário fazer um filtro das vagas do site |  BAIXA | 
 |RF-20| O sistema deve permitir ao usuário fazer um filtro das notícias do site |  BAIXA | 
 |RF-21| O sistema deve permitir ao usuário fazer um filtro dos usuário do site |  BAIXA | 
+|RF-22| O sistema deve permitir ao usuário entrar com seu perfil               | ALTA |
 
 
 ### Requisitos não Funcionais
