@@ -1,5 +1,5 @@
-import { Component } from "../../../framework/component.js";
-import { div, h5, h6, hr, img, mapTo } from '../../../framework/elements.js';
+import { Component } from "../../framework/component.js";
+import { div, h5, h6, hr, img, mapTo } from '../../framework/elements.js';
 
 /***
  * HomeVacancy
