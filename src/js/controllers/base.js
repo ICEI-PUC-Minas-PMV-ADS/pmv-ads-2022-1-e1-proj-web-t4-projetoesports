@@ -1,60 +1,30 @@
 import { Controller } from '../framework/controller.js';
-import { UserRepository } from '../repositories/user_repository.js';
 import { Navbar } from '../components/navbar.js';
-import { PerfilPage, SECTION_DEFAULT } from '../pages/perfil.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
 
 /***
- * PerfilController
+ * BaseController
  * Controlador responsavel por gerenciar a parte logica da pagina.
  */
 
-export class PerfilController extends Controller
+export class BaseController extends Controller
 {
-  /***
-   * O construtor é indicado para iniciar as variaveis do controlador,
-   * ele é chamado antes de onInitialize.
-   */
-
   constructor()
   {
     super();
 
-    this.userRepository = new UserRepository();
     this.loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
     this.criarPerfilModal = new bootstrap.Modal(document.getElementById('criarPerfilModal'));
   }
 
-  /***
-   * onInitialize
-   * Este metodo e chamado quando o controlador esta iniciando, antes de
-   * qualquer componente ser adicionado ao DOM. Nele é possivel carregar
-   * os dados no sistema para alimentar os componentes.
-   */
-
   onInitialize()
   {
-    // Se o usuário não esta logado, redireciona para a home.
-    if (!this.appState.load(USER_INFO))
-    {
-      //window.location.href = 'index.html';
-      //return;
-    }
-
     this.setState({
       userInfo: this.appState.load(USER_INFO),
-      section: SECTION_DEFAULT,
     });
   }
-
-  /***
-   * actions
-   * Este metodo retorna um objeto que é anexado ao "window"(o objeto global da pagina).
-   * Neste objeto retornado são incluidos os metodos que serão "passados" aos eventos dos elementos
-   * do DOM.
-   */
 
   actions()
   {
@@ -77,7 +47,7 @@ export class PerfilController extends Controller
 
           case 'minha equipe':
             {
-              // TODO: Redirecionar para minha equipe.
+              // TODO: Incluir link para pagina minha_equipe.
             }
             break;
 
@@ -199,24 +169,12 @@ export class PerfilController extends Controller
 
         // Emite uma mensagem de sucesso.
         alert('O usuário foi cadastrado com sucesso!');
-      },
-      onChangeSection: function (section)
-      {
-        this.setState({
-          section: section,
-        });
       }
     };
   }
 
-  /***
-   * buildComponentDatabase
-   * Este metodo registrar os componentes que serão renderizadas na pagina.
-   */
-
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
-    this.registerComponent('perfil-page', PerfilPage);
   }
 }
