@@ -1,6 +1,6 @@
-import { Component } from "../../framework/component.js";
-import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo } from '../../framework/elements.js';
-import { Switch } from '../../framework/std-components.js';
+import { Component } from "../framework/component.js";
+import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo } from '../framework/elements.js';
+import { Switch } from '../framework/std-components.js';
 
 /***
  * Constantes
