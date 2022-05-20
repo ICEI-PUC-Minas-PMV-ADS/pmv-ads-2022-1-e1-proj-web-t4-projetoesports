@@ -185,6 +185,7 @@ function evaluateParameters(controller, parameters) {
         });
 
         const obj = new componentClass(props);
+        obj.onInitialize?.();
 
         const dependencies = {};
         Object.keys(evaluatedParameters).forEach((key) => {

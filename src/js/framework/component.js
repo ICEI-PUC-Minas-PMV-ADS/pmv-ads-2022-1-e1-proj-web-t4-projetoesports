@@ -19,6 +19,7 @@ export class Component {
       setState: currentController?.setState,
       actions:  currentController?.actions,
       appState: currentController?.appState,
+      params: currentController?.params,
     };
 
     this.__children = null;
@@ -53,6 +54,7 @@ export class Component {
       }
     };
 
+    this.onInitialize = this.onInitialize?.bind(this);
     this.render = this.render?.bind(this);
     this.registerComponent = this.registerComponent?.bind(this);
     this.buildComponentDatabase = this.buildComponentDatabase?.bind(this);

@@ -25,13 +25,13 @@ const OPTION_ALTERAR_PERFIL    = 'alterar perfil';
 const OPTION_DELETAR_PERFIL    = 'deletar perfil';
 
 /***
- * PerfilPage
+ * ProfilePage
  * Component responsavel por renderizar o carrocel de noticias.
  * Props:
  *    news: Recebe o array com os objetos que representam a noticia.
  */
 
-export class PerfilPage extends Component
+export class ProfilePage extends Component
 {
   constructor(props)
   {

@@ -3,18 +3,20 @@ import { Navbar } from '../components/navbar.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
+import { VacancyPage } from '../pages/vacancy.js';
+import { UserRepository } from '../repositories/user_repository.js';
 
 /***
- * BaseController
+ * VagaController
  * Controlador responsavel por gerenciar a parte logica da pagina.
  */
 
-export class BaseController extends Controller
+export class VagaController extends Controller
 {
   constructor()
   {
     super();
-    
+
     this.userRepository = new UserRepository();
     this.loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
     this.criarPerfilModal = new bootstrap.Modal(document.getElementById('criarPerfilModal'));
@@ -177,5 +179,6 @@ export class BaseController extends Controller
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
+    this.registerComponent('vacancy-page', VacancyPage);
   }
 }

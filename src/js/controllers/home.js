@@ -3,16 +3,16 @@ import { NewsRepository } from '../repositories/news_repository.js';
 import { UserRepository } from '../repositories/user_repository.js';
 import { TournamentRepository } from '../repositories/tournament_repository.js';
 import { VacancyRepository } from '../repositories/vacancy_repository.js';
+import { RoleRepository } from '../repositories/role_repository.js';
 import { Navbar } from '../components/navbar.js';
 import { HomeCarousel } from '../components/home/home_carousel.js';
 import { HomeTournament } from '../components/home/home_tournament.js';
 import { HomeVacancy } from '../components/home/home_vacancy.js';
 import { User } from '../models/user.js';
-import { News } from '../models/news.js';
 import { Sha256 } from '../helpers/crypto.js';
-import { Tournament } from '../models/tournament.js';
-import { Vacancy } from '../models/vacancy.js';
 import { USER_INFO } from '../framework/state.js';
+
+import { initializeDatabase } from '../repositories/mock_data.js';
 
 /***
  * HomeController
@@ -29,14 +29,11 @@ export class HomeController extends Controller
     this.userRepository = new UserRepository();
     this.tournamentRepository = new TournamentRepository();
     this.vacancyRepository = new VacancyRepository();
+    this.roleRepository = new RoleRepository();
     this.loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
     this.criarPerfilModal = new bootstrap.Modal(document.getElementById('criarPerfilModal'));
 
     this.initializeSystem = this.initializeSystem?.bind(this);
-
-    this.initializeNews = this.initializeNews?.bind(this);
-    this.initializeTournament = this.initializeTournament?.bind(this);
-    this.initializeVacancies = this.initializeVacancies?.bind(this);
 
     this.initializeSystem();
   }
@@ -45,46 +42,10 @@ export class HomeController extends Controller
   {
     if (!this.newsRepository.getAll().length)
     {
-      this.initializeNews();
-    }
-
-    if (!this.tournamentRepository.getAll().length)
-    {
-      this.initializeTournament();
-    }
-
-    if (!this.vacancyRepository.getAll().length)
-    {
-      this.initializeVacancies();
+      initializeDatabase();
     }
   }
 
-  initializeNews()
-  {
-    this.newsRepository.create(new News('News #1', 'Descrição News #1', 'imgs/noticias_images/noticias_1.png', 'https://www.google.com', 1652282098729));
-    this.newsRepository.create(new News('News #2', 'Descrição News #2', 'imgs/noticias_images/noticias_2.png', 'https://www.google.com', 1652281098729));
-    this.newsRepository.create(new News('News #3', 'Descrição News #3', 'imgs/noticias_images/noticias_3.png', 'https://www.google.com', 1652282598729));
-    this.newsRepository.create(new News('News #4', 'Descrição News #4', 'imgs/noticias_images/noticias_4.png', 'https://www.google.com', 1652282298729));
-    this.newsRepository.create(new News('News #5', 'Descrição News #5', 'imgs/noticias_images/noticias_5.png', 'https://www.google.com', 1652281598729));
-  }
-  
-  initializeTournament()
-  {
-    this.tournamentRepository.create(new Tournament('Tournament #1', 'Descrição Tournament #1', 'url', 1652281598729));
-    this.tournamentRepository.create(new Tournament('Tournament #2', 'Descrição Tournament #2', 'url', 1652281498729));
-    this.tournamentRepository.create(new Tournament('Tournament #3', 'Descrição Tournament #3', 'url', 1652281898729));
-    this.tournamentRepository.create(new Tournament('Tournament #4', 'Descrição Tournament #4', 'url', 1652282098729));
-    this.tournamentRepository.create(new Tournament('Tournament #5', 'Descrição Tournament #5', 'url', 1652281858729));
-  }
-  
-  initializeVacancies()
-  {
-    this.vacancyRepository.create(new Vacancy('League of Legends', 'Team #1', 'Top lane', 'imgs/role_lane_icons/TOP.png', 1652284098729));
-    this.vacancyRepository.create(new Vacancy('League of Legends', 'Team #2', 'Ad carry', 'imgs/role_lane_icons/ADC.png', 1652283698729));
-    this.vacancyRepository.create(new Vacancy('League of Legends', 'Team #3', 'Mid lane', 'imgs/role_lane_icons/MIDDLE.png', 1652212098729));
-    this.vacancyRepository.create(new Vacancy('League of Legends', 'Team #4', 'Support', 'imgs/role_lane_icons/SUPPORT.png', 1652281598729));
-    this.vacancyRepository.create(new Vacancy('League of Legends', 'Team #5', 'Jungle', 'imgs/role_lane_icons/JUNGLE.png', 1652281098729));
-  }
 
   onInitialize()
   {
@@ -188,7 +149,7 @@ export class HomeController extends Controller
         const password = form['login_password'].value.trim();
 
         // Verifica se todos os campos foram prenchidos.
-        if (!email.length() || !password.length())
+        if (!email.length || !password.length)
         {
           alert('Todos os campos devem ser preenchidos');
           return;
@@ -231,7 +192,7 @@ export class HomeController extends Controller
         const re_password = form['register_re_password'].value.trim();
 
         // Verifica se todos os campos foram prenchidos.
-        if (!username.length() || !email.length() || !password.length())
+        if (!username.length || !email.length || !password.length)
         {
           alert('Todos os campos devem ser preenchidos');
           return;

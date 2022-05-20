@@ -46,7 +46,7 @@ export class BaseRepository {
   get(id) {
     let localStorage = window.localStorage;
     let rep_data = JSON.parse(localStorage.getItem(this._DATA_K));
-    return this.deserialize(rep_data[id]);
+    return rep_data[id] ? this.deserialize(rep_data[id]) : null;
   }
 
   /***
@@ -76,11 +76,11 @@ export class BaseRepository {
 
     let localStorage = window.localStorage;
     let rep_data = JSON.parse(localStorage.getItem(this._DATA_K));
-    let rep_item = this.deserialize(rep_data[data.id]);
-
-    if (rep_item === undefined) {
+    
+    if (rep_data[data.id] === undefined) {
       return undefined;
     }
+    let rep_item = this.deserialize(rep_data[data.id]);    
 
     const old_news = rep_data[data.id];
     rep_data[data.id] = this.serialize({ ...old_news, ...data, id: data.id });
@@ -108,11 +108,12 @@ export class BaseRepository {
 
     let localStorage = window.localStorage;
     let rep_data = JSON.parse(localStorage.getItem(this._DATA_K));
+    
+    if (rep_data[id] === undefined) {
+      return;
+    }    
     let rep_item = rep_data[id];
 
-    if (rep_item === undefined) {
-      return;
-    }
     delete rep_data[id];
 
     // Persiste o registro no localStorage.

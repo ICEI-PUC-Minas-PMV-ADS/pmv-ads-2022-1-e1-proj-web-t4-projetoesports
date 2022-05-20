@@ -4,12 +4,13 @@
  */
 
 export class Vacancy {
-  constructor(game, team, role, icon_url, created_at) {
+  constructor(description, owner_id, game_id, team_id, role_id, created_at) {
     this.id = undefined;
-    this.game = game;
-    this.team = team;
-    this.role = role;
-    this.icon_url = icon_url;
+    this.description = description; // Descrição da vaga.
+    this.team_id = team_id;         // Id do time da qual a vaga esta relacionada.
+    this.role_id = role_id;         // Id da função da qual a vaga esta relacionada.
+    this.candidates = [];           // Array com os Ids dos candidatos.
+    this.finalized = false;
     this.created_at = created_at || new Date().getTime();
   }
 }

@@ -1,7 +1,7 @@
 import { Controller } from '../framework/controller.js';
 import { UserRepository } from '../repositories/user_repository.js';
 import { Navbar } from '../components/navbar.js';
-import { PerfilPage, SECTION_DEFAULT } from '../pages/perfil.js';
+import { ProfilePage, SECTION_DEFAULT } from '../pages/profile.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
@@ -111,7 +111,7 @@ export class PerfilController extends Controller
         const password = form['login_password'].value.trim();
 
         // Verifica se todos os campos foram prenchidos.
-        if (!email.length() || !password.length())
+        if (!email.length || !password.length)
         {
           alert('Todos os campos devem ser preenchidos');
           return;
@@ -154,7 +154,7 @@ export class PerfilController extends Controller
         const re_password = form['register_re_password'].value.trim();
 
         // Verifica se todos os campos foram prenchidos.
-        if (!username.length() || !email.length() || !password.length())
+        if (!username.length || !email.length || !password.length)
         {
           alert('Todos os campos devem ser preenchidos');
           return;
@@ -217,6 +217,6 @@ export class PerfilController extends Controller
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
-    this.registerComponent('perfil-page', PerfilPage);
+    this.registerComponent('profile-page', ProfilePage);
   }
 }
