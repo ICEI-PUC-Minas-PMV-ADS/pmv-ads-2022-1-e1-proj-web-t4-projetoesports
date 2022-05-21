@@ -208,11 +208,11 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-20| O sistema deve permitir ao usuário fazer um filtro das notícias do site |  BAIXA | 
 |RF-21| O sistema deve permitir ao usuário fazer um filtro dos usuário do site |  BAIXA | 
 |RF-22| O sistema deve permitir ao usuário entrar com seu perfil               | ALTA |
-|RF-23| O sistema deve cadastrar/excluir um vaga de uma equipe               | MÉDIA |
+|RF-23| O sistema deve permitir ao administrador cadastrar/excluir uma vaga de uma equipe               | MÉDIA |
 |RF-24| O sistema deve notificar os jogadores cadastrados em uma vaga quando ela for excluida               | MÉDIA |
 |RF-25| O sistema deve permitir ao administrador de um time convidar um jogador a preencher uma vaga        | MÉDIA |
 |RF-26| O sistema deve exibir ao administrador de um time os candidatos a uma vaga | MÉDIA |
-|RF-27| O sistema deve permitir ao administrador de um time cancelar uma vaga em aberto | MÉDIA |
+|RF-27| O sistema deve permitir ao candidato a uma vaga de um time solicitar/cancelar a candidatura a uma vaga em aberto | MÉDIA |
 
 ### Requisitos não Funcionais
 
