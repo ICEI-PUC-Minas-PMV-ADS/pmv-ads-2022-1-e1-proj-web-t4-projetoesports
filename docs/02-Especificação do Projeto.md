@@ -153,22 +153,27 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 |José Alves          | entrar no site com o perfil de jogador                             | salvar as informações e preferencias pessoais                       |
 |José Alves          | que a página se adapte a diferentes tipos de telas                 | ter a liberdade de acessar o site no computador, telefone ou outro dispositivo compatível |
 |José Alves          | que o site seja acessível dos principais navegadores               | ter a facilidade de acesso sem ter que instalar aplicativos extras  |
-|José Alves          | acessar o site de qualquer lugar com acesso à internet          | me manter atualizado independentemente de onde estejam              |
+|José Alves          | acessar o site de qualquer lugar com acesso à internet             | me manter atualizado independentemente de onde estejam              |
 |José Alves          | ter segurança para fornecer alguma informação pessoal              | não ter problemas com vazamentos de dados                           |
-|José Alves          | encontrar um time para                                             | ingressar no time                                                   |
+|José Alves          | encontrar um time para                                             | ver as informações sobre esse time                                  |
 |José Alves          | visualizar as notícias do cenário competitivo                      | estar sempre atualizado sobre notícias do cenário profissional      |
 |José Alves          | visualizar as últimas vagas notificadas no sistema                 | auxiliar a ingressar em uma equipe                                  |
 |José Alves          | ter acesso a informações sobre os torneios mais recentes           | me atualizar em relação ao cenário competitivo                      |
-|José Alves          | navegar por todas as equipes do site                               | Localizar uma vaga que se enquadre em meu perfil                    | 
+|José Alves          | navegar por todas as equipes do site                               | Localizar uma vaga que se enquadre em meu perfil                    |
+|José Alves          | navegar por todas as vagas disponíveis do site                     | encontrar uma vaga que se enquadre em meu perfil de jogador         |
+|José Alves          | me candidatar a uma vaga                                           | ter a possibilidade de participar de uma equipe                     |
+|José Alves          | remover minha candidatura a uma vaga                               | reavaliar minha possibilidade de participar de uma equipe           |
+|José Alves          | ser notificado quando uma vaga que me inscrevi seja cancelada      | avaliar melhor outras oportunidades de vagas em aberto              |
 |Maria Santos        | receber notificações sobre os novos torneios                       | decidir em qual torneio minha equipe se encaixa melhor              |
 |Maria Santos        | analisar o perfil dos jogadores                                    | identificar o que melhor se adequa a minha equipe                   |
 |Maria Santos        | emitir notificações sobre vagas disponíveis                        | captar novos contatos para equipes futuras                          |
 |Maria Santos        | uma plataforma organizada                                          | gerenciar meu time, minhas equipes e torneios                       |
 |Maria Santos        | manter minhas equipes                                              | administra-las de forma eficiente                                   |
 |Maria Santos        | manter os jogadores da minha equipe                                | controle sobre a equipe e definir o time titular e os reservas      |
-|Maria Santos        | navegar por todos os torneios do site                              | ficar atualizada sobre o cenário competitivo                        |
-|Maria Santos        | navegar por todas as vagas disponíveis do site                     | encontrar algum jogador que se enquadre em meu time                 | 
-|Antônio Carlos      | encontrar time casual                                              | criar novas relações com interesses em comum                        |
+|Maria Santos        | navegar por todos os torneios do site                              | ficar atualizada sobre o cenário competitivo                        | 
+|Maria Santos        | convidar um jogador a preencher uma vaga do meu time               | suprir as necessidade taticas da minha equipe                       |
+|Maria Santos        | visualizar os jogadores que se increveram em uma vaga do meu time  | escolher o perfil de jogador que melhor se enquadre a vaga          |
+|Maria Santos        | cancelar uma vaga em aberto                                        | evitar que jogadores se increvam em uma vaga que reavaliei como desnecessaria           |
 |Antônio Carlos      | navegar por todas as notícias do site                              | passar meu tempo me atualizando sobre o cenário de e-sports         |
 |Antônio Carlos      | navegar por todos os torneios do site                              | Passar meu tempo me atualizando sobre o cenário de e-sports         |
 |Antônio Carlos      | navegar por todos os jogadores do site                             | conhecer outros usuários                                            |
@@ -203,7 +208,11 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-20| O sistema deve permitir ao usuário fazer um filtro das notícias do site |  BAIXA | 
 |RF-21| O sistema deve permitir ao usuário fazer um filtro dos usuário do site |  BAIXA | 
 |RF-22| O sistema deve permitir ao usuário entrar com seu perfil               | ALTA |
-
+|RF-23| O sistema deve cadastrar/excluir um vaga de uma equipe               | MÉDIA |
+|RF-24| O sistema deve notificar os jogadores cadastrados em uma vaga quando ela for excluida               | MÉDIA |
+|RF-25| O sistema deve permitir ao administrador de um time convidar um jogador a preencher uma vaga        | MÉDIA |
+|RF-26| O sistema deve exibir ao administrador de um time os candidatos a uma vaga | MÉDIA |
+|RF-27| O sistema deve permitir ao administrador de um time cancelar uma vaga em aberto | MÉDIA |
 
 ### Requisitos não Funcionais
 
