@@ -173,7 +173,7 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 |Maria Santos        | navegar por todos os torneios do site                              | ficar atualizada sobre o cenário competitivo                        | 
 |Maria Santos        | convidar um jogador a preencher uma vaga do meu time               | suprir as necessidade taticas da minha equipe                       |
 |Maria Santos        | visualizar os jogadores que se increveram em uma vaga do meu time  | escolher o perfil de jogador que melhor se enquadre a vaga          |
-|Maria Santos        | cancelar uma vaga em aberto                                        | evitar que jogadores se increvam em uma vaga que reavaliei como desnecessaria           |
+|Maria Santos        | cadastrar/cancelar uma vaga para a equipe                          | preencher vagas do time para disputar jogos e torneios              |
 |Antônio Carlos      | navegar por todas as notícias do site                              | passar meu tempo me atualizando sobre o cenário de e-sports         |
 |Antônio Carlos      | navegar por todos os torneios do site                              | Passar meu tempo me atualizando sobre o cenário de e-sports         |
 |Antônio Carlos      | navegar por todos os jogadores do site                             | conhecer outros usuários                                            |
