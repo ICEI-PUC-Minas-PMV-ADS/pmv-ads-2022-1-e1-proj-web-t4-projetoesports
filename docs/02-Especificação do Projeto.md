@@ -184,7 +184,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 
 ### Requisitos Funcionais
 
-|ID&nbsp;&nbsp;&nbsp;&nbsp;     | Descrição do Requisito  | Prioridade |
+|ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     | Descrição do Requisito  | Prioridade |
 |-------|-----------------------------------------|----|
 |RF-01| O sistema deve permitir ao usuário criar/alterar/excluir seu perfil de jogador | ALTA | 
 |RF-02| O site deve permitir a consulta de times com vagas disponíveis |  MÉDIA | 
