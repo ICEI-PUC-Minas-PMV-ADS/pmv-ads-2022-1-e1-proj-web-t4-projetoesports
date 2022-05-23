@@ -213,6 +213,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-25| O sistema deve permitir ao administrador de um time convidar um jogador a preencher uma vaga        | MÉDIA |
 |RF-26| O sistema deve exibir ao administrador de um time os candidatos a uma vaga | MÉDIA |
 |RF-27| O sistema deve permitir ao candidato a uma vaga de um time solicitar/cancelar a candidatura a uma vaga em aberto | MÉDIA |
+|RF-28| O sistema deve emitir uma notificação para o jogador confirmar o preenchimento de uma vaga | MÉDIA |
 
 ### Requisitos não Funcionais
 
