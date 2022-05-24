@@ -406,16 +406,22 @@ export function renderElementTree(elem, newElem)
     if (isComponent(elem))
     {
       elem.__children = elem.render();
-
+      
       // Valida elemento gerado pelo template.
-      if (
-        elem.__children instanceof VirtualElement === false &&
-        elem.__children instanceof Component === false
-      ) {
-        throw new Error("Component: 'render' must return 'VirtualElement' or 'Component'");
+      if (elem.__children)
+      {
+        if (
+          elem.__children instanceof VirtualElement === false &&
+          elem.__children instanceof Component === false
+        ) {
+          throw new Error("Component: 'render' must return 'VirtualElement' or 'Component'");
+        }
+        elem.__element = renderElementTree(elem.__children);
       }
-
-      elem.__element = renderElementTree(elem.__children);
+      else
+      {
+        elem.__element = document.createElement('div');
+      }
       return elem.__element;
     }
   }

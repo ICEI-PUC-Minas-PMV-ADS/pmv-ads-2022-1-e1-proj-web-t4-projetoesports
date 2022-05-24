@@ -24,6 +24,8 @@ export class Component {
 
     this.__children = null;
     this.__props = props;
+    this.__render_prom = null;
+    this.__old_state = {};
             
     this.updateProps = (newProps) => {
       this.__props = {...this.__props, ...newProps};
@@ -38,19 +40,35 @@ export class Component {
     };
 
     this.setState = (newState) => {
-      let updatedState;
       if (typeof newState === 'function')
       {
-        updatedState = {...this.__state, ...newState(this.state)};
+        this.__old_state = {...this.__state, ...newState(this.state)};
       }
       else
       {
-        updatedState = { ...this.__state, ...newState };
+        this.__old_state = { ...this.__state, ...newState };
       }
       
-      if (this.checkUpdate(this.__state, updatedState)) {
-        this.state = updatedState;
-        renderElementTree(this.__children, this.render?.());
+      if (!this.__render_prom)
+      {
+        this.__render_prom = new Promise((accept) => {
+          accept()
+        });
+
+        // Renderiza componente.
+        this.__render_prom.then(() => {
+          setTimeout(() => {
+            if (this.checkUpdate(this.__state, this.__old_state)) {
+              this.state = this.__old_state;
+              renderElementTree(this.__children, this.render?.());
+            }
+          }, 0);
+        });
+
+        // Limpa promise de renderização.
+        this.__render_prom.then(() => {
+          this.__render_prom = null;
+        });
       }
     };
 

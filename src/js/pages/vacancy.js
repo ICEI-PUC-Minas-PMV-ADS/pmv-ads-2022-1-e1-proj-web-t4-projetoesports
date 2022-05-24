@@ -115,7 +115,7 @@ export class VacancyPage extends Component
   })
   {
     return div({ style: { color: 'white' } }, [
-      h1({ className: 'mx-4' }, 'Vagas(Owner)'),
+      h1({ className: 'mx-4' }, 'Vagas'),
       hr({ className: 'mx-4' }),
       div({ className: 'container' }, [
         div({ className: 'row', style: { minHeight: '10rem' } }, [
@@ -150,7 +150,7 @@ export class VacancyPage extends Component
               ])
             ]),
             div({ className: 'd-flex justify-content-end' },
-              div()
+              button({ className: 'btn c-text-white c-bg-secondary mt-3' }, 'Excluir vaga'),
             )
           ]),
         ]),
@@ -239,6 +239,7 @@ export class VacancyPage extends Component
 
                 // Ser elegival para a vaga.
                 component(If, is_registered,
+                  
                   // Estar cadastrado.
                   button({ className: 'btn c-text-white c-bg-secondary mt-3' }, 'Remover candidatura'),
 

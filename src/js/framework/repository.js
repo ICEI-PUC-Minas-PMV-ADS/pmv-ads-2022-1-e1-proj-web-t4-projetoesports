@@ -68,7 +68,6 @@ export class BaseRepository {
   update(data) {
     if (
       data === undefined ||
-      data instanceof this._MODEL_BASE === false ||
       data.id === undefined
     ) {
       throw new Error("Failed to update record");
@@ -97,11 +96,10 @@ export class BaseRepository {
    * Responsavel por apagar um registro na base de dados.
    */
 
-  delete(data) {
+  delete(dataId) {
     if (
-      data === undefined ||
-      data instanceof this._MODEL_BASE === false ||
-      data.id === undefined
+      dataId === undefined ||
+      typeof dataId !== 'number'
     ) {
       throw new Error("Failed to delete record");
     }
@@ -109,12 +107,10 @@ export class BaseRepository {
     let localStorage = window.localStorage;
     let rep_data = JSON.parse(localStorage.getItem(this._DATA_K));
     
-    if (rep_data[id] === undefined) {
+    if (rep_data[dataId] === undefined) {
       return;
-    }    
-    let rep_item = rep_data[id];
-
-    delete rep_data[id];
+    }
+    delete rep_data[dataId];
 
     // Persiste o registro no localStorage.
     localStorage.setItem(this._DATA_K, JSON.stringify({ ...rep_data }));
