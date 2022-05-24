@@ -302,8 +302,8 @@ export class ProfilePage extends Component
           div({ className: "d-flex p-3 mb-5", style: { backgroundColor: '#261423', minHeight: '30rem', borderRadius: '5px' } }, [
             div({ className: 'flex-fill', style: { color: 'white' } }, [
               h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Estatísticas'),
-              mapTo('div', null, game_statistics, (statistic) => (
-                p(null, statistic)
+              mapTo('div', null, game_statistics, (statistic, index) => (
+                p({ key: index }, statistic)
               )),
             ])
           ])
@@ -327,8 +327,8 @@ export class ProfilePage extends Component
           div({ className: "d-flex p-3 mb-5", style: { backgroundColor: '#261423', minHeight: '30rem', borderRadius: '5px' } }, [
             div({ className: 'flex-fill', style: { color: 'white' } }, [
               h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Funções'),
-              mapTo('div', null, game_roles, (game_role) => (
-                p(null, game_role)
+              mapTo('div', null, game_roles, (game_role, index) => (
+                p({ key: index }, game_role)
               )),
             ])
           ])
@@ -372,8 +372,8 @@ export class ProfilePage extends Component
 
     return (
       div(null, 
-        mapTo('ul', null, contatos, (contato) => (
-          li(null, contato)
+        mapTo('ul', null, contatos, (contato, index) => (
+          li({ key: index }, contato)
         ))
       )
     );

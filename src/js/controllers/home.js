@@ -5,6 +5,7 @@ import { TournamentRepository } from '../repositories/tournament_repository.js';
 import { VacancyRepository } from '../repositories/vacancy_repository.js';
 import { RoleRepository } from '../repositories/role_repository.js';
 import { Navbar } from '../components/navbar.js';
+import { Sidebar } from '../components/sidebar.js';
 import { HomeCarousel } from '../components/home/home_carousel.js';
 import { HomeTournament } from '../components/home/home_tournament.js';
 import { HomeVacancy } from '../components/home/home_vacancy.js';
@@ -107,15 +108,9 @@ export class HomeController extends Controller
             }
             break;
 
-          case 'notificações':
-            {
-              // TODO: Implementar recurso de notificações.
-            }
-            break;
-
           case 'minha equipe':
             {
-              // TODO: Incluir link para pagina minha_equipe.
+              window.location.href = 'minhas_equipes.html';
             }
             break;
 
@@ -244,6 +239,8 @@ export class HomeController extends Controller
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
+    this.registerComponent('sidebar', Sidebar);
+    
     this.registerComponent('home-carousel', HomeCarousel);
     this.registerComponent('home-tournament', HomeTournament);
     this.registerComponent('home-vacancy', HomeVacancy);

@@ -1,6 +1,7 @@
 import { Controller } from '../framework/controller.js';
 import { UserRepository } from '../repositories/user_repository.js';
 import { Navbar } from '../components/navbar.js';
+import { Sidebar } from '../components/sidebar.js';
 import { ProfilePage, SECTION_DEFAULT } from '../pages/profile.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
@@ -69,15 +70,9 @@ export class PerfilController extends Controller
             }
             break;
 
-          case 'notificações':
-            {
-              // TODO: Implementar recurso de notificações.
-            }
-            break;
-
           case 'minha equipe':
             {
-              // TODO: Redirecionar para minha equipe.
+              window.location.href = 'minhas_equipes.html';
             }
             break;
 
@@ -217,6 +212,7 @@ export class PerfilController extends Controller
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
+    this.registerComponent('sidebar', Sidebar);
     this.registerComponent('profile-page', ProfilePage);
   }
 }
