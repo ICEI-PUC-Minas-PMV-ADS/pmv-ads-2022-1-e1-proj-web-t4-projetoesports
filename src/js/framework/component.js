@@ -25,7 +25,9 @@ export class Component {
     this.__children = null;
     this.__props = props;
     this.__render_prom = null;
-    this.__old_state = {};
+    this.__updated_state = null;
+
+    // JSON.parse(JSON.stringify(this.__state))
             
     this.updateProps = (newProps) => {
       this.__props = {...this.__props, ...newProps};
@@ -42,27 +44,29 @@ export class Component {
     this.setState = (newState) => {
       if (typeof newState === 'function')
       {
-        this.__old_state = {...this.__state, ...newState(this.state)};
+        this.__updated_state = {...this.__state, ...newState(this.state)};
       }
       else
       {
-        this.__old_state = { ...this.__state, ...newState };
+        this.__updated_state = { ...this.__state, ...newState };
       }
       
       if (!this.__render_prom)
       {
         this.__render_prom = new Promise((accept) => {
-          accept()
+          setTimeout(() => {
+            accept()
+          }, 0);
         });
 
         // Renderiza componente.
         this.__render_prom.then(() => {
-          setTimeout(() => {
-            if (this.checkUpdate(this.__state, this.__old_state)) {
-              this.state = this.__old_state;
-              renderElementTree(this.__children, this.render?.());
-            }
-          }, 0);
+          if (this.checkUpdate(this.__state, this.__updated_state)) {
+            this.__state = JSON.parse(JSON.stringify(this.__updated_state));
+            this.onDidUpdate?.();
+            this.__state = JSON.parse(JSON.stringify(this.__updated_state));
+            renderElementTree(this.__children, this.render?.());
+          }
         });
 
         // Limpa promise de renderização.
@@ -73,12 +77,13 @@ export class Component {
     };
 
     this.onInitialize = this.onInitialize?.bind(this);
+    this.onDidUpdate = this.onDidUpdate?.bind(this);
     this.render = this.render?.bind(this);
     this.registerComponent = this.registerComponent?.bind(this);
     this.buildComponentDatabase = this.buildComponentDatabase?.bind(this);
   }
 
-  get state() { return JSON.parse(JSON.stringify(this.__state)); }  
+  get state() { return this.__state; }
   set state(newState) { this.__state = JSON.parse(JSON.stringify(newState)); }
 
   get props() { return this.__props; }

@@ -28,38 +28,54 @@ export class Navbar extends Component
 
     this.notificationRepository = new NotificationRepository();
     this.updateNoficationData = this.updateNoficationData?.bind(this);
-    this.userInfo = this.ctrl.appState.load(USER_INFO);
-  }
-
-  onInitialize()
-  {
-    if (
-      this.userInfo?.id !== undefined &&
-      this.userInfo?.id !== null
-    ) {
-      this.updateNoficationData(this.userInfo.id);
-    }
-  }
-
-  updateNoficationData(user_id)
-  {
-    const notifications = this.notificationRepository.getAll();
-    const user_notifications = notifications.filter((notification) => notification.receiver_id === user_id);
-    const not_viewed_notification_count = user_notifications.reduce((acc, notification) => notification.viewed ? acc : acc + 1, 0);
-
-    this.setState({
-      notification_count: not_viewed_notification_count,
-      notifications: user_notifications,
-    });
   }
 
   /***
-   * 
+   * onInitialize
+   */
+
+  onInitialize()
+  {
+    this.updateNoficationData();
+  }
+
+  /***
+   * onDidUpdate
+   */
+
+  onDidUpdate()
+  {
+    this.updateNoficationData();
+  }
+
+  /***
+   * updateNoficationData
+   */
+
+  updateNoficationData()
+  {
+    const userInfo = this.ctrl.appState.load(USER_INFO);
+    
+    if (userInfo && userInfo.id !== undefined && userInfo.id !== null)
+    {
+      const notifications = this.notificationRepository.getAll();
+      const user_notifications = notifications.filter((notification) => notification.receiver_id === userInfo.id);
+      const not_viewed_notification_count = user_notifications.reduce((acc, notification) => notification.viewed ? acc : acc + 1, 0);
+
+      this.setState({
+        notification_count: not_viewed_notification_count,
+        notifications: user_notifications,
+      });
+    }
+  }
+
+  /***
+   * onClick
    */
 
   onClick(evt)
   {
-    const { target, currentTarget } = evt;
+    const { currentTarget } = evt;
     evt.preventDefault();
     
     if (currentTarget.dataset['action'] === 'notificações' && this.state.notifications?.length) {
@@ -67,8 +83,6 @@ export class Navbar extends Component
       this.state.notifications.forEach((notification) => {
         this.notificationRepository.update({...notification, viewed: true});
       });
-
-      this.updateNoficationData(this.userInfo.id);
 
       this.setState({
         show_notifications: !this.state.show_notifications
@@ -78,6 +92,10 @@ export class Navbar extends Component
       this.props.onAction?.(currentTarget.dataset['action']);
     }
   }
+
+  /***
+   * render
+   */
 
   render()
   {
@@ -91,7 +109,7 @@ export class Navbar extends Component
       
       this.notificationRepository.delete(notification_id);
 
-      this.updateNoficationData(this.userInfo.id);
+      this.updateNoficationData();
     }
 
     return (

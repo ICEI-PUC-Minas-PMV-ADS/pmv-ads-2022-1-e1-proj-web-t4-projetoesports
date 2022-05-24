@@ -90,6 +90,10 @@ export class Controller {
       // Atualiza props.
       item.component.updateProps(updatedProps);
 
+      item.component.__state = item.component.__updated_state;
+      item.component.onDidUpdate?.();
+      item.component.__state = item.component.__updated_state;
+
       // Atualiza arvore virtual.
       renderElementTree(
         item.component.__children,
