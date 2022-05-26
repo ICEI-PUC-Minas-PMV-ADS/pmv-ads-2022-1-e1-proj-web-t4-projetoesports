@@ -171,7 +171,7 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 |Maria Santos        | manter minhas equipes                                              | administra-las de forma eficiente                                   |
 |Maria Santos        | manter os jogadores da minha equipe                                | controle sobre a equipe e definir o time titular e os reservas      |
 |Maria Santos        | navegar por todos os torneios do site                              | ficar atualizada sobre o cenário competitivo                        | 
-|Maria Santos        | convidar um jogador a preencher uma vaga do meu time               | suprir as necessidade taticas da minha equipe                       |
+|Maria Santos        | convidar/desconvidar um jogador a preencher uma vaga do meu time   | suprir as necessidade taticas da minha equipe                       |
 |Maria Santos        | visualizar os jogadores que se increveram em uma vaga do meu time  | escolher o perfil de jogador que melhor se enquadre a vaga          |
 |Maria Santos        | cadastrar/cancelar uma vaga para a equipe                          | preencher vagas do time para disputar jogos e torneios              |
 |Antônio Carlos      | navegar por todas as notícias do site                              | passar meu tempo me atualizando sobre o cenário de e-sports         |
@@ -210,7 +210,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-22| O sistema deve permitir ao usuário entrar com seu perfil               | ALTA |
 |RF-23| O sistema deve permitir ao administrador cadastrar/excluir uma vaga de uma equipe               | MÉDIA |
 |RF-24| O sistema deve notificar os jogadores cadastrados em uma vaga quando ela for excluida               | MÉDIA |
-|RF-25| O sistema deve permitir ao administrador de um time convidar um jogador a preencher uma vaga        | MÉDIA |
+|RF-25| O sistema deve permitir ao administrador de um time convidar/desconvidar um jogador a preencher uma vaga        | MÉDIA |
 |RF-26| O sistema deve exibir ao administrador de um time os candidatos a uma vaga | MÉDIA |
 |RF-27| O sistema deve permitir ao candidato a uma vaga de um time solicitar/cancelar a candidatura a uma vaga em aberto | MÉDIA |
 |RF-28| O sistema deve emitir uma notificação para o jogador confirmar o preenchimento de uma vaga | MÉDIA |
