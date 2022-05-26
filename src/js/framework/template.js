@@ -6,6 +6,7 @@ import { Component } from './component.js';
  */
 
  const PROPS_ATTR_TABLE = {
+  id: 'id',
   className: 'className',
   style: 'style',
 };
@@ -247,6 +248,8 @@ function updateElementProps(velem, elem, props)
         setupAttrWithProp(elem, props, propKey, PROPS_ATTR_TABLE[propKey]);
         return;
       }
+      
+      elem.setAttribute(propKey.split(/(?=[A-Z])/).join('-').toLowerCase(), props[propKey]);
     });
   }
   return props;

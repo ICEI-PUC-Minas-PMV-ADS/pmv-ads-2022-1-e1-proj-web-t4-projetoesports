@@ -77,8 +77,11 @@ export class VagasEquipesController extends Controller {
           case 'sair':
             {
               if (this.state.userInfo) {
-                this.appState.store(USER_INFO, null)
-                this.setState({ userInfo: null })
+                this.appState.store(USER_INFO, null);
+                this.setState({ userInfo: null });
+
+                // Recarrega a pagina.
+                window.location.reload();
               }
             }
             break
@@ -108,7 +111,10 @@ export class VagasEquipesController extends Controller {
           alert('Usuário e/ou senha invalidos!')
         }
 
-        this.loginModal.toggle()
+        this.loginModal.toggle();
+
+        // Recarrega a pagina.
+        window.location.reload();
       },
       onSubmitRegister: function (event, form) {
         event.preventDefault()

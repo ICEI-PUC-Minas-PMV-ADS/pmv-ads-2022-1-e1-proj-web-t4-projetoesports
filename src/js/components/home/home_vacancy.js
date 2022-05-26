@@ -1,5 +1,5 @@
 import { Component } from "../../framework/component.js";
-import { div, h5, h6, hr, img, mapTo } from '../../framework/elements.js';
+import { div, h5, h6, hr, img, a, mapTo } from '../../framework/elements.js';
 
 import { RoleRepository } from '../../repositories/role_repository.js';
 import { TeamRepository } from '../../repositories/team_repository.js';
@@ -25,6 +25,15 @@ export class HomeVacancy extends Component
 
   render()
   {
+    /***
+     * onClick
+     */
+
+    function onClick(id)
+    {
+      window.location.href = `vaga.html?id=${id}`;
+    }
+
     return (
       div({ className: 'c-text-white mt-3' }, [
         h5(null, 'Vagas'),
@@ -35,7 +44,7 @@ export class HomeVacancy extends Component
             const { name: team_name, game_id } = this.teamRepository.get(team_id);
             const { name: game_name } = this.gameRepository.get(game_id);
 
-            return div({ key: id, className: 'mb-3 p-3 c-bg-primary-dark', style: { borderRadius: '5px' } }, [
+            return div({ key: id, className: 'mb-3 p-3 c-bg-primary-dark', style: { borderRadius: '5px', cursor: 'pointer' }, events: { click: () => onClick(id) } }, [
               div({ className: 'd-flex justify-content-between' }, [
                 h6({ }, game_name),
                 img({ src: icon_url, style: { width: '1.5rem', height: '1.5rem' } }),

@@ -1,15 +1,15 @@
-import { NewsRepository } from './news_repository.js';
-import { TournamentRepository } from './tournament_repository.js';
-import { UserRepository } from './user_repository.js';
-import { GameRepository } from './game_repository.js';
-import { RoleRepository } from './role_repository.js';
-import { TeamRepository } from './team_repository.js';
-import { VacancyRepository } from './vacancy_repository.js';
+import { NewsRepository } from '../repositories/news_repository.js';
+import { TournamentRepository } from '../repositories/tournament_repository.js';
+import { UserRepository } from '../repositories/user_repository.js';
+import { GameRepository } from '../repositories/game_repository.js';
+import { RoleRepository } from '../repositories/role_repository.js';
+import { TeamRepository } from '../repositories/team_repository.js';
+import { VacancyRepository } from '../repositories/vacancy_repository.js';
 
 import { News } from '../models/news.js';
 import { Tournament } from '../models/tournament.js';
 
-import { Sha256 } from '../helpers/crypto.js';
+import { Sha256 } from './crypto.js';
 
 /***
  * Inicia a massa de dados.
@@ -141,6 +141,19 @@ export function initializeUsers()
     game_statistics: [ 'https://oce.op.gg/summoners/br/mar_ci_lio' ],
     game_roles: [5]
   });
+
+  // Este usuario joga League of Legends como Jungle e não participa de time e não esta candidatado a vagas e é elegivel a vaga.
+  userRepository.create({
+    name: 'Binoculo',
+    email: 'bin_oculo@email.com',
+    password: Sha256.hash('123'),
+    img_url: 'imgs/RC.png',
+    objective: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.',
+    participated_teams: [],
+    contact_info: [ 'bin_oculo@email.com', '@bin_oculo' ],
+    game_statistics: [ 'https://oce.op.gg/summoners/br/bin_oculo' ],
+    game_roles: [2]
+  });
 }
 
 /***
@@ -247,6 +260,6 @@ export function initializeVacancies()
     role_id: 3,
     candidates: [],
     finalized: false,
-    created_at: new Date(2022, 5, 15, 9, 25, 0),
+    created_at: new Date(2022, 5, 15, 8, 25, 0),
   });
 }

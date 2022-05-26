@@ -36,6 +36,7 @@
           </div>
 
           <div class="pe-2">
+            <!-- Top Bar -->
             <div
               data-component="navbar"
               data-on-action="@action:onNavbarAction"></div>
@@ -44,26 +45,36 @@
         </div>
       </nav>
 
-      <!-- Side Bar -->
       <div class="d-flex flex-fill overflow-hidden ">
+
+        <!-- Side Bar -->
         <div data-component="sidebar"></div>
 
         <!-- Container de conteudo -->
         <div class="flex-fill overflow-auto c-bg-primary">
-          <div class="container">          
-            <!-- CONTEUDO -->
+          <!-- INICIO Conteudo -->
+          
+          <div class="container">     
+
+            <!-- Carrossel de noticias -->
             <div data-component="home-carousel" data-news="@state:news"></div>
+
             <div class="row my-4 justify-content-md-center">
               <div class="col-sm-6 col-lg-3 col-offset-lg-3">
+
+                <!-- Lista de torneios -->
                 <div data-component="home-tournament" data-tournaments="@state:tournaments"></div>
               </div>
 
               <div class="col-sm-6 col-lg-3">
-                <!-- TODO: Ajustar o card da vaga de acordo com as mudanças no modelo -->
+
+                <!-- Lista de vagas -->
                 <div data-component="home-vacancy" data-vacancies="@state:vacancies"></div>
-              </div>
+              </div>              
             </div>
           </div>
+
+          <!-- FIM Conteudo -->
         </div>
       </div>
     </div> <!-- .container-fluid.d-flex.flex-column.vh-100.p-0 -->
@@ -80,24 +91,13 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="loginModalLabel">Entrar</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form onsubmit="controller.onSubmitLogIn(event, this)">
               <div class="mb-3">
                 <label for="login_email" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="login_email"
-                  name="login_email"
-                  placeholder="name@example.com"
-                />
+                <input type="email" class="form-control" id="login_email" name="login_email" placeholder="name@example.com" />
               </div>
 
               <div class="mb-3 clearfix">

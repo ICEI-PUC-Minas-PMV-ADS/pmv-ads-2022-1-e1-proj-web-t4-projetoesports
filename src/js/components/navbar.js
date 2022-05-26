@@ -65,6 +65,13 @@ export class Navbar extends Component
       this.setState({
         notification_count: not_viewed_notification_count,
         notifications: user_notifications,
+        show_notifications: user_notifications.length ? this.state.show_notifications : false,
+      });
+    }
+    else
+    {
+      this.setState({
+        show_notifications: false,
       });
     }
   }
@@ -156,8 +163,8 @@ export class Navbar extends Component
               ({ id: nid, title, body, redirect_url }) => (
                 div({ key: nid, className: 'd-flex' }, [
                   div({ className: 'flex-fill' }, [
-                    div(null, title),
-                    div({ className: 'c-text-grey-700' }, body),
+                    div({ style: { fontWeight: 'bold' } }, title),
+                    div({ className: 'c-text-grey-700 pe-4', align: 'justify' }, body),
                   ]),
                   div({ className: 'd-flex flex-column justify-content-center' }, [
 

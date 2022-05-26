@@ -1,6 +1,4 @@
 import { NotificationRepository } from '../repositories/notification_repository.js';
-import { currentController } from '../framework/controller.js';
-import { USER_INFO } from '../framework/state.js';
 
 let nofiticationRepository;
 
@@ -8,23 +6,32 @@ let nofiticationRepository;
  * sendNotification
  */
 
-export function sendNotification(title, body, redirect_url, receiver_id)
+export function sendNotification(title, body, sender_id, receiver_id)
 {
   if (!nofiticationRepository)
   {
     nofiticationRepository = new NotificationRepository();
   }
 
-  const userInfo = currentController.appState.load(USER_INFO);
-
-  if (!userInfo)
-  {
-    throw new Error('Falha ao enviar notificação e necessario estar autenticado!');
-  }
-
   nofiticationRepository?.create({
-    title, body, receiver_id,
-    redirect_url,
-    sender_id: userInfo.id,
+    title, body, sender_id, receiver_id,
   });
 }
+
+/***
+ * sendNotificationWithRedirect
+ */
+
+ export function sendNotificationWithRedirect(title, body, redirect_url, sender_id, receiver_id)
+ {
+   if (!nofiticationRepository)
+   {
+     nofiticationRepository = new NotificationRepository();
+   }
+ 
+   nofiticationRepository?.create({
+     title, body, receiver_id,
+     redirect_url,
+     sender_id,
+   });
+ }

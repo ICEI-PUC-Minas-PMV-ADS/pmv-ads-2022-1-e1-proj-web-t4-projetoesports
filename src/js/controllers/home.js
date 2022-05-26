@@ -13,7 +13,7 @@ import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
 
-import { initializeDatabase } from '../repositories/mock_data.js';
+import { initializeDatabase } from '../helpers/mock_data.js';
 
 /***
  * HomeController
@@ -39,6 +39,10 @@ export class HomeController extends Controller
     this.initializeSystem();
   }
 
+  /***
+   * initializeSystem
+   */
+
   initializeSystem()
   {
     if (!this.newsRepository.getAll().length)
@@ -47,6 +51,9 @@ export class HomeController extends Controller
     }
   }
 
+  /***
+   * onInitialize
+   */
 
   onInitialize()
   {
@@ -126,6 +133,9 @@ export class HomeController extends Controller
               {
                 this.appState.store(USER_INFO, null);
                 this.setState({ userInfo: null });
+
+                // Recarrega a pagina.
+                window.location.reload();
               }
             }
             break;
@@ -176,6 +186,9 @@ export class HomeController extends Controller
 
         // Esconde o formulario
         this.loginModal.toggle();
+
+        // Recarrega a pagina.
+        window.location.reload();
       },
       onSubmitRegister: function(event, form)
       {

@@ -64,6 +64,9 @@ export class BaseController extends Controller
               {
                 this.appState.store(USER_INFO, null);
                 this.setState({ userInfo: null });
+
+                // Recarrega a pagina.
+                window.location.reload();
               }
             }
             break;
@@ -114,6 +117,9 @@ export class BaseController extends Controller
 
         // Esconde o formulario
         this.loginModal.toggle();
+
+        // Recarrega a pagina.
+        window.location.reload();
       },
       onSubmitRegister: function(event, form)
       {

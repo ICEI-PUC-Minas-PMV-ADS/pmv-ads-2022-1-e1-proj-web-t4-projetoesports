@@ -61,6 +61,9 @@ export class VagaController extends Controller
               {
                 this.appState.store(USER_INFO, null);
                 this.setState({ userInfo: null });
+
+                // Recarrega a pagina.
+                window.location.reload();
               }
             }
             break;
@@ -111,6 +114,9 @@ export class VagaController extends Controller
 
         // Esconde o formulario
         this.loginModal.toggle();
+
+        // Recarrega a pagina.
+        window.location.reload();
       },
       onSubmitRegister: function(event, form)
       {

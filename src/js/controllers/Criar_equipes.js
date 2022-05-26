@@ -93,6 +93,9 @@ export class CriarEquipesController extends Controller
               {
                 this.appState.store(USER_INFO, null);
                 this.setState({ userInfo: null });
+
+                // Recarrega a pagina.
+                window.location.reload();
               }
             }
             break;
@@ -131,6 +134,9 @@ export class CriarEquipesController extends Controller
         }
 
         this.loginModal.toggle();
+
+        // Recarrega a pagina.
+        window.location.reload();
       },
       onSubmitRegister: function(event, form)
       {
