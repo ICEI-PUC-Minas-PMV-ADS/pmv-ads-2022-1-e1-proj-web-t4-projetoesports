@@ -1,6 +1,10 @@
 import { Component } from "../framework/component.js";
 import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo } from '../framework/elements.js';
+import { USER_INFO } from "../framework/state.js";
 import { Switch } from '../framework/std-components.js';
+
+import { UserRepository } from '../repositories/user_repository.js';
+import { HOME_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
  * Constantes
@@ -43,6 +47,8 @@ export class ProfilePage extends Component
       contextMenu: false,
     };
 
+    this.userRepository = new UserRepository();
+
     this.renderSobreSection              = this.renderSobreSection?.bind(this);
     this.renderEstatisticaSection        = this.renderEstatisticaSection?.bind(this);
     this.renderFuncoesSection            = this.renderFuncoesSection?.bind(this);
@@ -51,6 +57,30 @@ export class ProfilePage extends Component
     this.renderSobreSectionMinhasEquipes = this.renderSobreSectionMinhasEquipes?.bind(this);
     this.renderSobreSectionContato       = this.renderSobreSectionContato?.bind(this);
   }
+
+  get user()
+  {    
+    return (
+      this.ctrl.appState.load(USER_INFO) ||
+      this.userRepository.get(this.ctrl.params?.id)
+    );
+  }
+
+  /***
+   * onDidUpdate
+   */
+
+  onDidUpdate()
+  {
+    if (!this.user)
+    {
+      redirectTo(HOME_ROUTE);
+    }
+  }
+
+  /***
+   * render
+   */
 
   render()
   {

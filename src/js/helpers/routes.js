@@ -24,10 +24,24 @@ export const PLAYERS_ROUTE = 'jogadores.html';
 export const NEWS_ROUTE = 'noticias.html';
 
 /***
+ * redirect_flag
+ */
+
+export let redirect_flag = false;
+
+/***
  * redirectTo
  */
 
 export function redirectTo(route, params)
 {
-  window.location.href = `${route}?${Object.entries(params).map((param) => param.join('=')).join('&')}`;
+  if (params)
+  {
+    window.location.href = `${route}?${Object.entries(params).map((param) => param.join('=')).join('&')}`;
+  }
+  else
+  {
+    window.location.href = `${route}`;
+  }
+  redirect_flag = true;
 }
