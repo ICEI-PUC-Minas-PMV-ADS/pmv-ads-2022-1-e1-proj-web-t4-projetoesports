@@ -21,13 +21,6 @@ export class BaseController extends Controller
     this.criarPerfilModal = new bootstrap.Modal(document.getElementById('criarPerfilModal'));
   }
 
-  onInitialize()
-  {
-    this.setState({
-      userInfo: this.appState.load(USER_INFO),
-    });
-  }
-
   actions()
   {
     return {
@@ -61,10 +54,9 @@ export class BaseController extends Controller
 
           case 'sair':
             {
-              if (this.state.userInfo)
+              if (this.appState.load(USER_INFO))
               {
                 this.appState.store(USER_INFO, null);
-                this.setState({ userInfo: null });
 
                 // Recarrega a pagina.
                 window.location.reload();
@@ -109,7 +101,6 @@ export class BaseController extends Controller
         if (user)
         {
           this.appState.store(USER_INFO, user);
-          this.setState({ userInfo: user });
         }
         else
         {

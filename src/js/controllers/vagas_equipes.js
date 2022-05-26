@@ -28,19 +28,6 @@ export class VagasEquipesController extends Controller {
   }
 
   /***
-   * onInitialize
-   * Este metodo e chamado quando o controlador esta iniciando, antes de
-   * qualquer componente ser adicionado ao DOM. Nele é possivel carregar
-   * os dados no sistema para alimentar os componentes.
-   */
-
-  onInitialize() {
-    this.setState({
-      userInfo: this.appState.load(USER_INFO)
-    })
-  }
-
-  /***
    * actions
    * Este metodo retorna um objeto que é anexado ao "window"(o objeto global da pagina).
    * Neste objeto retornado são incluidos os metodos que serão "passados" aos eventos dos elementos
@@ -77,9 +64,8 @@ export class VagasEquipesController extends Controller {
 
           case 'sair':
             {
-              if (this.state.userInfo) {
+              if (this.appState.load(USER_INFO)) {
                 this.appState.store(USER_INFO, null);
-                this.setState({ userInfo: null });
 
                 // Recarrega a pagina.
                 window.location.reload();
@@ -107,7 +93,6 @@ export class VagasEquipesController extends Controller {
 
         if (user) {
           this.appState.store(USER_INFO, user)
-          this.setState({ userInfo: user })
         } else {
           alert('Usuário e/ou senha invalidos!')
         }

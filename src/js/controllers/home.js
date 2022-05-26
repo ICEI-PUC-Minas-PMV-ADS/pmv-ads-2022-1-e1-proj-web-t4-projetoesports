@@ -100,7 +100,6 @@ export class HomeController extends Controller
       news: newsNewest,
       tournaments: tournamentsNewest,
       vacancies: vacanciesNewest,
-      userInfo: this.appState.load(USER_INFO),
     });
   }
 
@@ -131,10 +130,9 @@ export class HomeController extends Controller
 
           case 'sair':
             {
-              if (this.state.userInfo)
+              if (this.appState.load(USER_INFO))
               {
                 this.appState.store(USER_INFO, null);
-                this.setState({ userInfo: null });
 
                 // Recarrega a pagina.
                 window.location.reload();
@@ -179,7 +177,6 @@ export class HomeController extends Controller
         if (user)
         {
           this.appState.store(USER_INFO, user);
-          this.setState({ userInfo: user });
         }
         else
         {

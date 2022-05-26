@@ -56,14 +56,26 @@ export class ProfilePage extends Component
     this.renderSobreSectionObjetivo      = this.renderSobreSectionObjetivo?.bind(this);
     this.renderSobreSectionMinhasEquipes = this.renderSobreSectionMinhasEquipes?.bind(this);
     this.renderSobreSectionContato       = this.renderSobreSectionContato?.bind(this);
+
+    this.user = (
+      this.ctrl.params?.id
+        ? this.userRepository.get(this.ctrl.params?.id)
+        : this.ctrl.appState.load(USER_INFO)
+    );
   }
 
-  get user()
-  {    
-    return (
-      this.ctrl.appState.load(USER_INFO) ||
-      this.userRepository.get(this.ctrl.params?.id)
-    );
+  // http://127.0.0.1:5500/src/perfil.html?id=1
+
+  /***
+   * onInitialize
+   */
+
+  onInitialize()
+  {
+    if (!this.user)
+    {
+      redirectTo(HOME_ROUTE);
+    }
   }
 
   /***
@@ -86,7 +98,7 @@ export class ProfilePage extends Component
   {
     const { contextMenu, section } = this.state;
 
-    const img_url = this.props.userInfo?.img_url || PROFILE_IMG;
+    const img_url = this.user?.img_url || PROFILE_IMG;
 
     const section_components = {};
 
@@ -165,7 +177,7 @@ export class ProfilePage extends Component
                 
                 div({ className: "d-flex align-items-end" },
                   // Nome do jogador.
-                  h4({ className: "m-0", style: { color: 'white' } }, this.props.userInfo?.name)
+                  h4({ className: "m-0", style: { color: 'white' } }, this.user?.name)
                 )
               ])
             ),
@@ -324,7 +336,7 @@ export class ProfilePage extends Component
 
   renderEstatisticaSection()
   {
-    const game_statistics = this.props.userInfo?.game_statistics || [];
+    const game_statistics = this.user?.game_statistics || [];
 
     return (
       div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
@@ -349,7 +361,7 @@ export class ProfilePage extends Component
 
   renderFuncoesSection()
   {
-    const game_roles = this.props.userInfo?.game_roles || [];
+    const game_roles = this.user?.game_roles || [];
 
     return (
       div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
@@ -375,7 +387,7 @@ export class ProfilePage extends Component
   renderSobreSectionObjetivo()
   {
     return (
-      p(null, this.props.userInfo?.objective)
+      p(null, this.user?.objective)
     );
   }
 
@@ -398,7 +410,7 @@ export class ProfilePage extends Component
 
   renderSobreSectionContato()
   {
-    const contatos = this.props.userInfo?.contact_info || [];
+    const contatos = this.user?.contact_info || [];
 
     return (
       div(null, 

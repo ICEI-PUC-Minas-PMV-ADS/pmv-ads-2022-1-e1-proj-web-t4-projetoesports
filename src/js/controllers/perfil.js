@@ -30,27 +30,6 @@ export class PerfilController extends Controller
   }
 
   /***
-   * onInitialize
-   * Este metodo e chamado quando o controlador esta iniciando, antes de
-   * qualquer componente ser adicionado ao DOM. Nele é possivel carregar
-   * os dados no sistema para alimentar os componentes.
-   */
-
-  onInitialize()
-  {
-    // Se o usuário não esta logado, redireciona para a home.
-    if (!this.appState.load(USER_INFO))
-    {
-      redirectTo(HOME_ROUTE);
-    }
-
-    this.setState({
-      userInfo: this.appState.load(USER_INFO),
-      section: SECTION_DEFAULT,
-    });
-  }
-
-  /***
    * actions
    * Este metodo retorna um objeto que é anexado ao "window"(o objeto global da pagina).
    * Neste objeto retornado são incluidos os metodos que serão "passados" aos eventos dos elementos
@@ -84,10 +63,9 @@ export class PerfilController extends Controller
 
           case 'sair':
             {
-              if (this.state.userInfo)
+              if (this.appState.load(USER_INFO))
               {
                 this.appState.store(USER_INFO, null);
-                this.setState({ userInfo: null });
 
                 // Recarrega a pagina.
                 window.location.reload();
@@ -132,7 +110,6 @@ export class PerfilController extends Controller
         if (user)
         {
           this.appState.store(USER_INFO, user);
-          this.setState({ userInfo: user });
         }
         else
         {
