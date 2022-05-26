@@ -4,6 +4,7 @@ import { div, h5, h6, hr, img, a, mapTo } from '../../framework/elements.js';
 import { RoleRepository } from '../../repositories/role_repository.js';
 import { TeamRepository } from '../../repositories/team_repository.js';
 import { GameRepository } from '../../repositories/game_repository.js';
+import { redirectTo, VACANCY_ROUTE } from "../../helpers/routes.js";
 
 /***
  * HomeVacancy
@@ -31,7 +32,7 @@ export class HomeVacancy extends Component
 
     function onClick(id)
     {
-      window.location.href = `vaga.html?id=${id}`;
+      redirectTo(VACANCY_ROUTE, { id });
     }
 
     return (

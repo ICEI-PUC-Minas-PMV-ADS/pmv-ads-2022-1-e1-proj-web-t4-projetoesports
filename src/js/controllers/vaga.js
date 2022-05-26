@@ -6,6 +6,7 @@ import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
 import { VacancyPage } from '../pages/vacancy.js';
 import { UserRepository } from '../repositories/user_repository.js';
+import { MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
  * VagaController
@@ -45,13 +46,13 @@ export class VagaController extends Controller
 
           case 'minha equipe':
             {
-              window.location.href = 'minhas_equipes.html';
+              redirectTo(MY_TEAMS_ROUTE);
             }
             break;
 
           case 'perfil':
             {
-              window.location.href = 'perfil.html';
+              redirectTo(PROFILE_ROUTE);
             }
             break;
 

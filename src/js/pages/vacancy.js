@@ -10,6 +10,7 @@ import { RoleRepository } from '../repositories/role_repository.js';
 import { sendNotification, sendNotificationWithRedirect } from '../helpers/notification.js';
 
 import { USER_INFO } from '../framework/state.js';
+import { HOME_ROUTE, redirectTo, TEAM_ROUTE } from '../helpers/routes.js';
 
 /***
  * VacancyPage
@@ -120,7 +121,7 @@ export class VacancyPage extends Component
       this.vacancyRepository.delete(vacancy.id);
 
       // Redireciona para a home.
-      window.location.href = 'index.html';
+      redirectTo(HOME_ROUTE);
     }
   }
 
@@ -197,15 +198,14 @@ export class VacancyPage extends Component
   {
     if (!this.ctrl.params?.id)
     {
-      window.location.href = "index.html";
-      return;
+      redirectTo(HOME_ROUTE);
     }
     
     const vacancy = this.vacancyRepository.get(this.ctrl.params.id);
 
     if (!vacancy)
     {
-      window.location.href = "index.html";
+      redirectTo(HOME_ROUTE);
       return;
     }
 
@@ -221,23 +221,6 @@ export class VacancyPage extends Component
     const can_be_candidate = this.user !== undefined && this.user !== null && !is_owner && !is_player && !is_reserve && can_be_role;
 
     const pending_invite_from = vacancy.pending_invite_from;
-
-    console.log({
-      user: this.user, vacancy, team, role
-    });
-
-    console.log({
-      description: vacancy.description,
-      team_name: team.name,
-      team_icon_url: team.icon_url,
-      role_name: role.name,
-      role_icon_url: role.icon_url,
-      candidates: vacancy.candidates,
-      is_owner,
-      can_be_candidate,
-      is_registered,
-      pending_invite_from,
-    });
 
     this.setState({
       description: vacancy.description,
@@ -311,7 +294,7 @@ export class VacancyPage extends Component
                 className: 'btn c-text-white c-bg-secondary w-100 mt-3',
                 events: {
                   click: () => {
-                    window.location.href = `team.html?id=${team_id}`;
+                    redirectTo(TEAM_ROUTE, { id: team_id });
                   }
                 }
               },
@@ -362,7 +345,7 @@ export class VacancyPage extends Component
               if (!candidate)
               {
                 alert('Erro interno!');
-                window.location.href = 'index.html';
+                redirectTo(HOME_ROUTE);
                 return null;
               }
 
@@ -440,7 +423,7 @@ export class VacancyPage extends Component
                 className: 'btn c-text-white c-bg-secondary w-100 mt-3',
                 events: {
                   click: () => {
-                    window.location.href = `team.html?id=${team_id}`;
+                    redirectTo(TEAM_ROUTE, { id: team_id });
                   }
                 }
               },
@@ -468,6 +451,7 @@ export class VacancyPage extends Component
                 ]),
               ])
             ]),
+            
             div({ className: 'd-flex justify-content-end' },
               component(If, can_be_candidate,
 
@@ -514,7 +498,7 @@ export class VacancyPage extends Component
 
         if (!vacancy)
         {
-          window.location.href = "index.html";
+          redirectTo(HOME_ROUTE);
           return;
         }
 
@@ -524,7 +508,7 @@ export class VacancyPage extends Component
 
         if (!administrator)
         {
-          window.location.href = "index.html";
+          redirectTo(HOME_ROUTE);
           return;
         }
         
@@ -570,7 +554,7 @@ export class VacancyPage extends Component
         this.vacancyRepository.delete(vacancy.id);
 
         // Redireciona para a home.
-        window.location.href = 'index.html';
+        redirectTo(HOME_ROUTE);
       }
     }
     
@@ -586,7 +570,7 @@ export class VacancyPage extends Component
 
         if (!vacancy)
         {
-          window.location.href = "index.html";
+          redirectTo(HOME_ROUTE);
           return;
         }
 
@@ -596,7 +580,7 @@ export class VacancyPage extends Component
 
         if (!administrator)
         {
-          window.location.href = "index.html";
+          redirectTo(HOME_ROUTE);
           return;
         }
         

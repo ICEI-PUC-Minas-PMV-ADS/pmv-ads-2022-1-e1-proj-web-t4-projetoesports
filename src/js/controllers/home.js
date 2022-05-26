@@ -15,6 +15,8 @@ import { USER_INFO } from '../framework/state.js';
 
 import { initializeDatabase } from '../helpers/mock_data.js';
 
+import { HOME_ROUTE, MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
+
 /***
  * HomeController
  * Controlador responsavel por gerenciar a parte logica da pagina.
@@ -117,13 +119,13 @@ export class HomeController extends Controller
 
           case 'minha equipe':
             {
-              window.location.href = 'minhas_equipes.html';
+              redirectTo(MY_TEAMS_ROUTE);
             }
             break;
 
           case 'perfil':
             {
-              window.location.href = 'perfil.html';
+              redirectTo(PROFILE_ROUTE);
             }
             break;
 

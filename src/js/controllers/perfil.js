@@ -6,6 +6,7 @@ import { ProfilePage, SECTION_DEFAULT } from '../pages/profile.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
+import { HOME_ROUTE, MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
  * PerfilController
@@ -40,8 +41,7 @@ export class PerfilController extends Controller
     // Se o usuário não esta logado, redireciona para a home.
     if (!this.appState.load(USER_INFO))
     {
-      //window.location.href = 'index.html';
-      //return;
+      redirectTo(HOME_ROUTE);
     }
 
     this.setState({
@@ -72,13 +72,13 @@ export class PerfilController extends Controller
 
           case 'minha equipe':
             {
-              window.location.href = 'minhas_equipes.html';
+              redirectTo(MY_TEAMS_ROUTE);
             }
             break;
 
           case 'perfil':
             {
-              window.location.href = 'perfil.html';
+              redirectTo(PROFILE_ROUTE);
             }
             break;
 

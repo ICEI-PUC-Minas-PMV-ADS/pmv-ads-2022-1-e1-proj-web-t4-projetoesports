@@ -3,6 +3,7 @@ import { Navbar } from '../components/navbar.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
+import { PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
  * BaseController
@@ -54,7 +55,7 @@ export class BaseController extends Controller
 
           case 'perfil':
             {
-              window.location.href = 'perfil.html';
+              redirectTo(PROFILE_ROUTE);
             }
             break;
 

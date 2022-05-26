@@ -160,8 +160,8 @@ export class Navbar extends Component
 
             // Container de noficações.
             mapTo('div', { className: `notification-container ${this.state.show_notifications ? '' : 'hide'}` }, this.state.notifications,
-              ({ id: nid, title, body, redirect_url }) => (
-                div({ key: nid, className: 'd-flex' }, [
+              ({ id: not_id, title, body, redirect_url }) => (
+                div({ key: not_id, className: 'd-flex' }, [
                   div({ className: 'flex-fill' }, [
                     div({ style: { fontWeight: 'bold' } }, title),
                     div({ className: 'c-text-grey-700 pe-4', align: 'justify' }, body),
@@ -178,7 +178,7 @@ export class Navbar extends Component
                     // Botão para deletar notificação
                     a({
                         href: '#',
-                        events: { click: (evt) => deleteNotification(evt, nid) }
+                        events: { click: (evt) => deleteNotification(evt, not_id) }
                       },
                       img({ src: 'imgs/trash-can-solid.svg', style: { width: '1rem', height: '1rem' } })
                     ),
