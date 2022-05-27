@@ -50,7 +50,7 @@ export class Component {
       {
         this.__updated_state = { ...this.__state, ...newState };
       }
-      
+
       if (!this.__render_prom)
       {
         this.__render_prom = new Promise((accept) => {

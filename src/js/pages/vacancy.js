@@ -199,6 +199,7 @@ export class VacancyPage extends Component
     if (!this.ctrl.params?.id)
     {
       redirectTo(HOME_ROUTE);
+      return;
     }
     
     const vacancy = this.vacancyRepository.get(this.ctrl.params.id);
@@ -349,40 +350,42 @@ export class VacancyPage extends Component
                 return null;
               }
 
-              return div({ key: candidateId, className: 'py-2 px-2' }, [
-                div({ className: 'p-3 c-bg-secondary', style: { borderRadius: '5px' } }, [
-                  img({ src: candidate.img_url, style: { width: '10rem', height: '10rem' } }),
-                  h5({ className: 'text-center c-text-black' }, candidate.name),
-                ]),
+              return (
+                div({ key: candidateId, className: 'py-2 px-2' }, [
+                  div({ className: 'p-3 c-bg-secondary', style: { borderRadius: '5px' } }, [
+                    img({ src: candidate.img_url, style: { width: '10rem', height: '10rem' } }),
+                    h5({ className: 'text-center c-text-black' }, candidate.name),
+                  ]),
 
-                component(If, pending_invite_from === candidateId,
+                  component(If, pending_invite_from === candidateId,
 
-                  // Remover convite.
-                  button(
-                    {
-                      className: 'btn c-bg-primary c-text-white w-100 mt-3',
-                      events: { click: () => { this.onUninviteCandidate(candidateId) } }
-                    },
-                    'Desconvidar'
-                  ),
+                    // Remover convite.
+                    button(
+                      {
+                        className: 'btn c-bg-primary c-text-white w-100 mt-3',
+                        events: { click: () => { this.onUninviteCandidate(candidateId) } }
+                      },
+                      'Desconvidar'
+                    ),
 
-                  // Enviar convite.
-                  button(
-                    {
-                      className: `btn c-bg-primary c-text-white w-100 mt-3 ${pending_invite_from ? 'disabled' : ''}`,
-                      events: {
-                        click: () => {
-                          if (!pending_invite_from)
-                          {
-                            this.onInviteCandidate(candidateId);
+                    // Enviar convite.
+                    button(
+                      {
+                        className: `btn c-bg-primary c-text-white w-100 mt-3 ${pending_invite_from ? 'disabled' : ''}`,
+                        events: {
+                          click: () => {
+                            if (!pending_invite_from)
+                            {
+                              this.onInviteCandidate(candidateId);
+                            }
                           }
                         }
-                      }
-                    },
-                    'Convidar'
+                      },
+                      'Convidar'
+                    ),
                   ),
-                ),
-              ]);
+                ])
+              );
             }
           ),
         ])
