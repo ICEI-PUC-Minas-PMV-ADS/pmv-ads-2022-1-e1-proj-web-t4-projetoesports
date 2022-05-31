@@ -36,6 +36,9 @@ export class BaseRepository {
 
     // Atualiza a chave de indexação para criação de registros.
     localStorage.setItem(this._CURRENT_ID_K, current_index);
+
+    rep_data = JSON.parse(window.localStorage.getItem(this._DATA_K));
+    return rep_data[current_index - 1] ? this.deserialize(rep_data[current_index - 1]) : null;
   }
 
   /***

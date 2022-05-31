@@ -74,7 +74,8 @@ export function initializeUsers()
     participated_teams: [],
     contact_info: [ 'john@email.com' ],
     game_statistics: [ 'https://oce.op.gg/summoners/br/john_cabure' ],
-    game_roles: []
+    game_roles: [],
+    receive_new_vacancies_notification: true,
   });
 
   // Este usuario administra o time Team Coffee, não participa de time e não ha funções registradas.
@@ -87,7 +88,8 @@ export function initializeUsers()
     participated_teams: [],
     contact_info: [ 'xer_ima@email.com', '@xer_ima_123' ],
     game_statistics: [ 'https://oce.op.gg/summoners/br/xer_ima_xd' ],
-    game_roles: []
+    game_roles: [],
+    receive_new_vacancies_notification: true,
   });
 
   // Este usuario deseja jogar League of Legends como Jungle e não participa de time e esta candidatado a vaga no time Team Coffee.
@@ -100,7 +102,8 @@ export function initializeUsers()
     participated_teams: [],
     contact_info: [ 'nat_luca@email.com', '@nat_luca23' ],
     game_statistics: [ 'https://oce.op.gg/summoners/br/nat_luca' ],
-    game_roles: [2]
+    game_roles: [2],
+    receive_new_vacancies_notification: true,
   });
 
   // Este usuario joga League of Legends como Top lane e participa do time Team Coffee como ativo.
@@ -113,7 +116,8 @@ export function initializeUsers()
     participated_teams: [1],
     contact_info: [ 'ta_naka@email.com', '@tana_kapa' ],
     game_statistics: [ 'https://oce.op.gg/summoners/br/tana_kapa' ],
-    game_roles: [1]
+    game_roles: [1],
+    receive_new_vacancies_notification: true,
   });
 
   // Este usuario joga League of Legends como Ad carry e participa do time Team Coffee como reserva.
@@ -126,7 +130,8 @@ export function initializeUsers()
     participated_teams: [1],
     contact_info: [ 'mar_io@email.com', '@mar_io123' ],
     game_statistics: [ 'https://oce.op.gg/summoners/br/mar_io123' ],
-    game_roles: [4]
+    game_roles: [4],
+    receive_new_vacancies_notification: true,
   });
 
   // Este usuario joga League of Legends como Support e não participa de time e não esta candidatado a vagas e não e elegivel a vagas.
@@ -139,7 +144,8 @@ export function initializeUsers()
     participated_teams: [],
     contact_info: [ 'mar_ci_lio@email.com', '@mar_ci_lio' ],
     game_statistics: [ 'https://oce.op.gg/summoners/br/mar_ci_lio' ],
-    game_roles: [5]
+    game_roles: [5],
+    receive_new_vacancies_notification: true,
   });
 
   // Este usuario joga League of Legends como Jungle e não participa de time e não esta candidatado a vagas e é elegivel a vaga.
@@ -152,7 +158,8 @@ export function initializeUsers()
     participated_teams: [],
     contact_info: [ 'bin_oculo@email.com', '@bin_oculo' ],
     game_statistics: [ 'https://oce.op.gg/summoners/br/bin_oculo' ],
-    game_roles: [2]
+    game_roles: [2],
+    receive_new_vacancies_notification: true,
   });
 }
 

@@ -1,6 +1,7 @@
 import { NotificationRepository } from '../repositories/notification_repository.js';
+import { Notification } from '../models/notification.js';
 
-let nofiticationRepository;
+let nofiticationRepository = null;
 
 /***
  * sendNotification
@@ -13,9 +14,9 @@ export function sendNotification(title, body, sender_id, receiver_id)
     nofiticationRepository = new NotificationRepository();
   }
 
-  nofiticationRepository?.create({
-    title, body, sender_id, receiver_id,
-  });
+  nofiticationRepository?.create(new Notification(
+    title, body, null, sender_id, receiver_id,
+  ));
 }
 
 /***
@@ -29,9 +30,7 @@ export function sendNotification(title, body, sender_id, receiver_id)
      nofiticationRepository = new NotificationRepository();
    }
  
-   nofiticationRepository?.create({
-     title, body, receiver_id,
-     redirect_url,
-     sender_id,
-   });
+   nofiticationRepository?.create(new Notification(
+    title, body, redirect_url, sender_id, receiver_id,
+  ));
  }
