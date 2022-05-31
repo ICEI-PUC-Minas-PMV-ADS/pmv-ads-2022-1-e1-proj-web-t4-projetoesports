@@ -3,6 +3,8 @@ import { Component } from "./component.js";
 import { renderElementTree } from './template.js';
 import { processWindowSearch } from './query_params.js';
 
+import { redirect_flag } from '../helpers/routes.js';
+
 const _APP_KEY = "application";
 
 const _ACTION_DIR = '@action:';
@@ -90,11 +92,18 @@ export class Controller {
       // Atualiza props.
       item.component.updateProps(updatedProps);
 
+      item.component.__state = item.component.__updated_state;
+      item.component.onDidUpdate?.();
+      item.component.__state = item.component.__updated_state;
+
       // Atualiza arvore virtual.
-      renderElementTree(
-        item.component.__children,
-        item.component.render()
-      );
+      if (!redirect_flag)
+      {
+        renderElementTree(
+          item.component.__children,
+          item.component.render()
+        );
+      }
     });
   }
 
@@ -185,6 +194,7 @@ function evaluateParameters(controller, parameters) {
         });
 
         const obj = new componentClass(props);
+        obj.onInitialize?.();
 
         const dependencies = {};
         Object.keys(evaluatedParameters).forEach((key) => {
@@ -198,9 +208,12 @@ function evaluateParameters(controller, parameters) {
         currentController.__cachedComponents.push({ component: obj, dependencies });
 
         if (obj instanceof Component) {
-          obj.__children = obj.render();
-          obj.__element = renderElementTree(obj.__children);
-          component.replaceChildren(obj.__element);
+          if (!redirect_flag)
+          {
+            obj.__children = obj.render();
+            obj.__element = renderElementTree(obj.__children);
+            component.replaceChildren(obj.__element);
+          }
         }
       }
     });

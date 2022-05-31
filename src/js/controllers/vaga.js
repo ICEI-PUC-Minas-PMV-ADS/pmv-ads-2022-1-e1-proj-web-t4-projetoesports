@@ -1,25 +1,20 @@
 import { Controller } from '../framework/controller.js';
-import { UserRepository } from '../repositories/user_repository.js';
 import { Navbar } from '../components/navbar.js';
 import { Sidebar } from '../components/sidebar.js';
-import { ProfilePage, SECTION_DEFAULT } from '../pages/profile.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
-import { HOME_ROUTE, MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
+import { VacancyPage } from '../pages/vacancy.js';
+import { UserRepository } from '../repositories/user_repository.js';
+import { MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
- * PerfilController
+ * VagaController
  * Controlador responsavel por gerenciar a parte logica da pagina.
  */
 
-export class PerfilController extends Controller
+export class VagaController extends Controller
 {
-  /***
-   * O construtor é indicado para iniciar as variaveis do controlador,
-   * ele é chamado antes de onInitialize.
-   */
-
   constructor()
   {
     super();
@@ -28,13 +23,6 @@ export class PerfilController extends Controller
     this.loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
     this.criarPerfilModal = new bootstrap.Modal(document.getElementById('criarPerfilModal'));
   }
-
-  /***
-   * actions
-   * Este metodo retorna um objeto que é anexado ao "window"(o objeto global da pagina).
-   * Neste objeto retornado são incluidos os metodos que serão "passados" aos eventos dos elementos
-   * do DOM.
-   */
 
   actions()
   {
@@ -177,25 +165,14 @@ export class PerfilController extends Controller
 
         // Emite uma mensagem de sucesso.
         alert('O usuário foi cadastrado com sucesso!');
-      },
-      onChangeSection: function (section)
-      {
-        this.setState({
-          section: section,
-        });
       }
     };
   }
-
-  /***
-   * buildComponentDatabase
-   * Este metodo registrar os componentes que serão renderizadas na pagina.
-   */
 
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
     this.registerComponent('sidebar', Sidebar);
-    this.registerComponent('profile-page', ProfilePage);
+    this.registerComponent('vacancy-page', VacancyPage);
   }
 }

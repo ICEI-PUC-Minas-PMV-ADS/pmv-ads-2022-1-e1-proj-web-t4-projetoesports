@@ -4,6 +4,7 @@ import { Navbar } from '../components/navbar.js'
 import { User } from '../models/user.js'
 import { Sha256 } from '../helpers/crypto.js'
 import { USER_INFO } from '../framework/state.js'
+import { PROFILE_ROUTE, redirectTo } from '../helpers/routes.js'
 
 /***
  * BaseController
@@ -24,19 +25,6 @@ export class VagasEquipesController extends Controller {
     this.criarPerfilModal = new bootstrap.Modal(
       document.getElementById('criarPerfilModal')
     )
-  }
-
-  /***
-   * onInitialize
-   * Este metodo e chamado quando o controlador esta iniciando, antes de
-   * qualquer componente ser adicionado ao DOM. Nele é possivel carregar
-   * os dados no sistema para alimentar os componentes.
-   */
-
-  onInitialize() {
-    this.setState({
-      userInfo: this.appState.load(USER_INFO)
-    })
   }
 
   /***
@@ -70,15 +58,17 @@ export class VagasEquipesController extends Controller {
 
           case 'perfil':
             {
-              window.location.href = 'perfil.html'
+              redirectTo(PROFILE_ROUTE);
             }
             break
 
           case 'sair':
             {
-              if (this.state.userInfo) {
-                this.appState.store(USER_INFO, null)
-                this.setState({ userInfo: null })
+              if (this.appState.load(USER_INFO)) {
+                this.appState.store(USER_INFO, null);
+
+                // Recarrega a pagina.
+                window.location.reload();
               }
             }
             break
@@ -103,12 +93,14 @@ export class VagasEquipesController extends Controller {
 
         if (user) {
           this.appState.store(USER_INFO, user)
-          this.setState({ userInfo: user })
         } else {
           alert('Usuário e/ou senha invalidos!')
         }
 
-        this.loginModal.toggle()
+        this.loginModal.toggle();
+
+        // Recarrega a pagina.
+        window.location.reload();
       },
       onSubmitRegister: function (event, form) {
         event.preventDefault()

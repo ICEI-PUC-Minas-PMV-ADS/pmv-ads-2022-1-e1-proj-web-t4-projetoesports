@@ -150,6 +150,12 @@
 .c-text-grey-500 {
   color: #aaa;
 }
+.c-text-grey-600 {
+  color: #999;
+}
+.c-text-grey-700 {
+  color: #888;
+}
 
 .c-text-secondary {
   color: #c5a769;
@@ -192,4 +198,44 @@
   margin-left: 10px;
   margin-right: 10px;
   flex: 1;
+}
+
+/***
+ * Notificações
+ */
+
+.notification-container {
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0 0 15px #555;
+  width: 30rem;
+  position: absolute;
+  padding: 1rem;
+  border-radius: 5px;
+  z-index: 1;
+  top: 4.2rem;
+  right: 1.5rem;
+
+  animation-name: notification-container-show;
+  animation-duration: 0.15s;
+
+  opacity: 100%;
+}
+
+@keyframes notification-container-show
+{
+  0% { opacity: 0%; }
+  100% { opacity: 100%; }
+}
+
+.notification-container > div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.notification-container.hide {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 4.2rem;
+  right: 1.5rem;
 }

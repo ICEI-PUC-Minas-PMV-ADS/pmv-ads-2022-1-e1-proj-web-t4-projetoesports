@@ -17,15 +17,32 @@ export class HomeTournament extends Component
 
   render()
   {
+    /***
+     * onClick
+     */
+
+    function onClick(url)
+    {
+      window.open(url, '_blank');
+    }
+
     return (
       div({ className: 'c-text-white mt-3' }, [
         h5(null, 'Torneios'),
         hr(null, null),
         mapTo('div', null, this.props.tournaments,
-          (tournament) => div({ key: tournament.id, className: 'mb-3 p-3 c-bg-primary-dark', style: { borderRadius: '5px' } }, [
-            h6(null, tournament.name),
-            div({ className: 'c-text-grey-500' }, tournament.description),
-          ])
+          (tournament) => (
+            div({
+              key: tournament.id,
+              className: 'mb-3 p-3 c-bg-primary-dark',
+              style: { borderRadius: '5px', cursor: 'pointer' },
+              events: { click: () => onClick(tournament.url) } },
+              [
+                h6(null, tournament.name),
+                div({ className: 'c-text-grey-500' }, tournament.description),
+              ]
+            )
+          )
         )
       ])
     );

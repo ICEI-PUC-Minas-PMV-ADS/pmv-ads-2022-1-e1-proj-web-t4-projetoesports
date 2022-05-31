@@ -9,13 +9,17 @@ import { VirtualElement, VirtualElementMap } from './template.js';
 export const component    = (_component, ...args) => {
   if (typeof _component === 'function')
   {
-    return new _component(...args);
+    const obj = new _component(...args);
+    obj.onInitialize?.();
+    return obj;
   }
   else if (typeof _component === 'string')
   {
     if (currentController.__components[_component])
     {
-      return new currentController.__components[_component](...args);
+      const obj = new new currentController.__components[_component](...args);
+      obj.onInitialize?.();
+      return obj;
     }
   }
   throw new Error('Unexpected component');

@@ -3,6 +3,7 @@ import { Navbar } from '../components/navbar.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
+import { PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
  * BaseController
@@ -14,16 +15,10 @@ export class BaseController extends Controller
   constructor()
   {
     super();
-
+    
+    this.userRepository = new UserRepository();
     this.loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
     this.criarPerfilModal = new bootstrap.Modal(document.getElementById('criarPerfilModal'));
-  }
-
-  onInitialize()
-  {
-    this.setState({
-      userInfo: this.appState.load(USER_INFO),
-    });
   }
 
   actions()
@@ -53,16 +48,18 @@ export class BaseController extends Controller
 
           case 'perfil':
             {
-              window.location.href = 'perfil.html';
+              redirectTo(PROFILE_ROUTE);
             }
             break;
 
           case 'sair':
             {
-              if (this.state.userInfo)
+              if (this.appState.load(USER_INFO))
               {
                 this.appState.store(USER_INFO, null);
-                this.setState({ userInfo: null });
+
+                // Recarrega a pagina.
+                window.location.reload();
               }
             }
             break;
@@ -81,7 +78,7 @@ export class BaseController extends Controller
         const password = form['login_password'].value.trim();
 
         // Verifica se todos os campos foram prenchidos.
-        if (!email.length() || !password.length())
+        if (!email.length || !password.length)
         {
           alert('Todos os campos devem ser preenchidos');
           return;
@@ -104,7 +101,6 @@ export class BaseController extends Controller
         if (user)
         {
           this.appState.store(USER_INFO, user);
-          this.setState({ userInfo: user });
         }
         else
         {
@@ -113,6 +109,9 @@ export class BaseController extends Controller
 
         // Esconde o formulario
         this.loginModal.toggle();
+
+        // Recarrega a pagina.
+        window.location.reload();
       },
       onSubmitRegister: function(event, form)
       {
@@ -124,7 +123,7 @@ export class BaseController extends Controller
         const re_password = form['register_re_password'].value.trim();
 
         // Verifica se todos os campos foram prenchidos.
-        if (!username.length() || !email.length() || !password.length())
+        if (!username.length || !email.length || !password.length)
         {
           alert('Todos os campos devem ser preenchidos');
           return;
