@@ -121,18 +121,19 @@ export class CreateVacancyPage extends Component
         this.state.selected_role?.id
       ));
 
-      console.log({vacancy});
-
       if (confirm('Você deseja notificar os jogadores que possam se interessar pela vaga?'))
       {
+        // Filtra os jogadores que se enquadrem na função e tem interesse em receber notificações.
         const match_players = this.userRepository
           .getAll()
           .filter(
             (user) => (
-              user.game_roles.includes(this.state.selected_role.id) && user.receive_new_vacancies_notification
+              user.game_roles.includes(this.state.selected_role.id) &&
+              user.receive_new_vacancies_notification
             )
           );
 
+        // Emite notificações aos jogadores filtrados.
         match_players.forEach((player) => {
           sendNotificationWithRedirect(
             'Nova vaga',
