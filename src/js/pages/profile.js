@@ -1,6 +1,10 @@
 import { Component } from "../framework/component.js";
 import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo } from '../framework/elements.js';
+import { USER_INFO } from "../framework/state.js";
 import { Switch } from '../framework/std-components.js';
+
+import { UserRepository } from '../repositories/user_repository.js';
+import { HOME_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
  * Constantes
@@ -25,13 +29,13 @@ const OPTION_ALTERAR_PERFIL    = 'alterar perfil';
 const OPTION_DELETAR_PERFIL    = 'deletar perfil';
 
 /***
- * PerfilPage
+ * ProfilePage
  * Component responsavel por renderizar o carrocel de noticias.
  * Props:
  *    news: Recebe o array com os objetos que representam a noticia.
  */
 
-export class PerfilPage extends Component
+export class ProfilePage extends Component
 {
   constructor(props)
   {
@@ -43,6 +47,8 @@ export class PerfilPage extends Component
       contextMenu: false,
     };
 
+    this.userRepository = new UserRepository();
+
     this.renderSobreSection              = this.renderSobreSection?.bind(this);
     this.renderEstatisticaSection        = this.renderEstatisticaSection?.bind(this);
     this.renderFuncoesSection            = this.renderFuncoesSection?.bind(this);
@@ -50,13 +56,47 @@ export class PerfilPage extends Component
     this.renderSobreSectionObjetivo      = this.renderSobreSectionObjetivo?.bind(this);
     this.renderSobreSectionMinhasEquipes = this.renderSobreSectionMinhasEquipes?.bind(this);
     this.renderSobreSectionContato       = this.renderSobreSectionContato?.bind(this);
+
+    this.user = (
+      this.ctrl.params?.id
+        ? this.userRepository.get(this.ctrl.params?.id)
+        : this.ctrl.appState.load(USER_INFO)
+    );
   }
+
+  /***
+   * onInitialize
+   */
+
+  onInitialize()
+  {
+    if (!this.user)
+    {
+      redirectTo(HOME_ROUTE);
+    }
+  }
+
+  /***
+   * onDidUpdate
+   */
+
+  onDidUpdate()
+  {
+    if (!this.user)
+    {
+      redirectTo(HOME_ROUTE);
+    }
+  }
+
+  /***
+   * render
+   */
 
   render()
   {
     const { contextMenu, section } = this.state;
 
-    const img_url = this.props.userInfo?.img_url || PROFILE_IMG;
+    const img_url = this.user?.img_url || PROFILE_IMG;
 
     const section_components = {};
 
@@ -135,7 +175,7 @@ export class PerfilPage extends Component
                 
                 div({ className: "d-flex align-items-end" },
                   // Nome do jogador.
-                  h4({ className: "m-0", style: { color: 'white' } }, this.props.userInfo?.name)
+                  h4({ className: "m-0", style: { color: 'white' } }, this.user?.name)
                 )
               ])
             ),
@@ -294,7 +334,7 @@ export class PerfilPage extends Component
 
   renderEstatisticaSection()
   {
-    const game_statistics = this.props.userInfo?.game_statistics || [];
+    const game_statistics = this.user?.game_statistics || [];
 
     return (
       div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
@@ -302,8 +342,8 @@ export class PerfilPage extends Component
           div({ className: "d-flex p-3 mb-5", style: { backgroundColor: '#261423', minHeight: '30rem', borderRadius: '5px' } }, [
             div({ className: 'flex-fill', style: { color: 'white' } }, [
               h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Estatísticas'),
-              mapTo('div', null, game_statistics, (statistic) => (
-                p(null, statistic)
+              mapTo('div', null, game_statistics, (statistic, index) => (
+                p({ key: index }, statistic)
               )),
             ])
           ])
@@ -319,7 +359,7 @@ export class PerfilPage extends Component
 
   renderFuncoesSection()
   {
-    const game_roles = this.props.userInfo?.game_roles || [];
+    const game_roles = this.user?.game_roles || [];
 
     return (
       div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
@@ -327,8 +367,8 @@ export class PerfilPage extends Component
           div({ className: "d-flex p-3 mb-5", style: { backgroundColor: '#261423', minHeight: '30rem', borderRadius: '5px' } }, [
             div({ className: 'flex-fill', style: { color: 'white' } }, [
               h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Funções'),
-              mapTo('div', null, game_roles, (game_role) => (
-                p(null, game_role)
+              mapTo('div', null, game_roles, (game_role, index) => (
+                p({ key: index }, game_role)
               )),
             ])
           ])
@@ -345,7 +385,7 @@ export class PerfilPage extends Component
   renderSobreSectionObjetivo()
   {
     return (
-      p(null, this.props.userInfo?.objective)
+      p(null, this.user?.objective)
     );
   }
 
@@ -368,12 +408,12 @@ export class PerfilPage extends Component
 
   renderSobreSectionContato()
   {
-    const contatos = this.props.userInfo?.contact_info || [];
+    const contatos = this.user?.contact_info || [];
 
     return (
       div(null, 
-        mapTo('ul', null, contatos, (contato) => (
-          li(null, contato)
+        mapTo('ul', null, contatos, (contato, index) => (
+          li({ key: index }, contato)
         ))
       )
     );

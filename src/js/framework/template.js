@@ -6,6 +6,7 @@ import { Component } from './component.js';
  */
 
  const PROPS_ATTR_TABLE = {
+  id: 'id',
   className: 'className',
   style: 'style',
 };
@@ -247,6 +248,8 @@ function updateElementProps(velem, elem, props)
         setupAttrWithProp(elem, props, propKey, PROPS_ATTR_TABLE[propKey]);
         return;
       }
+      
+      elem.setAttribute(propKey.split(/(?=[A-Z])/).join('-').toLowerCase(), props[propKey]);
     });
   }
   return props;
@@ -332,6 +335,8 @@ export function renderElementTree(elem, newElem)
     // Processa: VirtualElementMap
     if (isVirtualElementMap(elem))
     {
+      let index = 0, isFirst = true;
+
       if (!elem.__element)
       {
         elem.__element = document.createElement(elem.__tag);
@@ -355,13 +360,12 @@ export function renderElementTree(elem, newElem)
         throw new Error("VirtualElementMap: 'template' must be 'function'");
       }
 
-      let index = 0, isFirst = true;
-
       // Gera a arvore de filho com base no template.
       elem.__children.forEach((child) => {
-        const renderizedChild = elem.__template(child, index++, isFirst);
+        const renderizedChild = elem.__template(child, index, isFirst);
 
         // Atualiza o flag que indica ser o primeiro filho.
+        index += 1;
         isFirst = false;
 
         // Valida elemento gerado pelo template.
@@ -374,7 +378,7 @@ export function renderElementTree(elem, newElem)
         }
 
         // Valida se o elemento gerado pelo template possui key
-        if (!renderizedChild.__props['key']) {
+        if (renderizedChild.__props['key'] === undefined) {
           throw new Error("VirtualElementMap: 'children' must 'key' props");
         }
 
@@ -405,16 +409,22 @@ export function renderElementTree(elem, newElem)
     if (isComponent(elem))
     {
       elem.__children = elem.render();
-
+      
       // Valida elemento gerado pelo template.
-      if (
-        elem.__children instanceof VirtualElement === false &&
-        elem.__children instanceof Component === false
-      ) {
-        throw new Error("Component: 'render' must return 'VirtualElement' or 'Component'");
+      if (elem.__children)
+      {
+        if (
+          elem.__children instanceof VirtualElement === false &&
+          elem.__children instanceof Component === false
+        ) {
+          throw new Error("Component: 'render' must return 'VirtualElement' or 'Component'");
+        }
+        elem.__element = renderElementTree(elem.__children);
       }
-
-      elem.__element = renderElementTree(elem.__children);
+      else
+      {
+        elem.__element = document.createElement('div');
+      }
       return elem.__element;
     }
   }
@@ -555,7 +565,9 @@ export function renderElementTree(elem, newElem)
       // Verifica se ha alterações no children.
       if (!compareValues(elem.__children, newElem.__children))
       {
-        // Atualiza os filhos.
+        let isFirst = true, index = 0;
+
+        // Atualiza os filhos.        
         elem.__children = newElem.__children;
 
         // Array com os elementos já processados.
@@ -563,12 +575,17 @@ export function renderElementTree(elem, newElem)
 
         // Gera a arvore de filho com base no template.
         newElem.__children.forEach((child) => {
-          const renderizedChild = newElem.__template(child);
+          const renderizedChild = newElem.__template(child, index, isFirst);
 
+          // Atualiza parametro auxiliares.
+          isFirst = false;
+          index++;
+
+          // Prepara variavel com a chave do element.
           let key = renderizedChild.__props['key'];
 
           // Valida se o elemento gerado pelo template possui key
-          if (!key) {
+          if (key === undefined) {
             throw new Error("VirtualElementMap: 'template' must 'key' props");
           }
 

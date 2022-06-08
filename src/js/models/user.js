@@ -14,6 +14,7 @@ export class User {
     this.participated_teams = null;
     this.contact_info = null;
     this.game_statistics = null;
+    this.receive_new_vacancies_notification = false;
     this.game_roles = null;
   }
 }

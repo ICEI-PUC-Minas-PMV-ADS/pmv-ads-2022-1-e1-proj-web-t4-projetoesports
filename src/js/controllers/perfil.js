@@ -1,10 +1,12 @@
 import { Controller } from '../framework/controller.js';
 import { UserRepository } from '../repositories/user_repository.js';
 import { Navbar } from '../components/navbar.js';
-import { PerfilPage, SECTION_DEFAULT } from '../pages/perfil.js';
+import { Sidebar } from '../components/sidebar.js';
+import { ProfilePage, SECTION_DEFAULT } from '../pages/profile.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
+import { HOME_ROUTE, MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
  * PerfilController
@@ -28,28 +30,6 @@ export class PerfilController extends Controller
   }
 
   /***
-   * onInitialize
-   * Este metodo e chamado quando o controlador esta iniciando, antes de
-   * qualquer componente ser adicionado ao DOM. Nele é possivel carregar
-   * os dados no sistema para alimentar os componentes.
-   */
-
-  onInitialize()
-  {
-    // Se o usuário não esta logado, redireciona para a home.
-    if (!this.appState.load(USER_INFO))
-    {
-      //window.location.href = 'index.html';
-      //return;
-    }
-
-    this.setState({
-      userInfo: this.appState.load(USER_INFO),
-      section: SECTION_DEFAULT,
-    });
-  }
-
-  /***
    * actions
    * Este metodo retorna um objeto que é anexado ao "window"(o objeto global da pagina).
    * Neste objeto retornado são incluidos os metodos que serão "passados" aos eventos dos elementos
@@ -69,30 +49,26 @@ export class PerfilController extends Controller
             }
             break;
 
-          case 'notificações':
-            {
-              // TODO: Implementar recurso de notificações.
-            }
-            break;
-
           case 'minha equipe':
             {
-              // TODO: Redirecionar para minha equipe.
+              redirectTo(MY_TEAMS_ROUTE);
             }
             break;
 
           case 'perfil':
             {
-              window.location.href = 'perfil.html';
+              redirectTo(PROFILE_ROUTE);
             }
             break;
 
           case 'sair':
             {
-              if (this.state.userInfo)
+              if (this.appState.load(USER_INFO))
               {
                 this.appState.store(USER_INFO, null);
-                this.setState({ userInfo: null });
+
+                // Recarrega a pagina.
+                window.location.reload();
               }
             }
             break;
@@ -111,7 +87,7 @@ export class PerfilController extends Controller
         const password = form['login_password'].value.trim();
 
         // Verifica se todos os campos foram prenchidos.
-        if (!email.length() || !password.length())
+        if (!email.length || !password.length)
         {
           alert('Todos os campos devem ser preenchidos');
           return;
@@ -134,7 +110,6 @@ export class PerfilController extends Controller
         if (user)
         {
           this.appState.store(USER_INFO, user);
-          this.setState({ userInfo: user });
         }
         else
         {
@@ -143,6 +118,9 @@ export class PerfilController extends Controller
 
         // Esconde o formulario
         this.loginModal.toggle();
+
+        // Recarrega a pagina.
+        window.location.reload();
       },
       onSubmitRegister: function(event, form)
       {
@@ -154,7 +132,7 @@ export class PerfilController extends Controller
         const re_password = form['register_re_password'].value.trim();
 
         // Verifica se todos os campos foram prenchidos.
-        if (!username.length() || !email.length() || !password.length())
+        if (!username.length || !email.length || !password.length)
         {
           alert('Todos os campos devem ser preenchidos');
           return;
@@ -217,6 +195,7 @@ export class PerfilController extends Controller
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
-    this.registerComponent('perfil-page', PerfilPage);
+    this.registerComponent('sidebar', Sidebar);
+    this.registerComponent('profile-page', ProfilePage);
   }
 }
