@@ -336,59 +336,66 @@ export class VacancyPage extends Component
         ]),
 
         // Container com os candidatos a vaga.
-        div({ className: 'my-4' }, [
-          h5(null, 'Canditados'),
-          hr(),
-          mapTo('div', { className: 'd-flex flex-wrap justify-content-center c-bg-primary-dark py-2 px-2' }, this.state.candidates,
-            (candidateId) => {
-              const candidate = this.userRepository.get(candidateId);
+        component(If, this.state?.candidates?.length > 0, 
 
-              if (!candidate)
-              {
-                alert('Erro interno!');
-                redirectTo(HOME_ROUTE);
-                return null;
-              }
+          // Exibe o container com os candidatos.
+          div({ className: 'my-4' }, [
+            h5(null, 'Canditados'),
+            hr(),
+            mapTo('div', { className: 'd-flex flex-wrap justify-content-center c-bg-primary-dark py-2 px-2' }, this.state.candidates,
+              (candidateId) => {
+                const candidate = this.userRepository.get(candidateId);
 
-              return (
-                div({ key: candidateId, className: 'py-2 px-2' }, [
-                  div({ className: 'p-3 c-bg-secondary', style: { borderRadius: '5px' } }, [
-                    img({ src: candidate.img_url, style: { width: '10rem', height: '10rem' } }),
-                    h5({ className: 'text-center c-text-black' }, candidate.name),
-                  ]),
+                if (!candidate)
+                {
+                  alert('Erro interno!');
+                  redirectTo(HOME_ROUTE);
+                  return null;
+                }
 
-                  component(If, pending_invite_from === candidateId,
+                return (
+                  div({ key: candidateId, className: 'py-2 px-2' }, [
+                    div({ className: 'p-3 c-bg-secondary', style: { borderRadius: '5px' } }, [
+                      img({ src: candidate.img_url, style: { width: '10rem', height: '10rem' } }),
+                      h5({ className: 'text-center c-text-black' }, candidate.name),
+                    ]),
 
-                    // Remover convite.
-                    button(
-                      {
-                        className: 'btn c-bg-primary c-text-white w-100 mt-3',
-                        events: { click: () => { this.onUninviteCandidate(candidateId) } }
-                      },
-                      'Desconvidar'
-                    ),
+                    component(If, pending_invite_from === candidateId,
 
-                    // Enviar convite.
-                    button(
-                      {
-                        className: `btn c-bg-primary c-text-white w-100 mt-3 ${pending_invite_from ? 'disabled' : ''}`,
-                        events: {
-                          click: () => {
-                            if (!pending_invite_from)
-                            {
-                              this.onInviteCandidate(candidateId);
+                      // Remover convite.
+                      button(
+                        {
+                          className: 'btn c-bg-primary c-text-white w-100 mt-3',
+                          events: { click: () => { this.onUninviteCandidate(candidateId) } }
+                        },
+                        'Desconvidar'
+                      ),
+
+                      // Enviar convite.
+                      button(
+                        {
+                          className: `btn c-bg-primary c-text-white w-100 mt-3 ${pending_invite_from ? 'disabled' : ''}`,
+                          events: {
+                            click: () => {
+                              if (!pending_invite_from)
+                              {
+                                this.onInviteCandidate(candidateId);
+                              }
                             }
                           }
-                        }
-                      },
-                      'Convidar'
+                        },
+                        'Convidar'
+                      ),
                     ),
-                  ),
-                ])
-              );
-            }
-          ),
-        ])
+                  ])
+                );
+              }
+            ),
+          ]),
+
+          // Exibe um div vazio quando não tem candidatos.
+          div()
+        )
       ])
     ]);
   }
