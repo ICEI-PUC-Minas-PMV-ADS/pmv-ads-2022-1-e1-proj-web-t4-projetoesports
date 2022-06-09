@@ -264,5 +264,138 @@ A tela de Informações sobre Equipe permitirá que o usuário se atualize sobre
 }
 ```
 
+## Tela de vaga
 
+A tela de vaga permitirá a todos os usuários do site visualizar informações sobre uma vaga, ao jogador se inscrever na vaga e ao adminitrador convidar um jogador a fazer parte do time.
 
+<img src="img/evidencias_testes/vitor/ct_20_001.jpg" />
+
+### Requisitos atendidos
+
+- RF-10
+- RF-23
+- RF-24
+- RF-25
+- RF-26
+- RF-27
+- RF-28
+
+### Artefatos da funcionalidade
+
+- vaga.html
+- js/controllers/vaga.js
+
+### Estrutura de Dados
+
+```
+{
+  "user": {
+    "id": 1,
+    "name": "John",
+    "email": "john@email.com",
+    "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+    "img_url": "imgs/RC.png",
+    "objective": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.",
+    "participated_teams": [],
+    "contact_info": ["john@email.com"],
+    "game_statistics": ["https://oce.op.gg/summoners/br/john_cabure"],
+    "game_roles": [],
+    "receive_new_vacancies_notification": true
+  },
+  "team":{
+    "id":1,
+    "name":"Team Coffee",
+    "email":"team_coffee_org@email.com",
+    "owner_id":2,
+    "game_id":1,
+    "icon_url":"imgs/team_icons/team_coffee.png",
+    "objective":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.",
+    "players":[4,5,3],
+    "active_players":[4],
+    "reserves":[5,3],
+    "vacancies":[1,2],
+    "contacts":["team_coffee_org@email.com","@team_coffee_org"]    
+  },
+  "role":{
+    "id":1,
+    "name":"Top lane",
+    "game_id":1,
+    "icon_url":"imgs/role_lane_icons/TOP.png"
+  },
+  "vacancy": {    
+    "id": 3,
+    "description": "skdajd askdj askj ksafjklsaj fasdf kjl",
+    "team_id": 1,
+    "role_id": 4,
+    "candidates": [],
+    "finalized": false,
+    "pending_invite_from": null,
+    "created_at": 1654039213509
+  }
+}
+```
+
+## Tela para criar vaga
+
+A tela criar vaga permitirá que o adminitrador de um time, crie uma vaga para preencher uma determinada função no time e notifique os jogadores interessados.
+
+<img src="img/evidencias_testes/vitor/ct_21_001.jpg" />
+
+### Requisitos atendidos
+
+- RF-21
+
+### Artefatos da funcionalidade
+
+- criar_vaga.html
+- js/controllers/criar_vaga.js
+
+### Estrutura de Dados
+
+```
+{
+  "user": {
+    "id": 1,
+    "name": "John",
+    "email": "john@email.com",
+    "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+    "img_url": "imgs/RC.png",
+    "objective": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.",
+    "participated_teams": [],
+    "contact_info": ["john@email.com"],
+    "game_statistics": ["https://oce.op.gg/summoners/br/john_cabure"],
+    "game_roles": [],
+    "receive_new_vacancies_notification": true
+  },
+  "team":{
+    "id":1,
+    "name":"Team Coffee",
+    "email":"team_coffee_org@email.com",
+    "owner_id":2,
+    "game_id":1,
+    "icon_url":"imgs/team_icons/team_coffee.png",
+    "objective":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.",
+    "players":[4,5,3],
+    "active_players":[4],
+    "reserves":[5,3],
+    "vacancies":[1,2],
+    "contacts":["team_coffee_org@email.com","@team_coffee_org"]    
+  },
+  "role":{
+    "id":1,
+    "name":"Top lane",
+    "game_id":1,
+    "icon_url":"imgs/role_lane_icons/TOP.png"
+  },
+  "vacancy": {    
+    "id": 3,
+    "description": "skdajd askdj askj ksafjklsaj fasdf kjl",
+    "team_id": 1,
+    "role_id": 4,
+    "candidates": [],
+    "finalized": false,
+    "pending_invite_from": null,
+    "created_at": 1654039213509
+  }
+}
+```
