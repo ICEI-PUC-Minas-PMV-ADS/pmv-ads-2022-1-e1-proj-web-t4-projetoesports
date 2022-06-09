@@ -10,11 +10,11 @@ Os requisitos para realização dos testes de software são:
 
 Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 
-<center>Tabela de teste CT-01</center>
+Tabela de teste CT-01
 
-<center><img src="img/tabela_testes/ct-01.jpg" /></center>
+<img src="img/tabela_testes/ct-01.jpg" />
 
-<center>Evidencias de teste</center>
+Evidencias de teste
 
-<center><img src="img/evidencias_testes/ct_01_001.jpg" /></center>
-<center><img src="img/evidencias_testes/ct_01_002.jpg" /></center>
+<img src="img/evidencias_testes/ct_01_001.jpg" />
+<img src="img/evidencias_testes/ct_01_002.jpg" />
