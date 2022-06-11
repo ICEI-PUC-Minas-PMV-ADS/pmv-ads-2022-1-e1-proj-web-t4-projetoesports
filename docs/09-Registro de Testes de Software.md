@@ -52,6 +52,26 @@ Este teste verifica se a lista de torneios está sendo devidamente exibida.
 
 <img src="img/evidencias_testes/vitor/ct_06_001.jpg" />
 
+## CT-07
+
+Este teste verifica se a autenticação está sendo feita de forma correta. Primeiramente deve se preencher os campos com dados de um usuário devidamente registrado.
+
+<img src="img/evidencias_testes/vitor/ct_07_001.jpg" />
+
+Após a confirmação o layout deverá mudar, exibindo novos icones relacionados a funções que o usuário poderá executar.
+
+<img src="img/evidencias_testes/vitor/ct_07_002.jpg" />
+
+## CT-08
+
+Este teste consiste da tentativa de autenticação com um e-mail que não está cadastrado.
+
+<img src="img/evidencias_testes/vitor/ct_08_001.jpg" />
+
+Após a confirmação a página deverá exibir uma mensagem de erro.
+
+<img src="img/evidencias_testes/vitor/ct_08_002.jpg" />
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
