@@ -142,6 +142,41 @@ Este teste consiste na exclusão de uma vaga listada na página home.
 <img src="img/evidencias_testes/vitor/ct_16_001.jpg" />
 <img src="img/evidencias_testes/vitor/ct_16_002.jpg" />
 
+## CT-17
+
+Este teste consiste em convidar um jogador candidato a uma vaga.
+
+<img src="img/evidencias_testes/vitor/ct_17_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct_17_002.jpg" />
+
+Após a confirmação a interface da página, irá se atualizar.
+
+<img src="img/evidencias_testes/vitor/ct_17_003.jpg" />
+
+## CT-18
+
+Este teste consiste em desconvidar um jogador candidato a uma vaga.
+
+<img src="img/evidencias_testes/vitor/ct_18_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct_18_002.jpg" />
+<img src="img/evidencias_testes/vitor/ct_18_003.jpg" />
+
+## CT-19
+
+Este teste consiste no processo completo para um jogador ingressar em um time.
+
+<img src="img/evidencias_testes/vitor/ct_19_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct_19_002.jpg" />
+
+A emissão de um convite.
+
+<img src="img/evidencias_testes/vitor/ct_19_003.jpg" />
+<img src="img/evidencias_testes/vitor/ct_19_004.jpg" />
+
+E a notificação quando ele e aceito.
+
+<img src="img/evidencias_testes/vitor/ct_19_005.jpg" />
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
