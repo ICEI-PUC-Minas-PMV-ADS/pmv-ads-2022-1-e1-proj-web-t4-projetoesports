@@ -173,9 +173,37 @@ A emissão de um convite.
 <img src="img/evidencias_testes/vitor/ct_19_003.jpg" />
 <img src="img/evidencias_testes/vitor/ct_19_004.jpg" />
 
-E a notificação quando ele e aceito.
+E a notificação enviada quando ele é aceito.
 
 <img src="img/evidencias_testes/vitor/ct_19_005.jpg" />
+
+## CT-20
+
+Este teste consiste no processo completo para um jogador ingressar em um time, porem, o candidato rejeita o convite.
+
+<img src="img/evidencias_testes/vitor/ct_20_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct_20_002.jpg" />
+
+A emissão de um convite.
+
+<img src="img/evidencias_testes/vitor/ct_20_003.jpg" />
+<img src="img/evidencias_testes/vitor/ct_20_004.jpg" />
+
+E a notificação enviada quando ele é rejeitado.
+
+<img src="img/evidencias_testes/vitor/ct_20_005.jpg" />
+
+## CT-21
+
+Este teste consiste em todo o processo para um administrador de time registrar uma vaga.
+Primeiramente ele deve selecionar uma vaga, a descrição é opcional.
+
+<img src="img/evidencias_testes/vitor/ct_21_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct_21_002.jpg" />
+
+Após a conclusão, pode-se verificar o sistema notifica aqueles jogadores que atendam aos requisitos e tem interesse em ser notificados.
+
+<img src="img/evidencias_testes/vitor/ct_21_003.jpg" />
 
 ## Avaliação
 
