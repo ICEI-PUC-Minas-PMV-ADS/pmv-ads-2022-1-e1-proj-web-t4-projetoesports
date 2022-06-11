@@ -129,6 +129,19 @@ E após abrir a lista de notificações, será possivel visualizar a notificaç�
 
 <img src="img/evidencias_testes/vitor/ct_14_004.jpg" />
 
+## CT-15
+
+Neste teste o administrador do time ao acessar a página de uma determinada vaga, irá visualizar uma lista com os candidatos a ela.
+
+<img src="img/evidencias_testes/vitor/ct_15_001.jpg" />
+
+## CT-16
+
+Este teste consiste na exclusão de uma vaga listada na página home.
+
+<img src="img/evidencias_testes/vitor/ct_16_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct_16_002.jpg" />
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
