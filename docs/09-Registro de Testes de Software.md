@@ -114,6 +114,21 @@ Após confirmar remover sua candidatura a interface da página irá mudar para p
 
 <img src="img/evidencias_testes/vitor/ct_13_002.jpg" />
 
+## CT-14
+
+Neste teste um usuário cadastrado e já candidatado à vaga, irá receber uma notificação após o administrador do time excluir a vaga em questão.
+
+<img src="img/evidencias_testes/vitor/ct_14_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct_14_002.jpg" />
+
+Efetuando a autenticação com o usuário candidato à vaga, será possível ver o ícone de notificação. 
+
+<img src="img/evidencias_testes/vitor/ct_14_003.jpg" />
+
+E após abrir a lista de notificações, será possivel visualizar a notificação em questão.
+
+<img src="img/evidencias_testes/vitor/ct_14_004.jpg" />
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
