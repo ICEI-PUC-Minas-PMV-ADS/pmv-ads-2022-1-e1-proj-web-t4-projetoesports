@@ -72,6 +72,28 @@ Após a confirmação a página deverá exibir uma mensagem de erro.
 
 <img src="img/evidencias_testes/vitor/ct_08_002.jpg" />
 
+## CT-09
+
+Este teste consiste da tentativa de autenticação com um e-mail devidamente cadastrado, porém, usando uma senha invalida.
+
+<img src="img/evidencias_testes/vitor/ct_09_001.jpg" />
+
+Após a confirmação a página deverá exibir uma mensagem de erro.
+
+<img src="img/evidencias_testes/vitor/ct_09_002.jpg" />
+
+## CT-10
+
+Este teste consiste apenas no acesso a uma vaga devidamente cadastrada sem autenenticação.
+
+<img src="img/evidencias_testes/vitor/ct_10_001.jpg" />
+
+## CT-11
+
+Este teste consiste apenas no acesso a uma vaga devidamente cadastrada com um usuário autenticado.
+
+<img src="img/evidencias_testes/vitor/ct_11_001.jpg" />
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
