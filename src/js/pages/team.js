@@ -4,13 +4,17 @@ import { USER_INFO } from "../framework/state.js";
 import { Switch } from '../framework/std-components.js';
 
 import { UserRepository } from '../repositories/user_repository.js';
+import { TeamRepository } from '../repositories/team_repository.js';
+import { VacancyRepository } from '../repositories/vacancy_repository.js';
+import { RoleRepository } from '../repositories/role_repository.js';
+
 import { HOME_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
  * Constantes
  */
 
-const PROFILE_IMG              = 'imgs/RC.png';
+const PROFILE_IMG              = 'imgs/icone_time.png';
 
 const SECTION_SOBRE            = 'sobre';
 const SECTION_EQUIPE      = 'equipe';
@@ -46,7 +50,10 @@ export class TeamPage extends Component
       contextMenu: false,
     };
 
+    this.teamRepository = new TeamRepository();
     this.userRepository = new UserRepository();
+    this.vacancyRepository = new VacancyRepository();
+    this.roleRepository = new RoleRepository();
 
     this.renderSobreSection              = this.renderSobreSection?.bind(this);
     this.renderEquipeSection        = this.renderEquipeSection?.bind(this);
@@ -55,9 +62,9 @@ export class TeamPage extends Component
     this.renderSobreSectionInfos      = this.renderSobreSectionInfos?.bind(this);
     this.renderSobreSectionContato       = this.renderSobreSectionContato?.bind(this);
 
-    this.user = (
+    this.team = (
       this.ctrl.params?.id
-        ? this.userRepository.get(this.ctrl.params?.id)
+        ? this.teamRepository.get(this.ctrl.params?.id)
         : this.ctrl.appState.load(USER_INFO)
     );
   }
@@ -87,7 +94,7 @@ export class TeamPage extends Component
   {
     const { contextMenu, section } = this.state;
 
-    const img_url = this.user?.img_url || PROFILE_IMG;
+    const img_url = this.team?.img_url || PROFILE_IMG;
 
     const section_components = {};
 
@@ -166,7 +173,7 @@ export class TeamPage extends Component
                 
                 div({ className: "d-flex align-items-end" },
                   // Nome do jogador.
-                  h4({ className: "m-0", style: { color: 'white' } }, this.user?.name)
+                  h4({ className: "m-0", style: { color: 'white' } }, this.team?.name)
                 )
               ])
             ),
@@ -318,7 +325,7 @@ export class TeamPage extends Component
 
   renderEquipeSection()
   {
-    const game_statistics = this.user?.game_statistics || [];
+    const game_statistics = this.team?.game_statistics || [];
 
     return (
       div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
@@ -343,20 +350,13 @@ export class TeamPage extends Component
 
   renderVagasSection()
   {
-    const game_roles = this.user?.game_roles || [];
+    const vacancies = this.team?.vacancies || [];
 
     return (
-      div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
-        div({ className: "container mt-5" }, 
-          div({ className: "d-flex p-3 mb-5", style: { backgroundColor: '#261423', minHeight: '30rem', borderRadius: '5px' } }, [
-            div({ className: 'flex-fill', style: { color: 'white' } }, [
-              h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Vagas'),
-              mapTo('div', null, game_roles, (game_role, index) => (
-                p({ key: index }, game_role)
-              )),
-            ])
-          ])
-        )
+      div(null, 
+        mapTo('ul', null, vacancies, (vacancie, index) => (
+          li({ key: index }, vacancie)
+        ))
       )
     );
   }
@@ -369,7 +369,7 @@ export class TeamPage extends Component
   renderSobreSectionInfos()
   {
     return (
-      p(null, this.user?.objective)
+      p(null, this.team?.objective)
     );
   }
 
@@ -380,7 +380,7 @@ export class TeamPage extends Component
 
   renderSobreSectionContato()
   {
-    const contatos = this.user?.contact_info || [];
+    const contatos = this.team?.contacts || [];
 
     return (
       div(null, 
