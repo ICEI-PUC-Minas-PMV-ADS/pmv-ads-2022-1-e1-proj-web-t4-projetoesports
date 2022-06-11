@@ -94,6 +94,26 @@ Este teste consiste apenas no acesso a uma vaga devidamente cadastrada com um us
 
 <img src="img/evidencias_testes/vitor/ct_11_001.jpg" />
 
+## CT-12
+
+Neste teste um usuário cadastrado e que atenda aos requisitos da vaga, irá se candidatar a uma vaga.
+
+<img src="img/evidencias_testes/vitor/ct_12_001.jpg" />
+
+Após confirmar sua candidatura a interface da página irá mudar para possibilidar a remoção da candidatura.
+
+<img src="img/evidencias_testes/vitor/ct_12_002.jpg" />
+
+## CT-13
+
+Neste teste um usuário cadastrado e já candidatado a vaga, irá remover sua candidatura.
+
+<img src="img/evidencias_testes/vitor/ct_13_001.jpg" />
+
+Após confirmar remover sua candidatura a interface da página irá mudar para possibilidar uma nova candidatura.
+
+<img src="img/evidencias_testes/vitor/ct_13_002.jpg" />
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
