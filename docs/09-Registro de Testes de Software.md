@@ -201,7 +201,7 @@ Primeiramente ele deve selecionar uma vaga, a descrição é opcional.
 <img src="img/evidencias_testes/vitor/ct_21_001.jpg" />
 <img src="img/evidencias_testes/vitor/ct_21_002.jpg" />
 
-Após a conclusão, pode-se verificar o sistema notifica aqueles jogadores que atendam aos requisitos e tem interesse em ser notificados.
+Após a conclusão, pode-se verificar que o sistema notifica aqueles jogadores que atendam aos requisitos e tem interesse em ser notificados.
 
 <img src="img/evidencias_testes/vitor/ct_21_003.jpg" />
 
