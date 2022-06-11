@@ -2,18 +2,94 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
+Os requisitos para realização dos testes de software são:
 
-Enumere quais cenários de testes foram selecionados para teste. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
- 
-## Ferramentas de Testes (Opcional)
+  * Site publicado na Internet
+  * Navegador da Internet - Chrome, Firefox ou Edge
+  * Conectividade de Internet
 
-Comente sobre as ferramentas de testes utilizadas.
- 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
+
+Tabela de teste CT-01
+
+<img src="img/tabela_testes/vitor/ct-01.jpg" />
+
+Tabela de teste CT-02
+
+<img src="img/tabela_testes/vitor/ct-02.jpg" />
+
+Tabela de teste CT-03
+
+<img src="img/tabela_testes/vitor/ct-03.jpg" />
+
+Tabela de teste CT-04
+
+<img src="img/tabela_testes/vitor/ct-04.jpg" />
+
+Tabela de teste CT-05
+
+<img src="img/tabela_testes/vitor/ct-05.jpg" />
+
+Tabela de teste CT-06
+
+<img src="img/tabela_testes/vitor/ct-06.jpg" />
+
+Tabela de teste CT-07
+
+<img src="img/tabela_testes/vitor/ct-07.jpg" />
+
+Tabela de teste CT-08
+
+<img src="img/tabela_testes/vitor/ct-08.jpg" />
+
+Tabela de teste CT-09
+
+<img src="img/tabela_testes/vitor/ct-09.jpg" />
+
+Tabela de teste CT-10
+
+<img src="img/tabela_testes/vitor/ct-10.jpg" />
+
+Tabela de teste CT-11
+
+<img src="img/tabela_testes/vitor/ct-11.jpg" />
+
+Tabela de teste CT-12
+
+<img src="img/tabela_testes/vitor/ct-12.jpg" />
+
+Tabela de teste CT-13
+
+<img src="img/tabela_testes/vitor/ct-13.jpg" />
+
+Tabela de teste CT-14
+
+<img src="img/tabela_testes/vitor/ct-14.jpg" />
+
+Tabela de teste CT-15
+
+<img src="img/tabela_testes/vitor/ct-15.jpg" />
+
+Tabela de teste CT-16
+
+<img src="img/tabela_testes/vitor/ct-16.jpg" />
+
+Tabela de teste CT-17
+
+<img src="img/tabela_testes/vitor/ct-17.jpg" />
+
+Tabela de teste CT-18
+
+<img src="img/tabela_testes/vitor/ct-18.jpg" />
+
+Tabela de teste CT-19
+
+<img src="img/tabela_testes/vitor/ct-19.jpg" />
+
+Tabela de teste CT-20
+
+<img src="img/tabela_testes/vitor/ct-20.jpg" />
+
+Tabela de teste CT-21
+
+<img src="img/tabela_testes/vitor/ct-21.jpg" />
