@@ -34,6 +34,24 @@ Após a confirmação a página exibirá uma mensagem de erro.
 
 <img src="img/evidencias_testes/vitor/ct_03_002.jpg" />
 
+## CT-04
+
+Este teste verifica se o carrossel de notícias está sendo devidamente exibido.
+
+<img src="img/evidencias_testes/vitor/ct_04_001.jpg" />
+
+## CT-05
+
+Este teste verifica se a lista de vagas está sendo devidamente exibida.
+
+<img src="img/evidencias_testes/vitor/ct_05_001.jpg" />
+
+## CT-06
+
+Este teste verifica se a lista de torneios está sendo devidamente exibida.
+
+<img src="img/evidencias_testes/vitor/ct_06_001.jpg" />
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
