@@ -1,21 +1,25 @@
 
 .equipes {
   width: 692.75px;
-  border: 1px solid #000000;
+  border: 1px solid #FFFFFF;
   border-radius: 5px;
-  background: #949494;
+  background: #C5A769;
 }
+.logo-size {
+  padding: 0.2rem;
+  width: 7rem;
+}
+
 
 .formtitle {
   font-family: 'Carme';
   font-size: 60px;
   color: #FFFFFF;
-  background: #949494;
   
 }
 
 .formequipes {
-  background: #D5D5D5;
+  background: #261423;
 }
 
 .c-FormEquipe, .c-label {
@@ -23,15 +27,15 @@
   font-family: 'Carme';
   font-style: normal;
   font-size: 20px;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 input {
   box-sizing: border-box;
   width: 574.48px;
   height: 46.93px;
-  background: rgba(251, 251, 251, 0.35);
-  border: 1px solid #000000;
+  background: #591E55;
+  border: 1px solid #FFFFFF;
   border-radius: 5px;
 }
 
@@ -43,12 +47,8 @@ input {
 .c-button {
   width: 235.3px;
   height: 62.58px;
-  background: #949494;
+  background: #C5A769;
   border-radius: 5px;
   color: #FFFFFF !important;
 }
 
-.c-button {
-  position: absolute;
-  left:  1100.46px;;
-}
