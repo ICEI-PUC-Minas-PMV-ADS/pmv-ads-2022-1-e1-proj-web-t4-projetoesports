@@ -25,7 +25,7 @@ function rolesInitialize() {
   });
 
   roleRepository.create({
-    name: 'Jungle Caçador Cacador',
+    name: 'Jungle Caçador Cacador JG',
     game_id: 1,
     icon_url: 'imgs/imgs_vagas_equipes/icones_roles/icone_jungle_vagas.png',
   });
