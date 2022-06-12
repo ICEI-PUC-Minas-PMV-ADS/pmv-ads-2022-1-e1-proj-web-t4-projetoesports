@@ -248,7 +248,13 @@ Este teste consiste em editar a opção estatísticas.
 Este teste consiste em editar o nome do usuário.
 <img src= "img/registros_teste_ed/edit_um.png">
 
+## CT-39
+Este teste consiste em editar a foto do usuário.
+<img src= "img/registros_teste_ed/altfoto.png">
 
+## CT-40
+Este teste consiste na possibilidade do usuário deletar o próprio perfil.
+<img src= "img/registros_teste_ed/delete.png">
 
 
 
