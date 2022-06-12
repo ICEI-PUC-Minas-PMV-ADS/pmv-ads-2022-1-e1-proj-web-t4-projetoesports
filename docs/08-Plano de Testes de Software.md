@@ -93,3 +93,15 @@ Tabela de teste CT-20
 Tabela de teste CT-21
 
 <img src="img/tabela_testes/vitor/ct-21.jpg" />
+
+Tabela de teste CT-22
+
+Tabela de teste CT-23
+
+Tabela de teste CT-24
+
+Tabela de teste CT-25
+
+Tabela de teste CT-26
+
+Tabela de teste CT-27
