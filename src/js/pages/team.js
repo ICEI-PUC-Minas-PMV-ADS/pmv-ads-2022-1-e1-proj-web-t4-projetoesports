@@ -10,7 +10,7 @@ import { TeamRepository } from '../repositories/team_repository.js';
 import { VacancyRepository } from '../repositories/vacancy_repository.js';
 import { RoleRepository } from '../repositories/role_repository.js';
 
-import { VACANCY_ROUTE, redirectTo } from '../helpers/routes.js';
+import { VACANCY_ROUTE, CREATE_VACANCY_ROUTE, redirectTo } from '../helpers/routes.js';
 import { GameRepository } from "../repositories/game_repository.js";
 
 /***
@@ -30,9 +30,10 @@ const SOBRE_SECTION_CONTATO    = 'Contato';
 
 const SOBRE_SECTION_DEFAULT    = SOBRE_SECTION_INFOS;
 
+const OPTION_NOVA_VAGA         = 'nova vaga';
 const OPTION_ALTERAR_FOTO      = 'alterar foto';
-const OPTION_ALTERAR_PERFIL    = 'alterar perfil';
-const OPTION_DELETAR_PERFIL    = 'deletar perfil';
+const OPTION_ALTERAR_EQUIPE    = 'alterar equipe';
+const OPTION_DELETAR_EQUIPE    = 'deletar equipe';
 
 /***
  * TeamPage
@@ -87,6 +88,8 @@ export class TeamPage extends Component
     this.team?.reserves.forEach((playerId) => {
       this.reserves.push(this.userRepository.get(playerId));
     });
+
+    this.loggedUser = this.teamRepository.getLoggedUser();
   }
 
   /***
@@ -156,6 +159,74 @@ export class TeamPage extends Component
      * Evento disparado ao clicar em uma opção do menu de contexto.
      */
 
+     const onContextOptionClick = (evt, option) => {
+      evt.preventDefault();
+      switch (option)
+      {
+        case OPTION_NOVA_VAGA:
+          {
+            let id = this.team.id;
+            redirectTo(CREATE_VACANCY_ROUTE, { id })
+          }
+          break;
+
+        case OPTION_ALTERAR_FOTO:
+          {
+            document.getElementById('inputFile').click();;
+            const querySelector = document.querySelector("#inputFile");
+            querySelector.team = this.team;
+            querySelector.teamRepository = this.teamRepository;
+            querySelector.addEventListener("change", function() {
+              this.team.icon_url = "imgs/team_icons/" + this.files[0].name
+              this.teamRepository.update(this.team);
+              document.location.reload(true);
+            })
+          }
+          break;
+
+        case OPTION_ALTERAR_EQUIPE:
+          {
+            let index = 1;
+            
+            let teamName = prompt("Nome da equipe:", this.team.name);
+            this.team.name = (teamName) ? teamName : this.team.name;
+
+            let teamObjetivo = prompt("Objetivo", this.team.objective);
+            this.team.objective = (teamObjetivo) ? teamObjetivo : this.team.objective
+;
+            this.team.contacts?.forEach(contato => {
+              let teamContato =  prompt("Contato " + index + " :", contato)
+              this.team.contacts[index - 1] = (teamContato) ? teamContato : this.team.contacts[index - 1];
+              index += 1;
+            })
+
+            this.teamRepository.update(this.team);
+          }
+          break;
+
+        case OPTION_DELETAR_EQUIPE:
+          {
+            let usuarios = [];
+            this.team.players?.forEach(userId => {
+              usuarios.push(this.userRepository.get(userId));
+            })
+
+            usuarios.forEach(usuario => {
+              usuario.players.filter(teamId => teamId !== this.team.id);
+              
+              this.userRepository.update(usuario);
+            });
+
+            this.teamRepository.delete(this.team.id);
+            redirectTo(HOME_ROUTE);
+          }
+          break;
+      }
+
+      // Esconde menu de contexto.
+      this.setState({ contextMenu: !contextMenu });
+    };
+
     return (
       div(null, [
         div({ className: "c-linear-header" },
@@ -164,7 +235,7 @@ export class TeamPage extends Component
               div({ className: "d-flex", style: { position: 'absolute', bottom: '-2rem', left: '3rem' } }, [
                 div({ style: { backgroundColor: 'white', padding: '0.2rem', width: '7rem', borderRadius: '50%' } },
                   // Imagem de perfil do jogador.
-                  img({ className: "w-100", src: img_url, style: { borderRadius: '50%' } })
+                  img({ className: "w-100", src: this.team?.icon_url, style: { borderRadius: '50%' } })
                 ),
                 
                 div({ className: "d-flex align-items-end" },
@@ -176,12 +247,58 @@ export class TeamPage extends Component
 
             div({ className: 'clearfix', style: { borderBottom: '1px solid white' } },
               div({ className: 'float-end', style: { height: '3rem', position: 'relative' } },
+              component(If, this.loggedUser.id === this.team.owner_id,
                 div({ className: 'd-flex justify-content-end flex-column'}, [
+                  div({ className: 'd-flex justify-content-end align-items-end' },
+                    a({
+                      href: "#",
+                      style: { textDecoration: 'none', fontSize: '2rem', color: 'white'},
+                      events: { click: (evt) => onContextMenuClick(evt) }
+                    }, '...')
+                  ),
                   
+                  div({
+                    style: { display: contextMenu ? 'block' : 'none',
+                    width: '10rem', backgroundColor: 'white',
+                    borderRadius: '0 0px 5px 5px',
+                    padding: '0.5rem', zIndex: 10 } },[
+                      div(null,
+                        a({
+                          href: '#',
+                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_NOVA_VAGA) } },
+                          style: { textDecoration: 'none', color: 'black' },
+                        }, 'Nova Vaga')
+                      ),
+                      hr(),
+                      div(null,
+                        a({
+                          href: '#',
+                          carnica: '',
+                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_ALTERAR_FOTO) } },
+                          style: { textDecoration: 'none', color: 'black' },
+                        }, 'Alterar foto')
+                      ),
+                      div(null,
+                        a({
+                          href: '#',
+                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_ALTERAR_EQUIPE) } },
+                          style: { textDecoration: 'none', color: 'black' },
+                        }, 'Alterar equipe')
+                      ),
+                      hr(),
+                      div(null,
+                        a({
+                          href: '#',
+                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_DELETAR_EQUIPE) } },
+                          style: { textDecoration: 'none', color: 'black' },
+                        }, 'Deletar equipe')
+                      ),
+                  ])
                 ])
               )
+              )
             ),
-
+            
             div(null,
               nav({ className: "nav" }, [
                 a({
