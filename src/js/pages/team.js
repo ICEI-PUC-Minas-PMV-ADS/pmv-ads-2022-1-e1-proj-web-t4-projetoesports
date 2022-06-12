@@ -1,5 +1,7 @@
 import { Component } from "../framework/component.js";
-import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo } from '../framework/elements.js';
+import { div, component, h5, h4, h6, nav, a, p, hr, li, img, mapTo } from '../framework/elements.js';
+import { If } from '../framework/std-components.js';
+
 import { USER_INFO } from "../framework/state.js";
 import { Switch } from '../framework/std-components.js';
 
@@ -8,7 +10,8 @@ import { TeamRepository } from '../repositories/team_repository.js';
 import { VacancyRepository } from '../repositories/vacancy_repository.js';
 import { RoleRepository } from '../repositories/role_repository.js';
 
-import { HOME_ROUTE, redirectTo } from '../helpers/routes.js';
+import { VACANCY_ROUTE, redirectTo } from '../helpers/routes.js';
+import { GameRepository } from "../repositories/game_repository.js";
 
 /***
  * Constantes
@@ -54,19 +57,36 @@ export class TeamPage extends Component
     this.userRepository = new UserRepository();
     this.vacancyRepository = new VacancyRepository();
     this.roleRepository = new RoleRepository();
+    this.gameRepository = new GameRepository();
 
-    this.renderSobreSection              = this.renderSobreSection?.bind(this);
-    this.renderEquipeSection        = this.renderEquipeSection?.bind(this);
-    this.renderVagasSection            = this.renderVagasSection?.bind(this);
+    this.renderSobreSection = this.renderSobreSection?.bind(this);
+    this.renderEquipeSection = this.renderEquipeSection?.bind(this);
+    this.renderVagasSection = this.renderVagasSection?.bind(this);
 
-    this.renderSobreSectionInfos      = this.renderSobreSectionInfos?.bind(this);
-    this.renderSobreSectionContato       = this.renderSobreSectionContato?.bind(this);
+    this.renderSobreSectionInfos = this.renderSobreSectionInfos?.bind(this);
+    this.renderSobreSectionContato = this.renderSobreSectionContato?.bind(this);
 
     this.team = (
       this.ctrl.params?.id
         ? this.teamRepository.get(this.ctrl.params?.id)
         : this.ctrl.appState.load(USER_INFO)
     );
+
+    this.vacancies = [];
+    this.team?.vacancies.forEach((vacancyId) => {
+      this.vacancies.push(this.vacancyRepository.get(vacancyId));
+    });
+
+    this.active_players = [];
+    this.reserves = [];
+
+    this.team?.active_players.forEach((playerId) => {
+      this.active_players.push(this.userRepository.get(playerId));
+    });
+
+    this.team?.reserves.forEach((playerId) => {
+      this.reserves.push(this.userRepository.get(playerId));
+    });
   }
 
   /***
@@ -136,30 +156,6 @@ export class TeamPage extends Component
      * Evento disparado ao clicar em uma opção do menu de contexto.
      */
 
-    const onContextOptionClick = (evt, option) => {
-      evt.preventDefault();
-      switch (option)
-      {
-        case OPTION_ALTERAR_FOTO:
-          {}
-          break;
-
-        case OPTION_ALTERAR_PERFIL:
-          {}
-          break;
-
-        case OPTION_DELETAR_PERFIL:
-          {
-            if (1)
-            {}
-          }
-          break;
-      }
-
-      // Esconde menu de contexto.
-      this.setState({ contextMenu: !contextMenu });
-    };
-
     return (
       div(null, [
         div({ className: "c-linear-header" },
@@ -181,42 +177,7 @@ export class TeamPage extends Component
             div({ className: 'clearfix', style: { borderBottom: '1px solid white' } },
               div({ className: 'float-end', style: { height: '3rem', position: 'relative' } },
                 div({ className: 'd-flex justify-content-end flex-column'}, [
-                  div({ className: 'd-flex justify-content-end align-items-end' },
-                    a({
-                      href: "#",
-                      style: { textDecoration: 'none', fontSize: '2rem', color: 'white'},
-                      events: { click: (evt) => onContextMenuClick(evt) }
-                    }, '...')
-                  ),
                   
-                  div({
-                    style: { display: contextMenu ? 'block' : 'none',
-                    width: '10rem', backgroundColor: 'white',
-                    borderRadius: '0 0px 5px 5px',
-                    padding: '0.5rem', zIndex: 10 } },[
-                      div(null,
-                        a({
-                          href: '#',
-                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_ALTERAR_FOTO) } },
-                          style: { textDecoration: 'none', color: 'black' },
-                        }, 'Alterar foto')
-                      ),
-                      div(null,
-                        a({
-                          href: '#',
-                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_ALTERAR_PERFIL) } },
-                          style: { textDecoration: 'none', color: 'black' },
-                        }, 'Alterar perfil')
-                      ),
-                      hr(),
-                      div(null,
-                        a({
-                          href: '#',
-                          events: { click: (evt) => { onContextOptionClick(evt, OPTION_DELETAR_PERFIL) } },
-                          style: { textDecoration: 'none', color: 'black' },
-                        }, 'Deletar perfil')
-                      ),
-                  ])
                 ])
               )
             ),
@@ -320,22 +281,58 @@ export class TeamPage extends Component
 
   /***
    * renderEquipeSection
-   * Renderiza a seção sobre.
+   * Renderiza a seção sobre equipe.
    */
 
   renderEquipeSection()
   {
-    const game_statistics = this.team?.game_statistics || [];
-
     return (
       div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
         div({ className: "container mt-5" }, 
           div({ className: "d-flex p-3 mb-5", style: { backgroundColor: '#261423', minHeight: '30rem', borderRadius: '5px' } }, [
             div({ className: 'flex-fill', style: { color: 'white' } }, [
-              h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Equipe'),
-              mapTo('div', null, game_statistics, (statistic, index) => (
-                p({ key: index }, statistic)
-              )),
+              
+              component(If, this.active_players?.length > 0, 
+                div(null, [
+                  h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Time principal'),
+                  div({ className: 'div', style: {border: '2px', display: 'table', maxWidth: '240px', borderSpacing:'16px'}}, [
+                    mapTo('div', null, this.active_players,
+                      ({ id, name, img_url }) => {
+                        const { name: role_name } = this.roleRepository.get(this.active_players.find(x => x.id == id).id);
+
+                        return div({ key: id, className: 'c-bg-primary-dark p-4', style: { borderRadius: '5px', cursor: 'pointer', display: 'table-cell', backgroundColor: 'rgba(255, 255, 255, 0.1)'  }}, [  
+                          div(null, [
+                            img({ className: "w-100", src: img_url, style: { borderRadius: '50%' } },),
+                            h5({ className: 'text-center p-2' }, name)
+                          ]),
+                          h5({ className: 'text-center p-2' }, role_name)
+                        ])
+                      }
+                    )
+                  ])
+                ])
+              ),
+
+              component(If, this.reserves?.length > 0, 
+                div(null, [
+                  h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Reservas'),
+                  div({ className: 'div', style: {border: '2px', display: 'table', maxWidth: '240px', borderSpacing:'16px'}}, [
+                    mapTo('div', null, this.reserves,
+                      ({ id, name, img_url }) => {
+                        const { name: role_name } = this.roleRepository.get(this.reserves.find(x => x.id == id).id);
+
+                        return div({ key: id, className: 'c-bg-primary-dark p-4', style: { borderRadius: '5px', cursor: 'pointer', display: 'table-cell', backgroundColor: 'rgba(255, 255, 255, 0.1)'  }}, [  
+                          div(null, [
+                            img({ className: "w-100", src: img_url, style: { borderRadius: '50%' } },),
+                            h5({ className: 'text-center p-2' }, name)
+                          ]),
+                          h5({ className: 'text-center p-2' }, role_name)
+                        ])
+                      }
+                    )
+                  ])
+                ])
+              ),
             ])
           ])
         )
@@ -350,13 +347,39 @@ export class TeamPage extends Component
 
   renderVagasSection()
   {
-    const vacancies = this.team?.vacancies || [];
-
     return (
-      div(null, 
-        mapTo('ul', null, vacancies, (vacancie, index) => (
-          li({ key: index }, vacancie)
-        ))
+      div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
+        div({ className: "container mt-5" }, 
+          div({ className: "d-flex p-3 mb-5", style: { backgroundColor: '#261423', minHeight: '30rem', borderRadius: '5px' } }, [
+            div({ className: 'flex-fill', style: { color: 'white' } }, [
+              h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Vagas'),
+
+              component(If, this.vacancies?.length > 0, 
+                div({ className: 'div', style: {border: '2px', display: 'table', borderSpacing:'16px'}}, [
+                mapTo('div', null, this.vacancies,
+                  ({ id, role_id, team_id }) => {
+                    const { name: role_name, icon_url } = this.roleRepository.get(role_id);
+                    const { id: game_id } = this.teamRepository.get(team_id);
+                    const { name: game_name } = this.gameRepository.get(game_id);
+        
+                    return div({ key: id, className: 'c-bg-primary-dark p-4', style: { borderRadius: '5px', cursor: 'pointer', display: 'table-cell', backgroundColor: 'rgba(255, 255, 255, 0.1)'  },
+                    events: { click: () => { redirectTo(VACANCY_ROUTE, { id }) }} }, [
+                      div({ className: 'd-flex justify-content-between' }, [
+                        h6({ }, game_name),
+                      ]),            
+                      hr({ style: { margin: '0.25rem 0' } }),
+                      div(null, [
+                        img({ src: icon_url, className: 'w-100' }),
+                        h5({ className: 'text-center p-2' }, role_name)
+                      ]),
+                    ])
+                  }
+                )
+              ])
+            ),
+            ])
+          ])
+        )
       )
     );
   }
