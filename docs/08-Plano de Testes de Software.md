@@ -129,4 +129,3 @@ Tabela de teste CT-29
 Tabela de teste CT-30
 
 <img src="img/CT-vagasEquipes/CT-30.png" width="580" height="320">
-
