@@ -71,7 +71,7 @@ export class ProfilePage extends Component
     );
 
     this.userRoles = [];
-    this.user?.game_roles.forEach((roleId) => {
+    this.user?.game_roles?.forEach((roleId) => {
       this.userRoles.push(this.roleRepository.get(roleId));
     });
 
@@ -160,7 +160,22 @@ export class ProfilePage extends Component
       switch (option)
       {
         case OPTION_ALTERAR_FOTO:
-          {}
+          {
+            document.getElementById('inputFile').click();;
+            const querySelector = document.querySelector("#inputFile");
+            querySelector.user = this.user;
+            querySelector.userRepository = this.userRepository;
+            querySelector.addEventListener("change", function() {
+              this.user.img_url = "imgs/" + this.files[0].name
+              this.userRepository.update(this.user);
+            })
+            // const reader = new FileReader();
+            
+            // reader.addEventListener("load", () => {
+            //   con
+            // })
+            // console.log(reader.readAsDataURL(fileInput.files[0]));
+          }
           break;
 
         case OPTION_ALTERAR_PERFIL:
@@ -219,7 +234,7 @@ export class ProfilePage extends Component
               div({ className: "d-flex", style: { position: 'absolute', bottom: '-2rem', left: '3rem' } }, [
                 div({ style: { backgroundColor: 'white', padding: '0.2rem', width: '7rem', borderRadius: '50%' } },
                   // Imagem de perfil do jogador.
-                  img({ className: "w-100", src: img_url, style: { borderRadius: '50%' } })
+                  img({ className: "w-100", src: this.user?.img_url, style: { borderRadius: '50%' } })
                 ),
                 
                 div({ className: "d-flex align-items-end" },
@@ -246,10 +261,11 @@ export class ProfilePage extends Component
                     borderRadius: '0 0px 5px 5px',
                     padding: '0.5rem', zIndex: 10 } },[
                       div(null,
-                        button({
+                        a({
                           href: '#',
+                          carnica: '',
                           events: { click: (evt) => { onContextOptionClick(evt, OPTION_ALTERAR_FOTO) } },
-                          style: { textDecoration: 'none', color: 'black', border:'0px', padding: '0px', backgroundColor: 'white' },
+                          style: { textDecoration: 'none', color: 'black' },
                         }, 'Alterar foto')
                       ),
                       div(null,
@@ -307,7 +323,9 @@ export class ProfilePage extends Component
    * renderSobreSection
    * Renderiza a seção sobre.
    */
-
+  callrepository(){
+    console.log(this.user);
+  }
   renderSobreSection()
   {
     const { sobreSection } = this.state;
