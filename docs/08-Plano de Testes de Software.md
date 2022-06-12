@@ -116,5 +116,5 @@ Tabela de teste CT-26
 
 Tabela de teste CT-27
 
-<img src="img/CT_Eduardo/ct-27.png" width="580" height="320">
+<img src="img/CT_Eduardo/ct-277.png" width="580" height="320">
 
