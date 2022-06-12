@@ -218,28 +218,28 @@ Este teste consiste em analisar se as vagas estão sendo filtradas corretamente 
 ## CT-31 
 
 Este teste consiste em visualizar a opção objetivos e sua descrição.
-<img src= "img/registro_teste_ed/objetivo.png">
+<img src= "img/registros_teste_ed/objetivo.png">
 
 Este teste consiste em visualizar a opção contatos e sua descrição.
-<img src= "img/registro_teste_ed/contato.png">
+<img src= "img/registros_teste_ed/contato.png">
 
 Este teste consiste em visualizar a opção estatísticas e sua descrição.
-<img src= "img/registro_teste_ed/estatística.png">
+<img src= "img/registros_teste_ed/estatística.png">
 
 Este teste consiste em visualizar a opção objetivos e sua descrição.
-<img src= "img/registro_teste_ed/objetivo.png">
+<img src= "img/registros_teste_ed/objetivo.png">
 
 Este teste consiste em editar a opção objetivos.
-<img src= "img/registro_teste_ed/edit_tres.png">
+<img src= "img/registros_teste_ed/edit_tres.png">
 
 Este teste consiste em editar a opção contato.
-<img src= "img/registro_teste_ed/edit_quatro.png">
+<img src= "img/registros_teste_ed/edit_quatro.png">
      
 Este teste consiste em editar a opção estatísticas.
-<img src= "img/registro_teste_ed/edit_dois.png">
+<img src= "img/registros_teste_ed/edit_dois.png">
 
 Este teste consiste em editar o nome do usuário.
-<img src= "img/registro_teste_ed/edit_um.png"
+<img src= "img/registros_teste_ed/edit_um.png">
 
 
 
