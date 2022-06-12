@@ -79,6 +79,13 @@ export class ProfilePage extends Component
     this.user?.participated_teams.forEach((teamId) => {
       this.userTeams.push(this.teamRepository.get(teamId));
     });
+
+    let teams = this.teamRepository.getAll();
+    teams.forEach(team => {
+      if(team.owner_id == this.user.id){
+        this.userTeams.push(team);
+      }
+    })
   }
 
   /***
@@ -473,7 +480,7 @@ export class ProfilePage extends Component
     return (
       div({ className: "flex-fill", },
             div({ className: 'flex-fill' }, [
-              component(If, this.userTeams.length > 0, 
+              component(If, this.userTeams.length > 0,
                   div({ className: 'div', style: {border: '2px', display: 'table', maxWidth: '240px', borderSpacing:'16px'}}, [
                     mapTo('div', null, this.userTeams,
                       ({id, name, icon_url}) => {
