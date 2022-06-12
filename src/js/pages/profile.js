@@ -1,11 +1,11 @@
 import { Component } from "../framework/component.js";
-import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo } from '../framework/elements.js';
+import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo, input, button } from '../framework/elements.js';
 import { USER_INFO } from "../framework/state.js";
 import { Switch } from '../framework/std-components.js';
 import { If } from '../framework/std-components.js';
 
 import { UserRepository } from '../repositories/user_repository.js';
-import { HOME_ROUTE, VACANCY_ROUTE, redirectTo } from '../helpers/routes.js';
+import { HOME_ROUTE, TEAM_ROUTE, redirectTo } from '../helpers/routes.js';
 import { RoleRepository } from "../repositories/role_repository.js";
 import { GameRepository } from "../repositories/game_repository.js";
 import { TeamRepository } from "../repositories/team_repository.js";
@@ -164,13 +164,45 @@ export class ProfilePage extends Component
           break;
 
         case OPTION_ALTERAR_PERFIL:
-          {}
+          {
+            let index = 1;
+            
+            this.user.name = prompt("Nome de usuário:", this.user.name);
+
+            this.user.game_statistics?.forEach(estatistica =>{
+              this.user.game_statistics[index - 1] = prompt("Estatística " + index + " :", estatistica);
+              index += 1;
+            })
+            index = 1;
+
+            this.user.objective = prompt("Objetivo", this.user.objective)
+
+            this.user.contact_info?.forEach(contato => {
+              this.user.contact_info[index - 1] = prompt("Contato " + index + " :", contato)
+              index += 1;
+            })
+
+            this.userRepository.update(this.user);
+          }
           break;
 
         case OPTION_DELETAR_PERFIL:
           {
-            if (1)
-            {}
+            let equipes = [];
+            this.user.participated_teams?.forEach(equipeId => {
+              equipes.push(this.teamRepository.get(equipeId));
+            })
+
+            equipes.forEach(equipe => {
+              equipe.players.filter(playerId => playerId !== this.user.id);
+              equipe.active_players.filter(playerId => playerId !== this.user.id );
+              equipe.reserves.filter(playerId => playerId !== this.user.id );
+              
+              this.teamRepository.update(equipe);
+            });
+
+            this.userRepository.delete(this.user.id);
+            redirectTo(HOME_ROUTE);
           }
           break;
       }
@@ -214,10 +246,10 @@ export class ProfilePage extends Component
                     borderRadius: '0 0px 5px 5px',
                     padding: '0.5rem', zIndex: 10 } },[
                       div(null,
-                        a({
+                        button({
                           href: '#',
                           events: { click: (evt) => { onContextOptionClick(evt, OPTION_ALTERAR_FOTO) } },
-                          style: { textDecoration: 'none', color: 'black' },
+                          style: { textDecoration: 'none', color: 'black', border:'0px', padding: '0px', backgroundColor: 'white' },
                         }, 'Alterar foto')
                       ),
                       div(null,
@@ -434,7 +466,7 @@ export class ProfilePage extends Component
                     mapTo('div', null, this.userTeams,
                       ({id, name, icon_url}) => {
                         return div({ key: id, style: { borderRadius: '5px', cursor: 'pointer', display: 'table-cell'  }, 
-                        events: { click: () => { redirectTo(VACANCY_ROUTE, { id }) }}}, [  
+                        events: { click: () => { redirectTo(TEAM_ROUTE, { id }) }}}, [  
                           div(null, [
                             img({ className: "w-100", src: icon_url, style: { borderRadius: '50%' } },),
                           ]),
@@ -466,4 +498,11 @@ export class ProfilePage extends Component
       )
     );
   }  
+
+  abrirPerfilInput()
+  {
+   return (
+     input({type:'file', accept: 'image/png, image/jpeg'})
+   );
+  }
 }
