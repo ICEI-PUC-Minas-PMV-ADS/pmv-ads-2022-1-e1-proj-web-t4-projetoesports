@@ -2,9 +2,13 @@ import { Component } from "../framework/component.js";
 import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo } from '../framework/elements.js';
 import { USER_INFO } from "../framework/state.js";
 import { Switch } from '../framework/std-components.js';
+import { If } from '../framework/std-components.js';
 
 import { UserRepository } from '../repositories/user_repository.js';
-import { HOME_ROUTE, redirectTo } from '../helpers/routes.js';
+import { HOME_ROUTE, VACANCY_ROUTE, redirectTo } from '../helpers/routes.js';
+import { RoleRepository } from "../repositories/role_repository.js";
+import { GameRepository } from "../repositories/game_repository.js";
+import { TeamRepository } from "../repositories/team_repository.js";
 
 /***
  * Constantes
@@ -48,6 +52,9 @@ export class ProfilePage extends Component
     };
 
     this.userRepository = new UserRepository();
+    this.roleRepository = new RoleRepository();
+    this.gameRepository = new GameRepository();
+    this.teamRepository = new TeamRepository();
 
     this.renderSobreSection              = this.renderSobreSection?.bind(this);
     this.renderEstatisticaSection        = this.renderEstatisticaSection?.bind(this);
@@ -62,6 +69,16 @@ export class ProfilePage extends Component
         ? this.userRepository.get(this.ctrl.params?.id)
         : this.ctrl.appState.load(USER_INFO)
     );
+
+    this.userRoles = [];
+    this.user?.game_roles.forEach((roleId) => {
+      this.userRoles.push(this.roleRepository.get(roleId));
+    });
+
+    this.userTeams = [];
+    this.user?.participated_teams.forEach((teamId) => {
+      this.userTeams.push(this.teamRepository.get(teamId));
+    });
   }
 
   /***
@@ -359,17 +376,30 @@ export class ProfilePage extends Component
 
   renderFuncoesSection()
   {
-    const game_roles = this.user?.game_roles || [];
-
     return (
       div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
         div({ className: "container mt-5" }, 
           div({ className: "d-flex p-3 mb-5", style: { backgroundColor: '#261423', minHeight: '30rem', borderRadius: '5px' } }, [
             div({ className: 'flex-fill', style: { color: 'white' } }, [
               h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Funções'),
-              mapTo('div', null, game_roles, (game_role, index) => (
-                p({ key: index }, game_role)
-              )),
+              
+              component(If, this.userRoles.length > 0, 
+                  div({ className: 'div', style: {border: '2px', display: 'table', maxWidth: '240px', borderSpacing:'16px'}}, [
+                    mapTo('div', null, this.userRoles,
+                      ({id, name, icon_url, game_id}) => {
+                        const { name: game_name } = this.gameRepository.get(game_id);
+
+                        return div({ key: id, className: 'c-bg-primary-dark p-4', style: { borderRadius: '5px', cursor: 'pointer', display: 'table-cell', backgroundColor: 'rgba(255, 255, 255, 0.1)'  }}, [  
+                          div(null, [
+                            img({ className: "w-100", src: icon_url, style: { borderRadius: '50%' } },),
+                            h5({ className: 'text-center p-2' }, game_name)
+                          ]),
+                          h5({ className: 'text-center p-2' }, name)
+                        ])
+                      }
+                    )
+                  ])
+              )
             ])
           ])
         )
@@ -397,7 +427,25 @@ export class ProfilePage extends Component
   renderSobreSectionMinhasEquipes()
   {
     return (
-      div(null, 'Minhas equipes #')
+      div({ className: "flex-fill", },
+            div({ className: 'flex-fill' }, [
+              component(If, this.userTeams.length > 0, 
+                  div({ className: 'div', style: {border: '2px', display: 'table', maxWidth: '240px', borderSpacing:'16px'}}, [
+                    mapTo('div', null, this.userTeams,
+                      ({id, name, icon_url}) => {
+                        return div({ key: id, style: { borderRadius: '5px', cursor: 'pointer', display: 'table-cell'  }, 
+                        events: { click: () => { redirectTo(VACANCY_ROUTE, { id }) }}}, [  
+                          div(null, [
+                            img({ className: "w-100", src: icon_url, style: { borderRadius: '50%' } },),
+                          ]),
+                          h5({ className: 'text-center p-2' }, name)
+                        ])
+                      }
+                    )
+                  ])
+              )
+            ])
+      )
     );
   }
 
