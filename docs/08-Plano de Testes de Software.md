@@ -96,12 +96,25 @@ Tabela de teste CT-21
 
 Tabela de teste CT-22
 
+<img src="img/CT_Eduardo/ct-22.png" width="580" height="320">
+     
 Tabela de teste CT-23
+
+<img src="img/CT_Eduardo/ct-23.png" width="580" height="320">
 
 Tabela de teste CT-24
 
+<img src="img/CT_Eduardo/ct-24.png" width="580" height="320">
+
 Tabela de teste CT-25
+
+<img src="img/CT_Eduardo/ct-25.png" width="580" height="320">
 
 Tabela de teste CT-26
 
+<img src="img/CT_Eduardo/ct-26.png" width="580" height="320">
+
 Tabela de teste CT-27
+
+<img src="img/CT_Eduardo/ct-27.png" width="580" height="320">
+
