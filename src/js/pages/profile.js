@@ -169,12 +169,6 @@ export class ProfilePage extends Component
               this.user.img_url = "imgs/" + this.files[0].name
               this.userRepository.update(this.user);
             })
-            // const reader = new FileReader();
-            
-            // reader.addEventListener("load", () => {
-            //   con
-            // })
-            // console.log(reader.readAsDataURL(fileInput.files[0]));
           }
           break;
 
