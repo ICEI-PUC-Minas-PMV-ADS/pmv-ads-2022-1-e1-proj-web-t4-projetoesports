@@ -6,12 +6,11 @@
   background: #C5A769;
 }
 .logo-size {
-  width: 82.6px;
-  height: 82.6px;
-  left: 717.57px;
-  top: 303.77px;
-  background: #868686;
+  padding: 0.2rem;
+  width: 7rem;
+  
 }
+
 
 .formtitle {
   font-family: 'Carme';
