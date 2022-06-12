@@ -205,6 +205,16 @@ Após a conclusão, pode-se verificar que o sistema notifica aqueles jogadores q
 
 <img src="img/evidencias_testes/vitor/ct_21_003.jpg" />
 
+## CT-29 
+
+Este teste consiste em analisar se as vagas estão sendo exibidas de forma paginada e se sua navegação é eficiente e fluida.
+<img src= "img/CT-vagasEquipes/Evidencia CT-29.png">
+
+## CT-30
+
+Este teste consiste em analisar se as vagas estão sendo filtradas corretamente de acordo com o que o usuário digitar.
+<img src= "img/CT-vagasEquipes/Evidencia CT-30.png">
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
