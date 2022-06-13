@@ -137,3 +137,31 @@ Tabela de teste CT-31
 Tabela de teste CT-32
 
 <img src="img/CT_Jessica/ct-32.png" />
+
+Tabela de teste CT-33
+
+<img src="img/CT_Pedro/CT-33.png" />
+
+Tabela de teste CT-34
+
+<img src="img/CT_Pedro/CT-34.png" />
+
+Tabela de teste CT-35
+
+<img src="img/CT_Pedro/CT-35.png" />
+
+Tabela de teste CT-36
+
+<img src="img/CT_Pedro/CT-36.png" />
+
+Tabela de teste CT-37
+
+<img src="img/CT_Pedro/CT-37.png" />
+
+Tabela de teste CT-38
+
+<img src="img/CT_Pedro/CT-38.png" />
+
+Tabela de teste CT-39
+
+<img src="img/CT_Pedro/CT-39.png" />

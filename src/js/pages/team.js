@@ -10,7 +10,7 @@ import { TeamRepository } from '../repositories/team_repository.js';
 import { VacancyRepository } from '../repositories/vacancy_repository.js';
 import { RoleRepository } from '../repositories/role_repository.js';
 
-import { VACANCY_ROUTE, CREATE_VACANCY_ROUTE, redirectTo } from '../helpers/routes.js';
+import {HOME_ROUTE, VACANCY_ROUTE, CREATE_VACANCY_ROUTE, redirectTo } from '../helpers/routes.js';
 import { GameRepository } from "../repositories/game_repository.js";
 
 /***
@@ -213,7 +213,7 @@ export class TeamPage extends Component
               })
   
               usuarios.forEach(usuario => {
-                usuario.players.filter(teamId => teamId !== this.team.id);
+                usuario.participated_teams.filter(teamId => teamId !== this.team.id);
                 
                 this.userRepository.update(usuario);
               });

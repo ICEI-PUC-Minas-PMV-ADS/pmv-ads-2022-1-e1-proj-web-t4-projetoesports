@@ -257,6 +257,62 @@ Este teste mostra que a criação da equipe foi feita da maneira correta, aprese
 Neste teste o sistema apresenta um alerta informando que todos os campos devem ser preenchidos para que a equipe possa ser criada.
 <img src= "img/CT_Jessica/error-criar-equipe.png">
 
+## CT-33
+
+Neste teste é visualizado as informações de uma equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-sobre-infos.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-sobre-contato.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-equipe-principal.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-equipe-reserva.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-vagas.png">
+
+## CT-34
+
+Neste teste é validado que o administrador consegue ver e manter sua equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-login.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-perfil-equipes.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-visao-admin-equipe.png">
+
+## CT-35
+
+Neste teste o administrador acessa a tela de novas vagas a partir da equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png"> 
+<img src= "img/CT_Pedro/Evidencias/evidencia-criar-vaga.png">
+
+## CT-36
+
+Neste teste o administrador altera a imagem de perfil da equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png"> 
+<img src= "img/CT_Pedro/Evidencias/evidencias-upload-imagem.png"> 
+<img src= "img/CT_Pedro/Evidencias/evidencia-perfil-foto-alterada.png">
+
+## CT-37
+
+Neste teste o administrador altera informações sobre a equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-alteracao-equipe.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-equipe-alterada.png">
+
+## CT-38
+
+Neste teste o administrador tenta excluir a equipe, porém não confirma a ação
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-delecao-confirmacao.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-sobre-infos.png">
+
+## CT-39
+
+Neste teste o administrador tenta excluir a equipe e confirma a ação
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-delecao-confirmacao.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-redireciona-inicio.png">  
 
 
 ## Avaliação
