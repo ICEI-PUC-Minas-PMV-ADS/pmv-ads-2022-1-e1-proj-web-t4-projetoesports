@@ -206,19 +206,21 @@ export class TeamPage extends Component
 
         case OPTION_DELETAR_EQUIPE:
           {
-            let usuarios = [];
-            this.team.players?.forEach(userId => {
-              usuarios.push(this.userRepository.get(userId));
-            })
-
-            usuarios.forEach(usuario => {
-              usuario.players.filter(teamId => teamId !== this.team.id);
-              
-              this.userRepository.update(usuario);
-            });
-
-            this.teamRepository.delete(this.team.id);
-            redirectTo(HOME_ROUTE);
+            if(window.confirm("Você realmente deseja deletar a equipe?")){
+              let usuarios = [];
+              this.team.players?.forEach(userId => {
+                usuarios.push(this.userRepository.get(userId));
+              })
+  
+              usuarios.forEach(usuario => {
+                usuario.players.filter(teamId => teamId !== this.team.id);
+                
+                this.userRepository.update(usuario);
+              });
+  
+              this.teamRepository.delete(this.team.id);
+              redirectTo(HOME_ROUTE);
+            }
           }
           break;
       }
