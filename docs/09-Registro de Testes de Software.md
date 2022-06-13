@@ -247,6 +247,16 @@ Este teste consiste em analisar se as vagas estão sendo exibidas de forma pagin
 Este teste consiste em analisar se as vagas estão sendo filtradas corretamente de acordo com o que o usuário digitar.
 <img src= "img/CT-vagasEquipes/Evidencia CT-30.png">
 
+## CT-31
+
+Este teste mostra que a criação da equipe foi feita da maneira correta, apresentando uma mensagem de sucesso.
+<img src= "img/CT_Jessica/sucesso-criar-equipe.png">
+
+## CT-32
+
+Neste teste o sistema apresenta um alerta informando que todos os campos devem ser preenchidos para que a equipe possa ser criada.
+<img src= "img/CT_Jessica/error-criar-equipe.png">
+
 
 
 ## Avaliação
