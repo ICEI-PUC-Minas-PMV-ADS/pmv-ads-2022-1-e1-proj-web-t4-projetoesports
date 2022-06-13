@@ -205,6 +205,38 @@ Após a conclusão, pode-se verificar que o sistema notifica aqueles jogadores q
 
 <img src="img/evidencias_testes/vitor/ct_21_003.jpg" />
 
+## CT-22
+
+Este teste consiste em visualizar a sessão sobre e sua descrição.
+<img src= "img/registros_teste_ed/objetivo.png">
+
+## CT-23
+Este teste consiste em visualizar a opção objetivos e sua descrição.
+<img src= "img/registros_teste_ed/objetivo.png">
+
+## CT-24
+
+Este teste consiste em visualizar a sessão minhas equipes e sua descrição.
+<img src= "img/registros_teste_ed/objetivo.png">
+
+## CT-25
+Este teste consiste em visualizar a sessão contatos e sua descrição.
+<img src= "img/registros_teste_ed/contato.png">
+
+## CT-26
+Este teste consiste em visualizar a sessão estatísticas e sua descrição.
+<img src= "img/registros_teste_ed/estatística.png">
+
+## CT-27
+Este teste consiste em editar o perfil do usuário.
+<img src= "img/registros_teste_ed/funções.png">
+
+
+## CT-28
+Este teste consiste em editar o perfil do usuário.
+<img src= "img/registros_teste_ed/edit_um.png">
+
+
 ## CT-29 
 
 Este teste consiste em analisar se as vagas estão sendo exibidas de forma paginada e se sua navegação é eficiente e fluida.
@@ -214,47 +246,6 @@ Este teste consiste em analisar se as vagas estão sendo exibidas de forma pagin
 
 Este teste consiste em analisar se as vagas estão sendo filtradas corretamente de acordo com o que o usuário digitar.
 <img src= "img/CT-vagasEquipes/Evidencia CT-30.png">
-
-## CT-31 
-
-Este teste consiste em visualizar a opção objetivos e sua descrição.
-<img src= "img/registros_teste_ed/objetivo.png">
-
-## CT-32
-Este teste consiste em visualizar a opção contatos e sua descrição.
-<img src= "img/registros_teste_ed/contato.png">
-
-## CT-33
-Este teste consiste em visualizar a opção estatísticas e sua descrição.
-<img src= "img/registros_teste_ed/estatística.png">
-
-## CT-34
-Este teste consiste em visualizar a opção objetivos e sua descrição.
-<img src= "img/registros_teste_ed/objetivo.png">
-
-## CT-35
-Este teste consiste em editar a opção objetivos.
-<img src= "img/registros_teste_ed/edit_tres.png">
-
-## CT-36
-Este teste consiste em editar a opção contato.
-<img src= "img/registros_teste_ed/edit_quatro.png">
-     
-## CT-37
-Este teste consiste em editar a opção estatísticas.
-<img src= "img/registros_teste_ed/edit_dois.png">
-
-## CT-38
-Este teste consiste em editar o nome do usuário.
-<img src= "img/registros_teste_ed/edit_um.png">
-
-## CT-39
-Este teste consiste em editar a foto do usuário.
-<img src= "img/registros_teste_ed/altfoto.png">
-
-## CT-40
-Este teste consiste na possibilidade do usuário deletar o próprio perfil.
-<img src= "img/registros_teste_ed/delete.png">
 
 
 
