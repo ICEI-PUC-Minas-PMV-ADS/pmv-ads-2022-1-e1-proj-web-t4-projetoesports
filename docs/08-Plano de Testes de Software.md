@@ -122,6 +122,14 @@ Tabela de teste CT-28
 
 <img src="img/CT_Eduardo/ct-28.png" width="580" height="320">
 
+Tabela de teste CT-29
+
+<img src="img/CT-vagasEquipes/CT-29.png" width="580" height="320">
+
+Tabela de teste CT-30
+
+<img src="img/CT-vagasEquipes/CT-30.png" width="580" height="320">
+
 Tabela de teste CT-31
 
 <img src="img/CT_Jessica/ct-31.png" />
