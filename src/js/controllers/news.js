@@ -1,6 +1,7 @@
 import { Controller } from '../framework/controller.js';
 import { Navbar } from '../components/navbar.js';
 import { Sidebar } from '../components/sidebar.js';
+import { NewsPage } from '../pages/news.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
@@ -9,11 +10,11 @@ import { MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js'
 import { UserRepository } from '../repositories/user_repository.js';
 
 /***
- * BaseController
+ * NoticiasController
  * Controlador responsavel por gerenciar a parte logica da pagina.
  */
 
-export class BaseController extends Controller
+export class NoticiasController extends Controller
 {
   constructor()
   {
@@ -34,12 +35,6 @@ export class BaseController extends Controller
           case 'entrar':
             {
               this.loginModal.toggle();
-            }
-            break;
-
-          case 'notificações':
-            {
-              // TODO: Implementar recurso de notificações.
             }
             break;
 
@@ -179,5 +174,7 @@ export class BaseController extends Controller
   {
     this.registerComponent('navbar', Navbar);
     this.registerComponent('sidebar', Sidebar);
+
+    this.registerComponent('news-page', NewsPage);
   }
 }
