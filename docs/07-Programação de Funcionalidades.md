@@ -197,6 +197,7 @@ A tela de buscas por vagas em equipes lista todas as vagas em aberto do site de 
 - src/vagas_equipes.html
 - src/js/controllers/vagas_equipes.js
 - src/imgs
+- src/js/pages/vagas_equipes.js 
 
 ### Estrutura de Dados
 

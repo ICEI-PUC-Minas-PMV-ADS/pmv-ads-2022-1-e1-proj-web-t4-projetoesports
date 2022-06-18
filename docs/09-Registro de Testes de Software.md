@@ -205,6 +205,116 @@ Após a conclusão, pode-se verificar que o sistema notifica aqueles jogadores q
 
 <img src="img/evidencias_testes/vitor/ct_21_003.jpg" />
 
+## CT-22
+
+Este teste consiste em visualizar a sessão sobre e sua descrição.
+<img src= "img/registros_teste_ed/objetivo.png">
+
+## CT-23
+Este teste consiste em visualizar a opção objetivos e sua descrição.
+<img src= "img/registros_teste_ed/objetivo.png">
+
+## CT-24
+
+Este teste consiste em visualizar a sessão minhas equipes e sua descrição.
+<img src= "img/registros_teste_ed/objetivo.png">
+
+## CT-25
+Este teste consiste em visualizar a sessão contatos e sua descrição.
+<img src= "img/registros_teste_ed/contato.png">
+
+## CT-26
+Este teste consiste em visualizar a sessão estatísticas e sua descrição.
+<img src= "img/registros_teste_ed/estatística.png">
+
+## CT-27
+Este teste consiste em editar o perfil do usuário.
+<img src= "img/registros_teste_ed/funções.png">
+
+
+## CT-28
+Este teste consiste em editar o perfil do usuário.
+<img src= "img/registros_teste_ed/edit_um.png">
+
+
+## CT-29 
+
+Este teste consiste em analisar se as vagas estão sendo exibidas de forma paginada e se sua navegação é eficiente e fluida.
+<img src= "img/CT-vagasEquipes/Evidencia CT-29.png">
+
+## CT-30
+
+Este teste consiste em analisar se as vagas estão sendo filtradas corretamente de acordo com o que o usuário digitar.
+<img src= "img/CT-vagasEquipes/Evidencia CT-30.png">
+
+## CT-31
+
+Este teste mostra que a criação da equipe foi feita da maneira correta, apresentando uma mensagem de sucesso.
+<img src= "img/CT_Jessica/sucesso-criar-equipe.png">
+
+## CT-32
+
+Neste teste o sistema apresenta um alerta informando que todos os campos devem ser preenchidos para que a equipe possa ser criada.
+<img src= "img/CT_Jessica/error-criar-equipe.png">
+
+## CT-33
+
+Neste teste é visualizado as informações de uma equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-sobre-infos.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-sobre-contato.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-equipe-principal.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-equipe-reserva.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-vagas.png">
+
+## CT-34
+
+Neste teste é validado que o administrador consegue ver e manter sua equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-login.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-perfil-equipes.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-visao-admin-equipe.png">
+
+## CT-35
+
+Neste teste o administrador acessa a tela de novas vagas a partir da equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png"> 
+<img src= "img/CT_Pedro/Evidencias/evidencia-criar-vaga.png">
+
+## CT-36
+
+Neste teste o administrador altera a imagem de perfil da equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png"> 
+<img src= "img/CT_Pedro/Evidencias/evidencias-upload-imagem.png"> 
+<img src= "img/CT_Pedro/Evidencias/evidencia-perfil-foto-alterada.png">
+
+## CT-37
+
+Neste teste o administrador altera informações sobre a equipe
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-alteracao-equipe.png">
+<img src= "img/CT_Pedro/Evidencias/evidencia-equipe-alterada.png">
+
+## CT-38
+
+Neste teste o administrador tenta excluir a equipe, porém não confirma a ação
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-delecao-confirmacao.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-sobre-infos.png">
+
+## CT-39
+
+Neste teste o administrador tenta excluir a equipe e confirma a ação
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-menu-context.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-delecao-confirmacao.png">  
+<img src= "img/CT_Pedro/Evidencias/evidencia-redireciona-inicio.png">  
+
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.

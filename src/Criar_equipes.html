@@ -91,13 +91,42 @@
 
         <!-- Container de conteudo -->
         <div class="flex-fill overflow-auto c-bg-primary">
-          <div class="container"> 
+          <div class="container"> <br><br>
             <div 
             href=""
             class="d-flex flex-column align-items-center"
           >
           <div class="equipes">
+          <div class="ps-2">
           <span class="formtitle" >Criar equipe</span>
+        </div>
+        <script>
+          function setup() {
+              document.getElementById('buttonid').addEventListener('click', openDialog);
+              function openDialog() {
+                  document.getElementById('fileid').click();
+              }
+              document.getElementById('fileid').addEventListener('change', submitForm);
+              function submitForm() {
+                  document.getElementById('formid').submit();
+              }
+          }
+      </script> 
+         <body onload="setup()">
+          <div class="ps-2">
+          <div class="d-flex justify-content-between align-items-center p-0 ">   
+            <div>
+            <form id='formid' action="form.php" method="POST" enctype="multipart/form-data"> 
+            <input type='file' id="actual-btn" hidden/> 
+            <div style="background-color: #868686; align-items: center; padding: 1rem; width: 4rem; border-radius:50%;">
+            <label 
+            for="actual-btn"><img class ="w-100" src="imgs/fotos-imports.svg" class="logo-size" alt="" ></label>
+          </div>
+            </form>  
+          </div>
+          </div>
+          </div>
+        </body>
           <div  
           href=""
           class="formequipes d-flex flex-column align-items-center"
@@ -117,10 +146,13 @@
             </div>
         </div class="d-flex flex-fill">
       </div><br>
-      <div>
-        <a id="button"><button class="c-button">Criar equipe</button></a>
-      </div>
-
+      <div class="d-flex flex-column align-items-center">
+        <form type="button"><button class="c-button" onclick="cadastro()">Criar equipe</button>
+        <script>
+          function cadastro(){
+             alert('Todos os campos devem ser preenchidos!');
+          }
+      </script>
           </div> <!-- Fim: CONTEUDO -->
         </div>
       </div>

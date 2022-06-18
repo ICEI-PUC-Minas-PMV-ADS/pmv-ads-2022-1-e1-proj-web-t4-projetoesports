@@ -1,10 +1,14 @@
 import { Component } from "../framework/component.js";
-import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo } from '../framework/elements.js';
+import { div, component, h5, h4, nav, a, p, hr, li, img, mapTo, input, button } from '../framework/elements.js';
 import { USER_INFO } from "../framework/state.js";
 import { Switch } from '../framework/std-components.js';
+import { If } from '../framework/std-components.js';
 
 import { UserRepository } from '../repositories/user_repository.js';
-import { HOME_ROUTE, redirectTo } from '../helpers/routes.js';
+import { HOME_ROUTE, TEAM_ROUTE, redirectTo } from '../helpers/routes.js';
+import { RoleRepository } from "../repositories/role_repository.js";
+import { GameRepository } from "../repositories/game_repository.js";
+import { TeamRepository } from "../repositories/team_repository.js";
 
 /***
  * Constantes
@@ -48,6 +52,9 @@ export class ProfilePage extends Component
     };
 
     this.userRepository = new UserRepository();
+    this.roleRepository = new RoleRepository();
+    this.gameRepository = new GameRepository();
+    this.teamRepository = new TeamRepository();
 
     this.renderSobreSection              = this.renderSobreSection?.bind(this);
     this.renderEstatisticaSection        = this.renderEstatisticaSection?.bind(this);
@@ -62,6 +69,23 @@ export class ProfilePage extends Component
         ? this.userRepository.get(this.ctrl.params?.id)
         : this.ctrl.appState.load(USER_INFO)
     );
+
+    this.userRoles = [];
+    this.user?.game_roles?.forEach((roleId) => {
+      this.userRoles.push(this.roleRepository.get(roleId));
+    });
+
+    this.userTeams = [];
+    this.user?.participated_teams.forEach((teamId) => {
+      this.userTeams.push(this.teamRepository.get(teamId));
+    });
+
+    let teams = this.teamRepository.getAll();
+    teams.forEach(team => {
+      if(team.owner_id == this.user.id){
+        this.userTeams.push(team);
+      }
+    })
   }
 
   /***
@@ -143,17 +167,58 @@ export class ProfilePage extends Component
       switch (option)
       {
         case OPTION_ALTERAR_FOTO:
-          {}
+          {
+            document.getElementById('inputFile').click();;
+            const querySelector = document.querySelector("#inputFile");
+            querySelector.user = this.user;
+            querySelector.userRepository = this.userRepository;
+            querySelector.addEventListener("change", function() {
+              this.user.img_url = "imgs/" + this.files[0].name
+              this.userRepository.update(this.user);
+            })
+          }
           break;
 
         case OPTION_ALTERAR_PERFIL:
-          {}
+          {
+            let index = 1;
+            
+            this.user.name = prompt("Nome de usuário:", this.user.name);
+
+            this.user.game_statistics?.forEach(estatistica =>{
+              this.user.game_statistics[index - 1] = prompt("Estatística " + index + " :", estatistica);
+              index += 1;
+            })
+            index = 1;
+
+            this.user.objective = prompt("Objetivo", this.user.objective)
+
+            this.user.contact_info?.forEach(contato => {
+              this.user.contact_info[index - 1] = prompt("Contato " + index + " :", contato)
+              index += 1;
+            })
+
+            this.userRepository.update(this.user);
+          }
           break;
 
         case OPTION_DELETAR_PERFIL:
           {
-            if (1)
-            {}
+            let equipes = [];
+            this.user.participated_teams?.forEach(equipeId => {
+              equipes.push(this.teamRepository.get(equipeId));
+            })
+
+            equipes.forEach(equipe => {
+              equipe.players.filter(playerId => playerId !== this.user.id);
+              equipe.active_players.filter(playerId => playerId !== this.user.id );
+              equipe.reserves.filter(playerId => playerId !== this.user.id );
+              
+              this.teamRepository.update(equipe);
+            });
+
+            this.userRepository.delete(this.user.id);
+            redirectTo(HOME_ROUTE);
           }
           break;
       }
@@ -170,7 +235,7 @@ export class ProfilePage extends Component
               div({ className: "d-flex", style: { position: 'absolute', bottom: '-2rem', left: '3rem' } }, [
                 div({ style: { backgroundColor: 'white', padding: '0.2rem', width: '7rem', borderRadius: '50%' } },
                   // Imagem de perfil do jogador.
-                  img({ className: "w-100", src: img_url, style: { borderRadius: '50%' } })
+                  img({ className: "w-100", src: this.user?.img_url, style: { borderRadius: '50%' } })
                 ),
                 
                 div({ className: "d-flex align-items-end" },
@@ -199,6 +264,7 @@ export class ProfilePage extends Component
                       div(null,
                         a({
                           href: '#',
+                          carnica: '',
                           events: { click: (evt) => { onContextOptionClick(evt, OPTION_ALTERAR_FOTO) } },
                           style: { textDecoration: 'none', color: 'black' },
                         }, 'Alterar foto')
@@ -258,7 +324,9 @@ export class ProfilePage extends Component
    * renderSobreSection
    * Renderiza a seção sobre.
    */
-
+  callrepository(){
+    console.log(this.user);
+  }
   renderSobreSection()
   {
     const { sobreSection } = this.state;
@@ -359,17 +427,30 @@ export class ProfilePage extends Component
 
   renderFuncoesSection()
   {
-    const game_roles = this.user?.game_roles || [];
-
     return (
       div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
         div({ className: "container mt-5" }, 
           div({ className: "d-flex p-3 mb-5", style: { backgroundColor: '#261423', minHeight: '30rem', borderRadius: '5px' } }, [
             div({ className: 'flex-fill', style: { color: 'white' } }, [
               h5({ className: "pb-2", style: { borderBottom: '1px solid #888' } }, 'Funções'),
-              mapTo('div', null, game_roles, (game_role, index) => (
-                p({ key: index }, game_role)
-              )),
+              
+              component(If, this.userRoles.length > 0, 
+                  div({ className: 'div', style: {border: '2px', display: 'table', maxWidth: '240px', borderSpacing:'16px'}}, [
+                    mapTo('div', null, this.userRoles,
+                      ({id, name, icon_url, game_id}) => {
+                        const { name: game_name } = this.gameRepository.get(game_id);
+
+                        return div({ key: id, className: 'c-bg-primary-dark p-4', style: { borderRadius: '5px', cursor: 'pointer', display: 'table-cell', backgroundColor: 'rgba(255, 255, 255, 0.1)'  }}, [  
+                          div(null, [
+                            img({ className: "w-100", src: icon_url, style: { borderRadius: '50%' } },),
+                            h5({ className: 'text-center p-2' }, game_name)
+                          ]),
+                          h5({ className: 'text-center p-2' }, name)
+                        ])
+                      }
+                    )
+                  ])
+              )
             ])
           ])
         )
@@ -397,7 +478,25 @@ export class ProfilePage extends Component
   renderSobreSectionMinhasEquipes()
   {
     return (
-      div(null, 'Minhas equipes #')
+      div({ className: "flex-fill", },
+            div({ className: 'flex-fill' }, [
+              component(If, this.userTeams.length > 0,
+                  div({ className: 'div', style: {border: '2px', display: 'table', maxWidth: '240px', borderSpacing:'16px'}}, [
+                    mapTo('div', null, this.userTeams,
+                      ({id, name, icon_url}) => {
+                        return div({ key: id, style: { borderRadius: '5px', cursor: 'pointer', display: 'table-cell'  }, 
+                        events: { click: () => { redirectTo(TEAM_ROUTE, { id }) }}}, [  
+                          div(null, [
+                            img({ className: "w-100", src: icon_url, style: { borderRadius: '50%' } },),
+                          ]),
+                          h5({ className: 'text-center p-2' }, name)
+                        ])
+                      }
+                    )
+                  ])
+              )
+            ])
+      )
     );
   }
 
@@ -418,4 +517,11 @@ export class ProfilePage extends Component
       )
     );
   }  
+
+  abrirPerfilInput()
+  {
+   return (
+     input({type:'file', accept: 'image/png, image/jpeg'})
+   );
+  }
 }

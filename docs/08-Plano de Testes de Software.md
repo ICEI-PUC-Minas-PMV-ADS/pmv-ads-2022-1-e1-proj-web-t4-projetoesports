@@ -93,3 +93,75 @@ Tabela de teste CT-20
 Tabela de teste CT-21
 
 <img src="img/tabela_testes/vitor/ct-21.jpg" />
+
+Tabela de teste CT-22
+
+<img src="img/CT_Eduardo/ct-22.png" width="580" height="320">
+     
+Tabela de teste CT-23
+
+<img src="img/CT_Eduardo/ct-23.png" width="580" height="320">
+
+Tabela de teste CT-24
+
+<img src="img/CT_Eduardo/ct-24.png" width="580" height="320">
+
+Tabela de teste CT-25
+
+<img src="img/CT_Eduardo/ct-25.png" width="580" height="320">
+
+Tabela de teste CT-26
+
+<img src="img/CT_Eduardo/ct-26.png" width="580" height="320">
+
+Tabela de teste CT-27
+
+<img src="img/CT_Eduardo/ct-277.png" width="580" height="320">
+
+Tabela de teste CT-28
+
+<img src="img/CT_Eduardo/ct-28.png" width="580" height="320">
+
+Tabela de teste CT-29
+
+<img src="img/CT-vagasEquipes/CT-29.png" width="580" height="320">
+
+Tabela de teste CT-30
+
+<img src="img/CT-vagasEquipes/CT-30.png" width="580" height="320">
+
+Tabela de teste CT-31
+
+<img src="img/CT_Jessica/ct-31.png" />
+
+Tabela de teste CT-32
+
+<img src="img/CT_Jessica/ct-32.png" />
+
+Tabela de teste CT-33
+
+<img src="img/CT_Pedro/CT-33.png" />
+
+Tabela de teste CT-34
+
+<img src="img/CT_Pedro/CT-34.png" />
+
+Tabela de teste CT-35
+
+<img src="img/CT_Pedro/CT-35.png" />
+
+Tabela de teste CT-36
+
+<img src="img/CT_Pedro/CT-36.png" />
+
+Tabela de teste CT-37
+
+<img src="img/CT_Pedro/CT-37.png" />
+
+Tabela de teste CT-38
+
+<img src="img/CT_Pedro/CT-38.png" />
+
+Tabela de teste CT-39
+
+<img src="img/CT_Pedro/CT-39.png" />
