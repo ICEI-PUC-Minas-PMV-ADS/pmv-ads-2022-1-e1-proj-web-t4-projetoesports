@@ -19,31 +19,36 @@ function rolesInitialize() {
   const roleRepository = new RoleRepository();
 
   roleRepository.create({
-    name: 'Top lane Topo',
+    name: 'Top lane',
+    tag: 'Top lane Topo',
     game_id: 1,
     icon_url: 'imgs/imgs_vagas_equipes/icones_roles/icone_top_vagas.png',
   });
 
   roleRepository.create({
-    name: 'Jungle Caçador Cacador JG',
+    name: 'Jungle',
+    tag: 'Jungle Caçador Cacador JG',
     game_id: 1,
     icon_url: 'imgs/imgs_vagas_equipes/icones_roles/icone_jungle_vagas.png',
   });
 
   roleRepository.create({
-    name: 'Mid lane Meio',
+    name: 'Mid lane',
+    tag: 'Mid lane Meio',
     game_id: 1,
     icon_url: 'imgs/imgs_vagas_equipes/icones_roles/icone_mid_vagas.png',
   });
 
   roleRepository.create({
-    name: 'Ad Carry ADC Atirador',
+    name: 'Ad Carry',
+    tag: 'Ad Carry ADC Atirador',
     game_id: 1,
     icon_url: 'imgs/imgs_vagas_equipes/icones_roles/icone_adc_vagas.png',
   });
 
   roleRepository.create({
-    name: 'Support Suporte',
+    name: 'Support',
+    tag: 'Support Suporte',
     game_id: 1,
     icon_url: 'imgs/imgs_vagas_equipes/icones_roles/icone_support_vagas.png',
   });
@@ -349,7 +354,7 @@ const list = {
                   </div>
                   <div class="botaoFlex">
                     <h1 class="c-text-white nomeTime">`+ teamRender.name + `</h1>
-                    <button class="buttom_card">Ir para vaga</button>
+                    <button class="buttom_card" onclick = "window.location.href = 'vaga.html?id=${vacancy.id}'">Ir para vaga</button>
                   </div>
                 </div>
               </div>
@@ -451,7 +456,7 @@ function vacancysFilter(searched) {
   return vacancys.filter(vaga => {
     let team = teamsRepository.get(vaga.team_id);
     let role = rolesRepository.get(vaga.role_id);
-    return role.name.toLowerCase().includes(searched.toLowerCase());
+    return role.tag.toLowerCase().includes(searched.toLowerCase());
 
   })
 };
