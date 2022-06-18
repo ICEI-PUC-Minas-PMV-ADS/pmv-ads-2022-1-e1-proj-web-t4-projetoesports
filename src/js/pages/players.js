@@ -14,8 +14,7 @@ const PAGE_SIZE = 15;
  *    news: Recebe o array com os objetos que representam a noticia.
  */
 
-export class PlayersPage extends Component
-{
+export class PlayersPage extends Component {
   constructor(props) {
     super(props);
 
@@ -110,8 +109,9 @@ export class PlayersPage extends Component
                           redirectTo('perfil.html', { id: user.id });
                         }
                       },
-                      className: "d-flex align-items-center flex-column w-75 c-bg-secondary p-4",
+                      className: "d-flex align-items-center flex-column w-75 p-4",
                       style: {
+                        backgroundColor: '#491b46',
                         cursor: 'pointer',
                         border: '1px solid black',
                         borderRadius: '0.75rem',
@@ -120,9 +120,9 @@ export class PlayersPage extends Component
                         fontSize: '1.25rem'
                       }
                     }, [
-                      img({ src: user.img_url, style: { width: '8rem', borderRadius: '50%' } }),
-                      div(null, user.name),
-                    ]
+                    img({ src: user.img_url, style: { width: '8rem', borderRadius: '50%' } }),
+                    div(null, user.name),
+                  ]
                   )
                 ]
               )
@@ -131,7 +131,7 @@ export class PlayersPage extends Component
         ),
 
         // Barra de paginação.
-        mapTo('div', { className: 'd-flex justify-content-center my-4'}, page_buttons, 
+        mapTo('div', { className: 'd-flex justify-content-center my-4' }, page_buttons,
           (button_index) => (
             a(
               {
