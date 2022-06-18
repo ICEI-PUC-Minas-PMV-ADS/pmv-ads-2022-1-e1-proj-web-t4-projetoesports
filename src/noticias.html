@@ -44,7 +44,7 @@
 
     <!-- Side Bar -->
     <div class="d-flex flex-fill overflow-hidden ">
-      
+
       <!-- Side Bar -->
       <div data-component="sidebar"></div>
 
@@ -55,7 +55,7 @@
         <!-- 1.1 Alterar o nome do arquivo: controllers/base.js para o mesmo nome da pagina. -->
         <!-- 1.2 Alterar o nome da classe: BaseController para <Nome da Pagina>Controller. -->
         <!-- 1.3 Alterar a inicialização do controlador de acordo com os novos parametros. -->
-
+        <div data-component="news-page"></div>
         
     </div> <!-- Fim: CONTEUDO -->
   </div>
@@ -154,12 +154,12 @@
   </script>
 
   <script type="module">
-    import { BaseController } from './js/controllers/base.js';
+    import { NoticiasController } from './js/controllers/news.js';
     import { initializeController } from './js/framework/controller.js';
 
     // Inicia o controlador da pagina.
-    const baseController = new BaseController();
-    initializeController(baseController);
+    const noticiasController = new NoticiasController();
+    initializeController(noticiasController);
   </script>
 </body>
 
