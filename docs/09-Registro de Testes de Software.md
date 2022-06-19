@@ -318,49 +318,49 @@ Neste teste o administrador tenta excluir a equipe e confirma a ação
 
 Neste teste e visualizado a lista de jogadores e barra de paginação logo abaixo.
 
-<img src="img/evidencias_testes/vitor/ct_40_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct-40_001.jpg" />
 
 ## CT-41
 
 Neste teste e visualizado a lista de jogadores.
 
-<img src="img/evidencias_testes/vitor/ct_41_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct-41_001.jpg" />
 
 Após digitar o texto de filtro e apertar "enter" a lista irá atualizar.
 
-<img src="img/evidencias_testes/vitor/ct_41_002.jpg" />
+<img src="img/evidencias_testes/vitor/ct-41_002.jpg" />
 
 ## CT-42
 
 Neste teste e visualizado a lista de noticias e barra de paginação logo abaixo.
 
-<img src="img/evidencias_testes/vitor/ct_42_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct-42_001.jpg" />
 
 ## CT-43
 
 Neste teste e visualizado a lista de noticias.
 
-<img src="img/evidencias_testes/vitor/ct_43_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct-43_001.jpg" />
 
 Após digitar o texto de filtro e apertar "enter" a lista irá atualizar.
 
-<img src="img/evidencias_testes/vitor/ct_43_002.jpg" />
+<img src="img/evidencias_testes/vitor/ct-43_002.jpg" />
 
 ## CT-44
 
 Neste teste e visualizado a lista de torneios e barra de paginação logo abaixo.
 
-<img src="img/evidencias_testes/vitor/ct_44_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct-44_001.jpg" />
 
 ## CT-45
 
 Neste teste e visualizado a lista de torneios.
 
-<img src="img/evidencias_testes/vitor/ct_45_001.jpg" />
+<img src="img/evidencias_testes/vitor/ct-45_001.jpg" />
 
 Após digitar o texto de filtro e apertar "enter" a lista irá atualizar.
 
-<img src="img/evidencias_testes/vitor/ct_45_002.jpg" />
+<img src="img/evidencias_testes/vitor/ct-45_002.jpg" />
 
 ## Avaliação
 
