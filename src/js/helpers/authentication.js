@@ -1,11 +1,12 @@
-import { USER_INFO } from "../framework/state";
+import { USER_INFO } from "../framework/state.js";
 
 /***
  * isUser
  */
 
 export function isUser() {
-  const userInfo = window.sessionStorage.getItem(USER_INFO);
+  const applicationState = JSON.parse(window.sessionStorage.getItem('_STATE_application'));
+  const userInfo = applicationState[USER_INFO];
   return userInfo !== undefined && userInfo !== null;
 }
 
@@ -14,5 +15,6 @@ export function isUser() {
  */
 
  export function getUser() {
-  return JSON.parse(window.sessionStorage.getItem(USER_INFO));
+  const applicationState = JSON.parse(window.sessionStorage.getItem('_STATE_application'));
+  return applicationState[USER_INFO];
 }

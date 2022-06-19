@@ -1,7 +1,7 @@
 import { Controller } from '../framework/controller.js';
 import { UserRepository } from '../repositories/user_repository.js';
 import { Navbar } from '../components/navbar.js';
-import { PerfilPage, SECTION_DEFAULT } from '../components/pages/perfil.js';
+import { Sidebar } from '../components/sidebar.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
@@ -42,10 +42,6 @@ export class CriarEquipesController extends Controller
     {
       redirectTo(HOME_ROUTE);
     }
-
-    this.setState({
-      section: SECTION_DEFAULT,
-    });
   }
 
   /***
@@ -174,12 +170,6 @@ export class CriarEquipesController extends Controller
 
         this.criarPerfilModal.toggle();
       },
-      onChangeSection: function (section)
-      {
-        this.setState({
-          section: section,
-        });
-      }
     };
   }
 
@@ -191,6 +181,6 @@ export class CriarEquipesController extends Controller
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
-    this.registerComponent('perfil-page', PerfilPage);
+    this.registerComponent('sidebar', Sidebar);
   }
 }

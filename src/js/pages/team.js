@@ -20,12 +20,12 @@ import { GameRepository } from "../repositories/game_repository.js";
 const PROFILE_IMG              = 'imgs/icone_time.png';
 
 const SECTION_SOBRE            = 'sobre';
-const SECTION_EQUIPE      = 'equipe';
-const SECTION_VAGAS          = 'vagas';
+const SECTION_EQUIPE           = 'equipe';
+const SECTION_VAGAS            = 'vagas';
  
 export const SECTION_DEFAULT   = SECTION_SOBRE;
 
-const SOBRE_SECTION_INFOS   = 'Informações Gerais';
+const SOBRE_SECTION_INFOS      = 'Informações Gerais';
 const SOBRE_SECTION_CONTATO    = 'Contato';
 
 const SOBRE_SECTION_DEFAULT    = SOBRE_SECTION_INFOS;
@@ -89,7 +89,7 @@ export class TeamPage extends Component
       this.reserves.push(this.userRepository.get(playerId));
     });
 
-    this.loggedUser = this.teamRepository.getLoggedUser();
+    this.loggedUser = this.ctrl.appState.load(USER_INFO);
   }
 
   /***
@@ -249,7 +249,7 @@ export class TeamPage extends Component
 
             div({ className: 'clearfix', style: { borderBottom: '1px solid white' } },
               div({ className: 'float-end', style: { height: '3rem', position: 'relative' } },
-              component(If, this.loggedUser.id === this.team.owner_id,
+              component(If, this.loggedUser?.id === this.team.owner_id,
                 div({ className: 'd-flex justify-content-end flex-column'}, [
                   div({ className: 'd-flex justify-content-end align-items-end' },
                     a({
