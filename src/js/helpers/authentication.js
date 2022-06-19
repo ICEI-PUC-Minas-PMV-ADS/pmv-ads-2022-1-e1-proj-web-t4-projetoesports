@@ -1,4 +1,4 @@
-import { USER_INFO } from "../framework/state";
+import { USER_INFO } from "../framework/state.js";
 
 /***
  * isUser
@@ -13,6 +13,6 @@ export function isUser() {
  * getUser
  */
 
- export function getUser() {
+export function getUser() {
   return JSON.parse(window.sessionStorage.getItem(USER_INFO));
 }

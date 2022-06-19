@@ -1,4 +1,4 @@
-//Simulação banco de dados
+
 import { UserRepository } from '/src/js/repositories/user_repository.js';
 import { GameRepository } from '/src/js/repositories/game_repository.js';
 import { RoleRepository } from '/src/js/repositories/role_repository.js';
@@ -6,7 +6,12 @@ import { TeamRepository } from '/src/js/repositories/team_repository.js';
 import { VacancyRepository } from '/src/js/repositories/vacancy_repository.js';
 import { Sha256 } from '/src/js/helpers/crypto.js';
 
+import { isUser } from '/src/js/helpers/authentication.js';
+import { getUser } from '/src/js/helpers/authentication.js';
+console.log(isUser());
+console.log(getUser());
 
+//Simulação banco de dados
 function gamesInitialize() {
   const gameRepository = new GameRepository();
 
