@@ -5,11 +5,8 @@ import { RoleRepository } from '/src/js/repositories/role_repository.js';
 import { TeamRepository } from '/src/js/repositories/team_repository.js';
 import { VacancyRepository } from '/src/js/repositories/vacancy_repository.js';
 import { Sha256 } from '/src/js/helpers/crypto.js';
-
 import { isUser } from '/src/js/helpers/authentication.js';
 import { getUser } from '/src/js/helpers/authentication.js';
-console.log(isUser());
-console.log(getUser());
 
 //Simulação banco de dados
 function gamesInitialize() {
@@ -66,7 +63,7 @@ function usersInitialize() {
     password: Sha256.hash('123'),
     img_url: 'imgs/RC.png',
     objective: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.',
-    participated_teams: [],
+    participated_teams: [1],
     contact_info: ['xer_ima@email.com', '@xer_ima_123'],
     game_statistics: ['https://oce.op.gg/summoners/br/xer_ima_xd'],
     game_roles: [],
@@ -90,7 +87,7 @@ function usersInitialize() {
     password: Sha256.hash('123'),
     img_url: 'imgs/RC.png',
     objective: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.',
-    participated_teams: [],
+    participated_teams: [3, 1, 2],
     contact_info: ['g0rila@email.com', '@g0rila'],
     game_statistics: ['https://oce.op.gg/summoners/br/g0rila_xd'],
     game_roles: [],
@@ -274,9 +271,8 @@ const teamsRepository = new TeamRepository();
 
 const rolesRepository = new RoleRepository();
 
-const vacancys = vacancysRepository.getAll();
-
-vacancys.reverse();
+const user = getUser();
+console.log(user);
 
 document.addEventListener('DOMContentLoaded', initializeLocalStorage);
 
@@ -296,19 +292,38 @@ function initializeLocalStorage() {
 
 
 //Inicialização da página
-vacancys.forEach(render);
-function render(vacancy) {
-  let containerMinhasEquipes = document.getElementById('teamsContainer');
-  let teamRender = teamsRepository.get(vacancy.team_id);
-  containerMinhasEquipes.innerHTML += `
+
+function uptade() {
+  let containerTeams = document.getElementById('teamsContainer');
+  const user = getUser();
+  if (isUser() == false) {
+    removeTeams();
+    containerTeams.innerHTML += `<div class= "card_2 c-text-white">
+                                          <h2>Nenhum usuário conectado.</h2>
+                                    </div>`;
+  }
+  else if (isUser() == true & user.participated_teams.length == 0) {
+    removeTeams();
+    containerTeams.innerHTML += `<div class= "card_2 c-text-white">
+                                          <h2 style = "text-align: center; ">Você não é membro de nenhuma equipe.</h2>
+                                    </div>`;
+  }
+  else {
+    user.participated_teams.forEach((team) => {
+      let containerMinhasEquipes = document.getElementById('teamsContainer');
+      let teamRender = teamsRepository.get(team);
+      containerMinhasEquipes.innerHTML += `
               <div>
-                <div class="cardVaga card_`+ vacancy.id + `">
+                <div class="cardVaga card_`+ team.id + `">
                     <img class="iconeTime" src="`+ teamRender.icon_url + `" alt="Icone Time"/>
                     <h1 class="c-text-white nomeTime">`+ teamRender.name + `</h1>
                 </div>
               </div>
 `;
+    })
+  }
 }
+uptade();
 
 
 //Configuração barra de pesquisa
@@ -320,10 +335,22 @@ function searchInKeyUp(event) {
   const searched = event.target.value;
   const teamsFound = teamsFilter(searched);
   let containerTeams = document.getElementById('teamsContainer');
+  console.log(teamsFound);
 
-  if (teamsFound.length > 1) {
+  if (teamsFound.length > 0) {
     removeTeams();
-    teamsFound.forEach(render);
+    teamsFound.forEach((team) => {
+      let containerMinhasEquipes = document.getElementById('teamsContainer');
+      let teamRender = teamsRepository.get(team);
+      containerMinhasEquipes.innerHTML += `
+              <div>
+                <div class="cardVaga card_`+ team.id + `">
+                    <img class="iconeTime" src="`+ teamRender.icon_url + `" alt="Icone Time"/>
+                    <h1 class="c-text-white nomeTime">`+ teamRender.name + `</h1>
+                </div>
+              </div>
+`;
+    })
   }
   else {
     removeTeams();
@@ -334,13 +361,13 @@ function searchInKeyUp(event) {
 
 };
 function teamsFilter(searched) {
-  return vacancys.filter(vaga => {
-    let team = teamsRepository.get(vaga.team_id);
+  return user.participated_teams.filter(vaga => {
+    let team = teamsRepository.get(vaga);
     let role = rolesRepository.get(vaga.role_id);
-    return role.tag.toLowerCase().includes(searched.toLowerCase());
-
+    return team.name.toLowerCase().includes(searched.toLowerCase());
   })
 };
+
 function removeTeams() {
   let containerTeams = document.getElementById('teamsContainer');
   while (containerTeams.firstChild) {

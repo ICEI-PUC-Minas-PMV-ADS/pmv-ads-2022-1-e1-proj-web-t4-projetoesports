@@ -449,15 +449,13 @@ function searchInKeyUp(event) {
                                           <h2>Nenhuma vaga encontrada.</h2>
                                     </div>`;
   }
-  console.log(vacancys);
-  console.log(vacancysFound);
+
 };
 function vacancysFilter(searched) {
   return vacancys.filter(vaga => {
     let team = teamsRepository.get(vaga.team_id);
     let role = rolesRepository.get(vaga.role_id);
     return role.tag.toLowerCase().includes(searched.toLowerCase());
-
   })
 };
 function removeVacancys() {
