@@ -196,7 +196,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-08| O sistema deve possibilitar que o administrador possa manter uma equipe |  ALTA | 
 |RF-09| O sistema deve permitir a qualquer usuário visualizar informações sobre uma equipe |  BAIXA | 
 |RF-10| O sistema deve permitir a qualquer usuário visualizar informações sobre uma vaga |  BAIXA | 
-|RF-11| O sistema deve permiti ao adminitrador de time incluir/excluir um membro de uma equipe |  MÉDIA | 
+|RF-11| O sistema deve permitir ao adminitrador de time incluir/excluir um membro de uma equipe |  MÉDIA | 
 |RF-12| O sistema deve listar todas as notícias do site de forma paginada |  BAIXA | 
 |RF-13| O sistema deve listar todas as vagas em aberto do site de forma paginada |  BAIXA | 
 |RF-14| O sistema deve listar todos os torneios do site de forma paginada |  BAIXA | 
