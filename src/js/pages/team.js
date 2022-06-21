@@ -407,7 +407,7 @@ export class TeamPage extends Component
   renderEquipeSection()
   {
     const { owner_id } = this.team;
-    const { id: logged_user_id } = this.loggedUser;
+    const logged_user_id = this.loggedUser?.id;
 
     const onExpulsarJogador = (id, playerRoleInTeam) => {
       const { name } = this.userRepository.get(id);
