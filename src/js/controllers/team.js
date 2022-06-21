@@ -1,5 +1,6 @@
 import { Controller } from '../framework/controller.js';
 import { Navbar } from '../components/navbar.js';
+import { Sidebar } from '../components/sidebar.js';
 import { User } from '../models/user.js';
 import { Sha256 } from '../helpers/crypto.js';
 import { USER_INFO } from '../framework/state.js';
@@ -172,6 +173,7 @@ export class TeamController extends Controller
   buildComponentDatabase()
   {
     this.registerComponent('navbar', Navbar);
+    this.registerComponent('sidebar', Sidebar);
     this.registerComponent('team-page', TeamPage);
   }
 }
