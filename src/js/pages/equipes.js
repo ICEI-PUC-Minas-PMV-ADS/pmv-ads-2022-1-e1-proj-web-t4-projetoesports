@@ -341,20 +341,14 @@ const controls = {
   }
 };
 const list = {
-  create(teams) {
+  create(team) {
     let containerTeams = document.getElementById('teamsContainer');
-    containerTeams.innerHTML += `
-              <div>
-                <div class="cardVaga card_`+ teams.id + `">
-                  <div class="iconesFlex">
-                    <img class="iconeTime" src="`+ teams.icon_url + `" alt="Icone Time"/>
-                  </div>
-                  <div class="botaoFlex">
-                    <h1 class="c-text-white nomeTime">`+ teams.name + `</h1>
-                    <button class="buttom_card">Ir para vaga</button>
-                  </div>
-                </div>
-              </div>
+    containerTeams.innerHTML += `<a href = "equipe.html?id=${team.id}">
+                                    <div class="cardTeam card_`+ team.id + `">
+                                        <img class="iconeTime" src="`+ team.icon_url + `" alt="Icone Time"/>
+                                        <h1 class="c-text-white nomeTime">`+ team.name + `</h1>
+                                    </div>
+                                  </a>
 `;
 
   },
