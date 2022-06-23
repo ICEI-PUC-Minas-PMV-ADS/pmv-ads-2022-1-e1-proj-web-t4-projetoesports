@@ -94,6 +94,21 @@ z-index: 0;
 .cardTeam:hover::before{
   height: 100%;
 }
+#buttonCreateTeam{
+  border-radius: 5px;
+  padding: 8px 28px;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  
+}
+#buttonCreateTeam:hover {
+  background-color: white; /* Green */
+  color: #491b46;
+}
 
 @media screen and (max-width: 800px) {
   #teamsContainer {
