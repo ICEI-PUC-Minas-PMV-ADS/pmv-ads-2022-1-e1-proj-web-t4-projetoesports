@@ -14,7 +14,7 @@ export function isUser() {
  * getUser
  */
 
- export function getUser() {
+export function getUser() {
   const applicationState = JSON.parse(window.sessionStorage.getItem('_STATE_application'));
   return applicationState[USER_INFO];
 }
