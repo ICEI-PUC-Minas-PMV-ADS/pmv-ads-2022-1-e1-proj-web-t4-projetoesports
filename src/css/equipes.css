@@ -1,0 +1,428 @@
+.side-bar-btn {
+  padding: 1.25rem;
+}
+
+.bg-grey-100 {
+  background-color: #888;
+}
+
+.menu > li {
+  list-style: none;
+}
+
+.top-icon-size {
+  width: 4rem;
+  height: 4rem;
+}
+
+.icon-size {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.5rem;
+  background-color: #888;
+  padding: 0.5rem;
+}
+
+.icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-size {
+  width: 3rem;
+  height: 3rem;
+}
+
+.nav-link-c {
+  color: #888;
+  font-size: 12px;
+  padding: 0;
+}
+
+.nav-link-c:hover {
+  color: #777;
+}
+
+.nav-link-c:active {
+  color: #666;
+}
+
+.nav-link-c-perfil {
+  font-size: 22px;
+  color: white;
+}
+
+.nav-link-c-perfil:hover {
+  color: #555;
+}
+
+.nav-link-c-perfil.active {
+  border-bottom: 5px solid black;
+}
+body {
+  background-color: #591e55;
+}
+a:link {
+  text-decoration: none;
+}
+.cardTeam {
+  
+  background-color: #491b46;
+  border-radius: 5px;
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.cardTeam::before{
+content: "";
+width: 100%;
+height: 0;
+position: absolute;
+background-image: linear-gradient(#491b46, #261423);
+z-index: 0;
+}
+.cardTeam:hover::before{
+  height: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  #teamsContainer {
+    display: grid;
+    justify-content: center;
+    grid-auto-flow: row;
+    row-gap: 2rem;
+    grid-template-columns: minmax(20rem, 30rem);
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    grid-template-areas:
+      'cabecalho'
+      'cardTeam_1'
+      'cardTeam_2'
+      'cardTeam_3'
+      'cardTeam_4'
+      'cardTeam_5'
+      'cardTeam_6'
+      'cardTeam_7'
+      'cardTeam_8'
+      'cardTeam_9';
+  }
+  .cabecalho {
+    grid-area: cabecalho;
+  }
+  .cardTeam_1 {
+    grid-area: cardTeam_1;
+  }
+  .cardTeam_2 {
+    grid-area: cardTeam_2;
+  }
+  .cardTeam_3 {
+    grid-area: cardTeam_3;
+  }
+  .cardTeam_4 {
+    grid-area: cardTeam_4;
+  }
+  .cardTeam_5 {
+    grid-area: cardTeam_5;
+  }
+  .cardTeam_6 {
+    grid-area: cardTeam_6;
+  }
+  .cardTeam_7 {
+    grid-area: cardTeam_7;
+  }
+  .cardTeam_8 {
+    grid-area: cardTeam_8;
+  }
+  .cardTeam_9 {
+    grid-area: cardTeam_9;
+  }
+
+  .cabecalho_flex {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .barra_de_pesquisa {
+    background-color: white;
+    border: solid 1px;
+    border-radius: 40px;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 15px;
+    margin-inline: auto;
+  }
+  .txt_pesquisa {
+    float: right;
+    background-color: transparent;
+    padding-right: 10px;
+    font-style: italic;
+    font-size: 18px;
+    border: none;
+    border-radius: 0px 40px 40px 0px;
+    height: 38px;
+    width: 85%;
+  }
+  .icone_pesquisa {
+    width: 1.5rem;
+    margin: 9px;
+  }
+  .iconeTime {
+    width: 35%;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+  
+  .nomeTime {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 800px) {
+  #teamsContainer {
+    display: grid;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-columns: minmax(20rem, 30rem) minmax(20rem, 30rem);
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      'cabecalho cabecalho'
+      'cardTeam_1 cardTeam_2'
+      'cardTeam_3 cardTeam_4'
+      'cardTeam_5 cardTeam_6'
+      'cardTeam_7 cardTeam_8'
+      'cardTeam_9 cardTeam_9';
+  }
+  .cabecalho {
+    grid-area: cabecalho;
+    padding-inline: 0;
+  }
+  .cardTeam_1 {
+    grid-area: cardTeam_1;
+  }
+  .cardTeam_2 {
+    grid-area: cardTeam_2;
+  }
+  .cardTeam_3 {
+    grid-area: cardTeam_3;
+  }
+  .cardTeam_4 {
+    grid-area: cardTeam_4;
+  }
+  .cardTeam_5 {
+    grid-area: cardTeam_5;
+  }
+  .cardTeam_6 {
+    grid-area: cardTeam_6;
+  }
+  .cardTeam_7 {
+    grid-area: cardTeam_7;
+  }
+  .cardTeam_8 {
+    grid-area: cardTeam_8;
+  }
+  .cardTeam_9 {
+    grid-area: cardTeam_9;
+  }
+
+  .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .barra_de_pesquisa {
+    background-color: white;
+    border: solid 1px;
+    border-radius: 40px;
+    width: 250px;
+    float: right;
+    height: 40px;
+  }
+  .txt_pesquisa {
+    float: right;
+    background-color: transparent;
+    padding-right: 10px;
+    font-style: italic;
+    font-size: 18px;
+    border: none;
+    border-radius: 0px 40px 40px 0px;
+    height: 36px;
+    width: 205px;
+  }
+  .icone_pesquisa {
+    width: 1.5rem;
+    margin: 9px;
+  }
+  .cabecalho_flex {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -15px;
+  }
+  
+  .iconeTime {
+    width: 35%;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+  
+  .nomeTime {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+  
+}
+
+@media screen and (min-width: 1100px) {
+  #teamsContainer {
+    display: grid;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-columns: minmax(20rem, 30rem) minmax(20rem, 30rem) minmax(
+        20rem,
+        30rem
+      );
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      'cabecalho cabecalho cabecalho'
+      'cardTeam_1 cardTeam_2 cardTeam_3'
+      'cardTeam_4 cardTeam_5 cardTeam_6'
+      'cardTeam_7 cardTeam_8 cardTeam_9';
+  }
+  .cabecalho {
+    grid-area: cabecalho;
+    padding-inline: 0;
+  }
+  .cardTeam_1 {
+    grid-area: cardTeam_1;
+  }
+  .cardTeam_2 {
+    grid-area: cardTeam_2;
+  }
+  .cardTeam_3 {
+    grid-area: cardTeam_3;
+  }
+  .cardTeam_4 {
+    grid-area: cardTeam_4;
+  }
+  .cardTeam_5 {
+    grid-area: cardTeam_5;
+  }
+  .cardTeam_6 {
+    grid-area: cardTeam_6;
+  }
+  .cardTeam_7 {
+    grid-area: cardTeam_7;
+  }
+  .cardTeam_8 {
+    grid-area: cardTeam_8;
+  }
+  .cardTeam_9 {
+    grid-area: cardTeam_9;
+  }
+  
+  .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .barra_de_pesquisa {
+    background-color: white;
+    border-radius: 40px;
+    width: 250px;
+    float: right;
+    height: 40px;
+  }
+  .txt_pesquisa {
+    float: right;
+    background-color: transparent;
+    padding-right: 10px;
+    font-style: italic;
+    font-size: 18px;
+    border: none;
+    border-radius: 0px 40px 40px 0px;
+    height: 36px;
+    width: 205px;
+  }
+  .icone_pesquisa {
+    width: 1.5rem;
+    margin: 9px;
+  }
+  .cabecalho_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -15px;
+  }
+  
+  .iconeTime {
+    width: 35%;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+  
+  .nomeTime {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+}
+#paginate{
+  color: white;
+}
+#paginate .controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 8px;
+}
+
+#paginate .controls div {
+  cursor: pointer;
+
+  /* border: 1px solid #eee; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14;
+}
+
+#paginate .controls div:not(.numbers),
+#paginate .controls div.numbers div{
+  width: 40px;
+  height: 40px;
+}
+
+#paginate .controls div.numbers div:hover,
+#paginate .controls div.numbers div.active {
+  color: #bebebe;
+}
+.first, .prev, .numbers, .next, .last {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin:0.8rem;
+}
