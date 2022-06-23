@@ -1,229 +1,390 @@
+.side-bar-btn {
+  padding: 1.25rem;
+}
 
-/* Basic styling */
-* {
-  box-sizing: border-box;
+.bg-grey-100 {
+  background-color: #888;
+}
+
+.menu > li {
+  list-style: none;
+}
+
+.top-icon-size {
+  width: 4rem;
+  height: 4rem;
+}
+
+.icon-size {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.5rem;
+  background-color: #888;
+  padding: 0.5rem;
+}
+
+.icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-size {
+  width: 3rem;
+  height: 3rem;
+}
+
+.nav-link-c {
+  color: #888;
+  font-size: 12px;
   padding: 0;
-  margin: 0;
+}
+
+.nav-link-c:hover {
+  color: #777;
+}
+
+.nav-link-c:active {
+  color: #666;
+}
+
+.nav-link-c-perfil {
+  font-size: 22px;
+  color: white;
+}
+
+.nav-link-c-perfil:hover {
+  color: #555;
+}
+
+.nav-link-c-perfil.active {
+  border-bottom: 5px solid black;
 }
 body {
-  font-family: sans-serif;
+  background-color: #591e55;
 }
-.navbar {
-  background: rgb(54, 5, 35);
-  padding: 5px 20px;
-}
-ul {
-  list-style-type: none;
-}
-a {
-  color: white;
+a:link {
   text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
-}
-.logo a:hover {
-  text-decoration: none;
-}
-.menu li {
-  font-size: 28px;
-  padding: 15px 5px;
-  margin-right: 5px;
-  white-space: nowrap;
-}
-
-.menu li p{
-  font-size: 10px;
-  margin: 5px 5px 0 0;
-  color: #fff;
-}
-
-.menu li i:hover{
-  color: rgb(201, 16, 118);
-}
-.logo a,
-.toggle a {
-  font-size: 20px;
-}
-
-/* Mobile menu */
-.menu {
+.cardTeam {
+  
+  background-color: #491b46;
+  border-radius: 5px;
+  max-width: 30rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-}
-.toggle {
-  order: 1;
-}
-.item.button {
-  order: 2;
-}
-.item {
-  width: 100%;
-  text-align: center;
-  order: 3;
-  display: none;
-}
-.item.active {
-  display: block;
-}
-
-/* Navbar Toggle */
-.toggle {
-  cursor:pointer;
-}
-.bars {
-  background: #999;
-  display: inline-block;
-  height: 2px;
+  overflow: hidden;
+  cursor: pointer;
   position: relative;
-  transition: background .2s ease-out;
-  width: 18px;
 }
-.bars:before,
-.bars:after {
-  background: #999;
-  content: '';
-  display: block;
+
+.cardTeam::before{
+content: "";
+width: 100%;
+height: 0;
+position: absolute;
+background-image: linear-gradient(#491b46, #261423);
+z-index: 0;
+}
+.cardTeam:hover::before{
   height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-}
-.bars:before {
-  top: 5px;
-}
-.bars:after {
-  top: -5px;
 }
 
-/* Navbar vertical */
-
-.vertical {
-  display: flex;
-  text-align: center;
-}
-
-
-.navabar-vertical{
-  
-  height: 100%;
-  background-color: rgb(27, 2, 13);
-  color: #fff;
-}
-
-.vertical ul li{
-  margin: 0px 5px 20px;
-}
-
-.vertical ul li i{
-  font-size: 30px;
-}
-
-.vertical ul li p{
-  font-size: 10px;
-}
-
-/*Content*/
-
-.item-dashboard{
-  width: 100%;
-  background-color: rgba(111, 11, 124, 0.911);
-}
-
-.content {
-  align-items: center;
-  display: flex;
-  text-align: left;
-  justify-content: space-between;
-  margin: 20px;
-  color: #fff;
-}
-
-.content h2{
-  font-size: 35px;
-}
-
-input[type=search] {
-  border-radius: 10px;
-  padding: 8px 20px;
-  margin: 8px 0;
-  color: #fff;
-  box-sizing: border-box;
-}
-
-.lupa {
-  margin-left: -90%;
-  z-index: 1;
-}
-
-.cards {
-  margin-left: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  text-align: center;
-  align-items: center;
-}
-
-.item-card{
-  width: 350px;
-  height: 180px;
-  margin: 20px;
-  background: rgb(54, 5, 35);
-  border-radius: 10px;
-  color: #fff;
-}
-
-.item-card:hover{
-  width: 360px;
-  background: rgb(94, 13, 63);
-}
-
-.item-card img{
-  width: 100px;
-  margin-top: 20px;
-  border-radius: 100%;
-}
-
-
-
-/* Tablet menu */
-@media all and (min-width: 468px) {
-  .menu {
-      justify-content: center;
+@media screen and (max-width: 800px) {
+  #teamsContainer {
+    display: grid;
+    justify-content: center;
+    grid-auto-flow: row;
+    row-gap: 2rem;
+    grid-template-columns: minmax(20rem, 30rem);
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    grid-template-areas:
+      'cabecalho'
+      'card_1'
+      'card_2'
+      'card_3'
+      'card_4'
+      'card_5'
+      'card_6'
+      'card_7'
+      'card_8'
+      'card_9';
+  }
+  .cabecalho {
+    grid-area: cabecalho;
+  }
+  .card_1 {
+    grid-area: card_1;
+  }
+  .card_2 {
+    grid-area: card_2;
+  }
+  .card_3 {
+    grid-area: card_3;
+  }
+  .card_4 {
+    grid-area: card_4;
+  }
+  .card_5 {
+    grid-area: card_5;
+  }
+  .card_6 {
+    grid-area: card_6;
+  }
+  .card_7 {
+    grid-area: card_7;
+  }
+  .card_8 {
+    grid-area: card_8;
+  }
+  .card_9 {
+    grid-area: card_9;
   }
 
-  .logo {
-      flex: 1;
+  .cabecalho_flex {
+    display: flex;
+    flex-flow: column nowrap;
   }
-
-  .toggle {
-      order: 2;
+  .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .barra_de_pesquisa {
+    background-color: white;
+    border: solid 1px;
+    border-radius: 40px;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 15px;
+    margin-inline: auto;
+  }
+  .txt_pesquisa {
+    float: right;
+    background-color: transparent;
+    padding-right: 10px;
+    font-style: italic;
+    font-size: 18px;
+    border: none;
+    border-radius: 0px 40px 40px 0px;
+    height: 38px;
+    width: 85%;
+  }
+  .icone_pesquisa {
+    width: 1.5rem;
+    margin: 9px;
   }
   
+  .iconeTime {
+    width: 35%;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+  
+  .nomeTime {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 800px) {
+  #teamsContainer {
+    display: grid;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-columns: minmax(20rem, 30rem) minmax(20rem, 30rem);
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      'cabecalho cabecalho'
+      'card_1 card_2'
+      'card_3 card_4'
+      'card_5 card_6'
+      'card_7 card_8'
+      'card_9 card_9';
+  }
+  .cabecalho {
+    grid-area: cabecalho;
+    padding-inline: 0;
+  }
+  .card_1 {
+    grid-area: card_1;
+  }
+  .card_2 {
+    grid-area: card_2;
+  }
+  .card_3 {
+    grid-area: card_3;
+  }
+  .card_4 {
+    grid-area: card_4;
+  }
+  .card_5 {
+    grid-area: card_5;
+  }
+  .card_6 {
+    grid-area: card_6;
+  }
+  .card_7 {
+    grid-area: card_7;
+  }
+  .card_8 {
+    grid-area: card_8;
+  }
+  .card_9 {
+    grid-area: card_9;
+  }
+
+  .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .barra_de_pesquisa {
+    background-color: white;
+    border: solid 1px;
+    border-radius: 40px;
+    width: 250px;
+    float: right;
+    height: 40px;
+  }
+  .txt_pesquisa {
+    float: right;
+    background-color: transparent;
+    padding-right: 10px;
+    font-style: italic;
+    font-size: 18px;
+    border: none;
+    border-radius: 0px 40px 40px 0px;
+    height: 36px;
+    width: 205px;
+  }
+  .icone_pesquisa {
+    width: 1.5rem;
+    margin: 9px;
+  }
+  .cabecalho_flex {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -15px;
+  }
+  .iconeTime {
+    width: 35%;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+  
+  .nomeTime {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
 }
 
-/* Desktop menu */
-@media all and (min-width: 768px) {
-  .item {
-      display: block;
-      width: auto;
+@media screen and (min-width: 1100px) {
+  #teamsContainer {
+    display: grid;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-columns: minmax(20rem, 30rem) minmax(20rem, 30rem) minmax(
+        20rem,
+        30rem
+      );
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      'cabecalho cabecalho cabecalho'
+      'card_1 card_2 card_3'
+      'card_4 card_5 card_6'
+      'card_7 card_8 card_9';
   }
-  .toggle {
-      display: none;
+  .cabecalho {
+    grid-area: cabecalho;
+    padding-inline: 0;
   }
-  .logo {
-      order: 0;
+  .card_1 {
+    grid-area: card_1;
   }
-  .item {
-      order: 1;
+  .card_2 {
+    grid-area: card_2;
   }
-  .button {
-      order: 2;
+  .card_3 {
+    grid-area: card_3;
   }
-  .menu li {
-      padding: 15px 10px;
+  .card_4 {
+    grid-area: card_4;
+  }
+  .card_5 {
+    grid-area: card_5;
+  }
+  .card_6 {
+    grid-area: card_6;
+  }
+  .card_7 {
+    grid-area: card_7;
+  }
+  .card_8 {
+    grid-area: card_8;
+  }
+  .card_9 {
+    grid-area: card_9;
+  }
+  
+  .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .barra_de_pesquisa {
+    background-color: white;
+    border: solid 1px;
+    border-radius: 40px;
+    width: 250px;
+    float: right;
+    height: 40px;
+  }
+  .txt_pesquisa {
+    float: right;
+    background-color: transparent;
+    padding-right: 10px;
+    font-style: italic;
+    font-size: 18px;
+    border: none;
+    border-radius: 0px 40px 40px 0px;
+    height: 36px;
+    width: 205px;
+  }
+  .icone_pesquisa {
+    width: 1.5rem;
+    margin: 9px;
+  }
+  .cabecalho_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -15px;
+  }
+  .iconeTime {
+    width: 35%;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+  
+  .nomeTime {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
   }
 }
+

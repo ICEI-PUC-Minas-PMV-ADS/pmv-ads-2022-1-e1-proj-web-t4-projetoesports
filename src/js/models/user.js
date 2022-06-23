@@ -11,7 +11,7 @@ export class User {
     this.password = password;
     this.img_url = null;
     this.objective = null;
-    this.participated_teams = null;
+    this.participated_teams = [];
     this.contact_info = null;
     this.game_statistics = null;
     this.receive_new_vacancies_notification = false;

@@ -1,12 +1,14 @@
-//Simulação banco de dados
+
 import { UserRepository } from '/src/js/repositories/user_repository.js';
 import { GameRepository } from '/src/js/repositories/game_repository.js';
 import { RoleRepository } from '/src/js/repositories/role_repository.js';
 import { TeamRepository } from '/src/js/repositories/team_repository.js';
 import { VacancyRepository } from '/src/js/repositories/vacancy_repository.js';
 import { Sha256 } from '/src/js/helpers/crypto.js';
+import { isUser } from '/src/js/helpers/authentication.js';
+import { getUser } from '/src/js/helpers/authentication.js';
 
-
+//Simulação banco de dados
 function gamesInitialize() {
   const gameRepository = new GameRepository();
 
@@ -61,7 +63,7 @@ function usersInitialize() {
     password: Sha256.hash('123'),
     img_url: 'imgs/RC.png',
     objective: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.',
-    participated_teams: [],
+    participated_teams: [1],
     contact_info: ['xer_ima@email.com', '@xer_ima_123'],
     game_statistics: ['https://oce.op.gg/summoners/br/xer_ima_xd'],
     game_roles: [],
@@ -85,7 +87,7 @@ function usersInitialize() {
     password: Sha256.hash('123'),
     img_url: 'imgs/RC.png',
     objective: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.',
-    participated_teams: [],
+    participated_teams: [3, 1, 2],
     contact_info: ['g0rila@email.com', '@g0rila'],
     game_statistics: ['https://oce.op.gg/summoners/br/g0rila_xd'],
     game_roles: [],
@@ -269,9 +271,7 @@ const teamsRepository = new TeamRepository();
 
 const rolesRepository = new RoleRepository();
 
-const vacancys = vacancysRepository.getAll();
-
-vacancys.reverse();
+const user = getUser();
 
 document.addEventListener('DOMContentLoaded', initializeLocalStorage);
 
@@ -289,137 +289,40 @@ function initializeLocalStorage() {
   }
 };
 
-//Configuração da paginação
-let perPage = 9;
 
-const state = {
-  page: 1,
-  perPage,
-  totalPage: Math.ceil(vacancys.length / perPage),
-  maxVisibleButtons: 5,
-};
-const controls = {
-  next() {
-    state.page++
-    const lastPage = state.page > state.totalPage
-    if (lastPage) {
-      state.page--
-    }
-  },
-  prev() {
-    state.page--
-    if (state.page < 1) {
-      state.page++
-    }
-  },
-  goTo(page) {
-    if (page < 1) {
-      page = 1;
-    }
-    state.page = +page
-    if (page > state.totalPage) {
-      state.page = state.totalPage;
-    }
-  },
-  createListeners() {
-    document.querySelector('.first').addEventListener('click', () => {
-      controls.goTo(1);
-      update();
-    })
-    document.querySelector('.last').addEventListener('click', () => {
-      controls.goTo(state.totalPage);
-      update();
-    })
-    document.querySelector('.next').addEventListener('click', () => {
-      controls.next();
-      update();
-    })
-    document.querySelector('.prev').addEventListener('click', () => {
-      controls.prev();
-      update();
-    })
+//Inicialização da página
+
+function uptade() {
+  let containerTeams = document.getElementById('teamsContainer');
+  const user = getUser();
+  if (isUser() == false) {
+    removeTeams();
+    containerTeams.innerHTML += `<div class= "card_2 c-text-white">
+                                          <h2>Nenhum usuário conectado.</h2>
+                                    </div>`;
   }
-};
-const list = {
-  create(vacancy) {
-    let containerVacancys = document.getElementById('vagasContainer');
-    let teamRender = teamsRepository.get(vacancy.team_id);
-    let roleRender = rolesRepository.get(vacancy.role_id);
-    containerVacancys.innerHTML += `
-              <div>
-                <div class="cardVaga card_`+ vacancy.id + `">
-                  <div class="iconesFlex">
+  else if (isUser() == true & user.participated_teams.length == 0) {
+    removeTeams();
+    containerTeams.innerHTML += `<div class= "card_2 c-text-white">
+                                          <h2 style = "text-align: center; ">Você não é membro de nenhuma equipe.</h2>
+                                    </div>`;
+  }
+  else {
+    user.participated_teams.forEach((team) => {
+      let containerMinhasEquipes = document.getElementById('teamsContainer');
+      let teamRender = teamsRepository.get(team);
+      containerMinhasEquipes.innerHTML += `
+              <a href = "equipe.html?id=${team}">
+                <div class="cardTeam card_`+ team + `">
                     <img class="iconeTime" src="`+ teamRender.icon_url + `" alt="Icone Time"/>
-                    <img class="iconeRole" src="`+ roleRender.icon_url + `" alt="Icone Role"/>
-                  </div>
-                  <div class="botaoFlex">
                     <h1 class="c-text-white nomeTime">`+ teamRender.name + `</h1>
-                    <button class="buttom_card" onclick = "window.location.href = 'vaga.html?id=${vacancy.id}'">Ir para vaga</button>
-                  </div>
                 </div>
-              </div>
+              </a>
 `;
-
-  },
-  update(vacancysFound) {
-    document.querySelector('#vagasContainer').innerHTML = '';
-
-    let page = state.page - 1
-    let start = page * state.perPage
-    let end = start + state.perPage
-
-    const paginatedVacancys = vacancysFound.slice(start, end)
-
-    paginatedVacancys.forEach(list.create)
-
+    })
   }
-
-};
-const buttons = {
-  create(number) {
-    const button = document.createElement('div');
-
-    button.innerHTML = number;
-
-    if (state.page == number) {
-      button.classList.add('active')
-    }
-
-    button.addEventListener('click', (event) => {
-      const page = event.target.innerText;
-      controls.goTo(page);
-      update();
-    });
-
-    document.querySelector('.numbers').appendChild(button);
-  },
-  update() {
-    document.querySelector('.numbers').innerHTML = '';
-    const { maxLeft, maxRight } = buttons.calculateMaxVisible();
-    for (let page = maxLeft; page <= maxRight; page++) {
-      buttons.create(page);
-    };
-  },
-  calculateMaxVisible() {
-    const { maxVisibleButtons } = state;
-    let maxLeft = (state.page - Math.floor(maxVisibleButtons / 2))
-    let maxRight = (state.page + Math.floor(maxVisibleButtons / 2))
-
-    if (maxLeft < 1) {
-      maxLeft = 1;
-      maxRight = maxVisibleButtons;
-    }
-
-    if (maxRight > state.totalPage) {
-      maxLeft = state.totalPage - (maxVisibleButtons - 1);
-      maxRight = state.totalPage;
-      if (maxLeft < 1) {
-        maxLeft = 1
-      }
-    }
-    return { maxLeft, maxRight };
-  }
-};
+}
+uptade();
 
 //Configuração barra de pesquisa
 const search = document.getElementById('searchInput');
@@ -428,51 +331,46 @@ search.addEventListener('keyup', _.debounce(searchInKeyUp, 400));
 
 function searchInKeyUp(event) {
   const searched = event.target.value;
-  const vacancysFound = vacancysFilter(searched);
-  let containerVacancys = document.getElementById('vagasContainer');
-  let pagination = document.getElementById('paginate');
+  const teamsFound = teamsFilter(searched);
+  let containerTeams = document.getElementById('teamsContainer');
+  console.log(teamsFound);
 
-  if (vacancysFound.length > 1 & vacancysFound.length != vacancys.length) {
-    removeVacancys();
-    pagination.style.display = 'none';
-    vacancysFound.forEach(list.create);
-  }
-  else if (vacancysFound.length == vacancys.length) {
-    removeVacancys();
-    pagination.style.display = 'block';
-    init();
+  if (teamsFound.length > 0) {
+    removeTeams();
+    teamsFound.forEach((team) => {
+      let containerMinhasEquipes = document.getElementById('teamsContainer');
+      let teamRender = teamsRepository.get(team);
+      containerMinhasEquipes.innerHTML += `
+              <a href = "equipe.html?id=${team}">
+                <div class="cardTeam card_`+ team + `">
+                    <img class="iconeTime" src="`+ teamRender.icon_url + `" alt="Icone Time"/>
+                    <h1 class="c-text-white nomeTime">`+ teamRender.name + `</h1>
+                </div>
+              </a>
+`;
+    })
   }
   else {
-    removeVacancys();
-    pagination.style.display = 'none';
-    containerVacancys.innerHTML += `<div class= "card_2 c-text-white">
-                                          <h2>Nenhuma vaga encontrada.</h2>
+    removeTeams();
+    containerTeams.innerHTML += `<div class= "card_2 c-text-white">
+                                          <h2>Nenhuma equipe encontrada.</h2>
                                     </div>`;
   }
 
 };
-function vacancysFilter(searched) {
-  return vacancys.filter(vaga => {
-    let team = teamsRepository.get(vaga.team_id);
-    let role = rolesRepository.get(vaga.role_id);
-    return role.tag.toLowerCase().includes(searched.toLowerCase());
+function teamsFilter(searched) {
+  return user.participated_teams.filter(vaga => {
+    let team = teamsRepository.get(vaga);
+    return team.name.toLowerCase().includes(searched.toLowerCase());
   })
 };
-function removeVacancys() {
-  let containerVacancys = document.getElementById('vagasContainer');
-  while (containerVacancys.firstChild) {
-    containerVacancys.removeChild(containerVacancys.firstChild);
+
+function removeTeams() {
+  let containerTeams = document.getElementById('teamsContainer');
+  while (containerTeams.firstChild) {
+    containerTeams.removeChild(containerTeams.firstChild);
   }
 };
 
 
-//Inicialização da página
-function update() {
-  list.update(vacancys)
-  buttons.update();
-}
-function init() {
-  update();
-  controls.createListeners();
-}
-init();
+
