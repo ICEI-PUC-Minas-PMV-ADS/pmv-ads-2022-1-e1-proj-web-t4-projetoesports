@@ -346,18 +346,15 @@ const list = {
     let teamRender = teamsRepository.get(vacancy.team_id);
     let roleRender = rolesRepository.get(vacancy.role_id);
     containerVacancys.innerHTML += `
-              <div>
-                <div class="cardVaga card_`+ vacancy.id + `">
+              <a href = "vaga.html?id=${vacancy.id}">
+                <div class="cardVacancy card_`+ vacancy.id + `">
                   <div class="iconesFlex">
                     <img class="iconeTime" src="`+ teamRender.icon_url + `" alt="Icone Time"/>
                     <img class="iconeRole" src="`+ roleRender.icon_url + `" alt="Icone Role"/>
                   </div>
-                  <div class="botaoFlex">
                     <h1 class="c-text-white nomeTime">`+ teamRender.name + `</h1>
-                    <button class="buttom_card" onclick = "window.location.href = 'vaga.html?id=${vacancy.id}'">Ir para vaga</button>
-                  </div>
                 </div>
-              </div>
+              </a>
 `;
 
   },
@@ -378,7 +375,7 @@ const list = {
 const buttons = {
   create(number) {
     const button = document.createElement('div');
-
+    button.classList.add('buttonsNumbers')
     button.innerHTML = number;
 
     if (state.page == number) {

@@ -369,7 +369,7 @@ const list = {
 const buttons = {
   create(number) {
     const button = document.createElement('div');
-
+    button.classList.add('buttonsNumbers')
     button.innerHTML = number;
 
     if (state.page == number) {

@@ -419,10 +419,17 @@ z-index: 0;
 
 #paginate .controls div.numbers div:hover,
 #paginate .controls div.numbers div.active {
-  color: #bebebe;
+  background-color: white; 
+  color: #491b46;
 }
-.first, .prev, .numbers, .next, .last {
+
+.first, .prev, .buttonsNumbers, .next, .last {
   border: 1px solid #eee;
   border-radius: 5px;
   margin:0.8rem;
+}
+
+.first:hover, .prev:hover, .buttonsNumbers:hover, .next:hover, .last:hover {
+  background-color: white; 
+  color: #491b46;
 }
