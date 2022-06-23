@@ -272,7 +272,6 @@ const teamsRepository = new TeamRepository();
 const rolesRepository = new RoleRepository();
 
 const user = getUser();
-console.log(user);
 
 document.addEventListener('DOMContentLoaded', initializeLocalStorage);
 
@@ -313,18 +312,17 @@ function uptade() {
       let containerMinhasEquipes = document.getElementById('teamsContainer');
       let teamRender = teamsRepository.get(team);
       containerMinhasEquipes.innerHTML += `
-              <div>
-                <div class="cardVaga card_`+ team.id + `">
+              <a href = "equipe.html?id=${team}">
+                <div class="cardTeam card_`+ team + `">
                     <img class="iconeTime" src="`+ teamRender.icon_url + `" alt="Icone Time"/>
                     <h1 class="c-text-white nomeTime">`+ teamRender.name + `</h1>
                 </div>
-              </div>
+              </a>
 `;
     })
   }
 }
 uptade();
-
 
 //Configuração barra de pesquisa
 const search = document.getElementById('searchInput');
@@ -343,12 +341,12 @@ function searchInKeyUp(event) {
       let containerMinhasEquipes = document.getElementById('teamsContainer');
       let teamRender = teamsRepository.get(team);
       containerMinhasEquipes.innerHTML += `
-              <div>
-                <div class="cardVaga card_`+ team.id + `">
+              <a href = "equipe.html?id=${team}">
+                <div class="cardTeam card_`+ team + `">
                     <img class="iconeTime" src="`+ teamRender.icon_url + `" alt="Icone Time"/>
                     <h1 class="c-text-white nomeTime">`+ teamRender.name + `</h1>
                 </div>
-              </div>
+              </a>
 `;
     })
   }
@@ -363,7 +361,6 @@ function searchInKeyUp(event) {
 function teamsFilter(searched) {
   return user.participated_teams.filter(vaga => {
     let team = teamsRepository.get(vaga);
-    let role = rolesRepository.get(vaga.role_id);
     return team.name.toLowerCase().includes(searched.toLowerCase());
   })
 };

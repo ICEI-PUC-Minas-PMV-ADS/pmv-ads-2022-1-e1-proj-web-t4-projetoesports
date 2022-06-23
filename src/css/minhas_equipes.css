@@ -64,7 +64,36 @@
 .nav-link-c-perfil.active {
   border-bottom: 5px solid black;
 }
+body {
+  background-color: #591e55;
+}
+a:link {
+  text-decoration: none;
+}
+.cardTeam {
+  
+  background-color: #491b46;
+  border-radius: 5px;
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
 
+.cardTeam::before{
+content: "";
+width: 100%;
+height: 0;
+position: absolute;
+background-image: linear-gradient(#491b46, #261423);
+z-index: 0;
+}
+.cardTeam:hover::before{
+  height: 100%;
+}
 
 @media screen and (max-width: 800px) {
   #teamsContainer {
@@ -152,22 +181,17 @@
     width: 1.5rem;
     margin: 9px;
   }
-  .cardVaga {
-    background-color: #491b46;
-    border-radius: 5px;
-    max-width: 30rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  
   .iconeTime {
     width: 35%;
     margin-top: 1rem;
+    z-index: 1;
   }
   
   .nomeTime {
     font-size: 3rem;
     margin-bottom: 1rem;
+    z-index: 1;
   }
 }
 @media screen and (min-width: 800px) {
@@ -254,22 +278,16 @@
     justify-content: space-between;
     margin-bottom: -15px;
   }
-  .cardVaga {
-    background-color: #491b46;
-    border-radius: 5px;
-    max-width: 30rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .iconeTime {
     width: 35%;
     margin-top: 1rem;
+    z-index: 1;
   }
   
   .nomeTime {
     font-size: 3rem;
     margin-bottom: 1rem;
+    z-index: 1;
   }
 }
 
@@ -357,22 +375,16 @@
     justify-content: space-between;
     margin-bottom: -15px;
   }
-  .cardVaga {
-    background-color: #491b46;
-    border-radius: 5px;
-    max-width: 30rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .iconeTime {
     width: 35%;
     margin-top: 1rem;
+    z-index: 1;
   }
   
   .nomeTime {
     font-size: 3rem;
     margin-bottom: 1rem;
+    z-index: 1;
   }
 }
 
