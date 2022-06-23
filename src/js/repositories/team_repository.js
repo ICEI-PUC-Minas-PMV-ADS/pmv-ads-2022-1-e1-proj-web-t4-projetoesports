@@ -17,10 +17,4 @@ export class TeamRepository extends BaseRepository {
   deserialize(data) {
     return { ...data };
   }
-
-  getLoggedUser() {
-    let sessionStorage = window.sessionStorage;
-    let rep_data = JSON.parse(sessionStorage.getItem('_STATE_application'));
-    return this.deserialize(rep_data?.user_info);
-  }
 }

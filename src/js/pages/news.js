@@ -26,7 +26,7 @@ export class NewsPage extends Component
       news,
       current_page: 1,
       page_count: Math.ceil(news.length / PAGE_SIZE),
-      search_filter: 0,
+      search_filter: "",
     };
   }
 
@@ -40,7 +40,15 @@ export class NewsPage extends Component
           (index >= (this.state.current_page - 1) * PAGE_SIZE) &&
           (index < this.state.current_page * PAGE_SIZE)
         ) {
-          paged_news.push(news);
+          const filter = this.state.search_filter.trim();
+
+          if (filter.length) {
+            if (news.title?.toLowerCase().includes(filter.toLowerCase()) || news.description?.toLowerCase().includes(filter.toLowerCase())) {
+              paged_news.push(news);
+            }
+          } else {
+            paged_news.push(news);
+          }
         }
       }
     });
@@ -60,6 +68,28 @@ export class NewsPage extends Component
             img({ src: "imgs/newspaper-solid.svg", style: { width: '1.5rem' } }),
             h4({ style: { marginLeft: '0.5rem' } }, "Noticias"),
           ]),
+
+          // Barra de busca
+          div({ className: "d-flex align-items-center", style: { position: 'relative' } }, [
+            input({
+              type: "text",
+              placeholder: 'Pesquisa',
+              style: {
+                borderRadius: '1rem',
+                width: '15rem',
+                paddingLeft: '1.75rem'
+              },
+              value: this.state.search_filter,
+              events: {
+                change: (evt) => {
+                  this.setState({ search_filter: evt.target.value });
+                },
+              }
+            }),
+            span({ className: "", style: { position: 'absolute', top: '0.25rem', left: '0.5rem' } },
+              img({ src: "imgs/magnifying-glass.svg", style: { width: '1.0rem' } })
+            )
+          ])
         ]),
 
         // Conteudo

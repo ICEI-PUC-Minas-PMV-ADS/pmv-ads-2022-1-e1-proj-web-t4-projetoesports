@@ -666,7 +666,9 @@ export function renderElementTree(elem, newElem)
         const parentElement = elem.__element.parentElement;
         elem.__children = newElem.__children;
         elem.__element = renderElementTree(elem.__children);
-        parentElement.replaceChildren(elem.__element);
+        if (parentElement) {
+          parentElement.replaceChildren(elem.__element);
+        }
         return null;
       }
 

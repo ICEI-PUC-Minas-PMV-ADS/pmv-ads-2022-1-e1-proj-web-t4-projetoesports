@@ -1,5 +1,5 @@
 import { Component } from "../framework/component.js";
-import { div, component, h5, h4, h6, nav, a, p, hr, li, img, mapTo } from '../framework/elements.js';
+import { div, component, h5, h4, h6, nav, a, p, hr, li, img, mapTo, button } from '../framework/elements.js';
 import { If } from '../framework/std-components.js';
 
 import { USER_INFO } from "../framework/state.js";
@@ -9,6 +9,8 @@ import { UserRepository } from '../repositories/user_repository.js';
 import { TeamRepository } from '../repositories/team_repository.js';
 import { VacancyRepository } from '../repositories/vacancy_repository.js';
 import { RoleRepository } from '../repositories/role_repository.js';
+
+import { sendNotification } from '../helpers/notification.js';
 
 import {HOME_ROUTE, VACANCY_ROUTE, CREATE_VACANCY_ROUTE, redirectTo } from '../helpers/routes.js';
 import { GameRepository } from "../repositories/game_repository.js";
@@ -20,12 +22,12 @@ import { GameRepository } from "../repositories/game_repository.js";
 const PROFILE_IMG              = 'imgs/icone_time.png';
 
 const SECTION_SOBRE            = 'sobre';
-const SECTION_EQUIPE      = 'equipe';
-const SECTION_VAGAS          = 'vagas';
+const SECTION_EQUIPE           = 'equipe';
+const SECTION_VAGAS            = 'vagas';
  
 export const SECTION_DEFAULT   = SECTION_SOBRE;
 
-const SOBRE_SECTION_INFOS   = 'Informações Gerais';
+const SOBRE_SECTION_INFOS      = 'Informações Gerais';
 const SOBRE_SECTION_CONTATO    = 'Contato';
 
 const SOBRE_SECTION_DEFAULT    = SOBRE_SECTION_INFOS;
@@ -67,11 +69,10 @@ export class TeamPage extends Component
     this.renderSobreSectionInfos = this.renderSobreSectionInfos?.bind(this);
     this.renderSobreSectionContato = this.renderSobreSectionContato?.bind(this);
 
-    this.team = (
-      this.ctrl.params?.id
-        ? this.teamRepository.get(this.ctrl.params?.id)
-        : this.ctrl.appState.load(USER_INFO)
-    );
+    if (!this.ctrl.params?.id) {
+      redirectTo(HOME_ROUTE);
+    }
+    this.team = this.teamRepository.get(this.ctrl.params?.id);
 
     this.vacancies = [];
     this.team?.vacancies.forEach((vacancyId) => {
@@ -89,7 +90,7 @@ export class TeamPage extends Component
       this.reserves.push(this.userRepository.get(playerId));
     });
 
-    this.loggedUser = this.teamRepository.getLoggedUser();
+    this.loggedUser = this.ctrl.appState.load(USER_INFO);
   }
 
   /***
@@ -121,8 +122,8 @@ export class TeamPage extends Component
 
     const section_components = {};
 
-    section_components[SECTION_SOBRE]       = this.renderSobreSection();
-    section_components[SECTION_EQUIPE] = this.renderEquipeSection();
+    section_components[SECTION_SOBRE]     = this.renderSobreSection();
+    section_components[SECTION_EQUIPE]    = this.renderEquipeSection();
     section_components[SECTION_VAGAS]     = this.renderVagasSection();
 
     /***
@@ -249,7 +250,7 @@ export class TeamPage extends Component
 
             div({ className: 'clearfix', style: { borderBottom: '1px solid white' } },
               div({ className: 'float-end', style: { height: '3rem', position: 'relative' } },
-              component(If, this.loggedUser.id === this.team.owner_id,
+              component(If, this.loggedUser?.id === this.team.owner_id,
                 div({ className: 'd-flex justify-content-end flex-column'}, [
                   div({ className: 'd-flex justify-content-end align-items-end' },
                     a({
@@ -405,6 +406,34 @@ export class TeamPage extends Component
 
   renderEquipeSection()
   {
+    const { owner_id } = this.team;
+    const logged_user_id = this.loggedUser?.id;
+
+    const onExpulsarJogador = (id, playerRoleInTeam) => {
+      const { name } = this.userRepository.get(id);
+      if (confirm(`Você confirma a expulsão do jogador ${name}?`)) {
+        for (let i = 0; i < this.team[playerRoleInTeam].length; i++) {
+          if (this.team[playerRoleInTeam][i] === id) {
+            this.team[playerRoleInTeam].splice(i, 1);
+            break;
+          }
+        }
+
+        for (let i = 0; i < this.team['players'].length; i++) {
+          if (this.team['players'][i] === id) {
+            delete this.team['players'].splice(i, 1);
+            break;
+          }
+        }
+
+        sendNotification(`${this.team.name}`, `Você foi expulso do time ${this.team.name}!`, logged_user_id, id);
+
+        this.teamRepository.update(this.team);
+
+        window.location.reload();
+      }
+    }
+
     return (
       div({ className: "flex-fill", style: { backgroundColor: '#591E55' } },
         div({ className: "container mt-5" }, 
@@ -424,7 +453,11 @@ export class TeamPage extends Component
                             img({ className: "w-100", src: img_url, style: { borderRadius: '50%' } },),
                             h5({ className: 'text-center p-2' }, name)
                           ]),
-                          h5({ className: 'text-center p-2' }, role_name)
+                          h5({ className: 'text-center p-2' }, role_name),
+                          component(If, owner_id === logged_user_id,
+                            button({ className: 'btn c-bg-secondary', style: { fontSize: '12px' }, events: { click: () => { onExpulsarJogador(id, 'active_players') } } }, "Expulsar jogador"),
+                            div(),
+                          )
                         ])
                       }
                     )
@@ -445,7 +478,11 @@ export class TeamPage extends Component
                             img({ className: "w-100", src: img_url, style: { borderRadius: '50%' } },),
                             h5({ className: 'text-center p-2' }, name)
                           ]),
-                          h5({ className: 'text-center p-2' }, role_name)
+                          h5({ className: 'text-center p-2' }, role_name),
+                          component(If, owner_id === logged_user_id,
+                            button({ className: 'btn c-bg-secondary', style: { fontSize: '12px' }, events: { click: () => { onExpulsarJogador(id, 'reserves') } } }, "Expulsar jogador"),
+                            div(),
+                          )
                         ])
                       }
                     )
@@ -482,7 +519,7 @@ export class TeamPage extends Component
                     const { name: game_name } = this.gameRepository.get(game_id);
         
                     return div({ key: id, className: 'c-bg-primary-dark p-4', style: { borderRadius: '5px', cursor: 'pointer', display: 'table-cell', backgroundColor: 'rgba(255, 255, 255, 0.1)'  },
-                    events: { click: () => { redirectTo(VACANCY_ROUTE, { id }) }} }, [
+                      events: { click: () => { redirectTo(VACANCY_ROUTE, { id }) }} }, [
                       div({ className: 'd-flex justify-content-between' }, [
                         h6({ }, game_name),
                       ]),            

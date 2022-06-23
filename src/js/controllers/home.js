@@ -15,7 +15,7 @@ import { USER_INFO } from '../framework/state.js';
 
 import { initializeDatabase } from '../helpers/mock_data.js';
 
-import { HOME_ROUTE, MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
+import { MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
 
 /***
  * HomeController

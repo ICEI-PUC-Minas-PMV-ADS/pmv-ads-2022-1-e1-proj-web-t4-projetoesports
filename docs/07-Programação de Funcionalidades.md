@@ -400,3 +400,137 @@ A tela criar vaga permitirá que o adminitrador de um time, crie uma vaga para p
   }
 }
 ```
+
+## Tela para visualizar jogadores
+
+A tela para visualizar os jogadores, ela lista todos os usuário cadastrados no sistema, para manter a performance ela faz a paginação em ate 15 elementos conforme especificação.
+
+<img src="img/jogadores.jpg" />
+
+### Requisitos atendidos
+
+- RF-16
+- RF-21
+
+### Artefatos da funcionalidade
+
+- jogadores.html
+- js/controllers/players.js
+- js/pages/players.js
+
+### Estrutura de Dados
+
+```
+{
+  [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "john@email.com",
+      "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "img_url": "imgs/RC.png",
+      "objective": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.",
+      "participated_teams": [],
+      "contact_info": ["john@email.com"],
+      "game_statistics": ["https://oce.op.gg/summoners/br/john_cabure"],
+      "game_roles": [],
+      "receive_new_vacancies_notification": true
+    },
+    {
+      "id": 2,
+      "name": "Pedro",
+      "email": "pedro@email.com",
+      "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "img_url": "imgs/RC.png",
+      "objective": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minima.",
+      "participated_teams": [],
+      "contact_info": ["pedro@email.com"],
+      "game_statistics": ["https://oce.op.gg/summoners/br/pedro_cabure"],
+      "game_roles": [],
+      "receive_new_vacancies_notification": true
+    }
+  ]
+}
+```
+
+## Tela para visualizar noticias
+
+A tela para visualizar as noticias, ela lista todos as noticias cadastrados no sistema, para manter a performance ela faz a paginação em ate 15 elementos conforme especificação.
+
+<img src="img/noticias.jpg" />
+
+### Requisitos atendidos
+
+- RF-12
+- RF-20
+
+### Artefatos da funcionalidade
+
+- noticias.html
+- js/controllers/news.js
+- js/pages/news.js
+
+### Estrutura de Dados
+
+```
+{
+  [
+    {
+      "id":1,
+      "title":"News #1",
+      "description":"Descrição News #1",
+      "carousel_img_url":"imgs/noticias_images/noticias_1.png",
+      "url":"https://www.google.com",
+      "created_at":1652281098729
+    },
+    {
+      "id":2,
+      "title":"News #2",
+      "description":"Descrição News #2",
+      "carousel_img_url":"imgs/noticias_images/noticias_2.png",
+      "url":"https://www.google.com",
+      "created_at":1652281098729
+    }
+  ]
+}
+```
+
+## Tela para visualizar torneios
+
+A tela para visualizar os torneios, ela lista todos os torneios cadastrados no sistema, para manter a performance ela faz a paginação em ate 15 elementos conforme especificação.
+
+<img src="img/torneios.jpg" />
+
+### Requisitos atendidos
+
+- RF-14
+- RF-18
+
+### Artefatos da funcionalidade
+
+- torneios.html
+- js/controllers/tournaments.js
+- js/pages/tournaments.js
+
+### Estrutura de Dados
+
+```
+{
+  [
+    {
+      "id":1,
+      "name":"Tournament #1",
+      "description":"Descrição Tournament #1",
+      "url":"http://www.news.com/torneio1",
+      "created_at":1652281498729
+    },
+    {
+      "id":2,
+      "name":"Tournament #2",
+      "description":"Descrição Tournament #2",
+      "url":"http://www.news.com/torneio2",
+      "created_at":1652281498729
+    }
+  ]
+}
+```

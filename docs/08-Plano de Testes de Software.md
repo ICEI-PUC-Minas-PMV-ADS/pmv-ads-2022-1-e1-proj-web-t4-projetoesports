@@ -165,3 +165,27 @@ Tabela de teste CT-38
 Tabela de teste CT-39
 
 <img src="img/CT_Pedro/CT-39.png" />
+
+Tabela de teste CT-40
+
+<img src="img/tabela_testes/vitor/ct-40.jpg" />
+
+Tabela de teste CT-41
+
+<img src="img/tabela_testes/vitor/ct-41.jpg" />
+
+Tabela de teste CT-42
+
+<img src="img/tabela_testes/vitor/ct-42.jpg" />
+
+Tabela de teste CT-43
+
+<img src="img/tabela_testes/vitor/ct-43.jpg" />
+
+Tabela de teste CT-44
+
+<img src="img/tabela_testes/vitor/ct-44.jpg" />
+
+Tabela de teste CT-45
+
+<img src="img/tabela_testes/vitor/ct-45.jpg" />
