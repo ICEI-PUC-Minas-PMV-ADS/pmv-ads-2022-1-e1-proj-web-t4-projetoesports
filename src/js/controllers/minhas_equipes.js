@@ -9,11 +9,11 @@ import { MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js'
 import { UserRepository } from '../repositories/user_repository.js';
 
 /***
- * BaseController
+ * MinhasEquipesController
  * Controlador responsavel por gerenciar a parte logica da pagina.
  */
 
-export class minhasEquipesController extends Controller {
+export class MinhasEquipesController extends Controller {
   constructor() {
     super();
 
@@ -29,12 +29,6 @@ export class minhasEquipesController extends Controller {
           case 'entrar':
             {
               this.loginModal.toggle();
-            }
-            break;
-
-          case 'notificações':
-            {
-              // TODO: Implementar recurso de notificações.
             }
             break;
 

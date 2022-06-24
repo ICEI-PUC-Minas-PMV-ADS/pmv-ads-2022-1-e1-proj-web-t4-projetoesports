@@ -41,49 +41,9 @@
 
     <!-- Side Bar -->
     <div class="d-flex flex-fill overflow-hidden">
-      <nav class="h-100 c-bg-primary-dark" style="width: 4rem">
-        <ul class="nav flex-column align-items-center pt-2" style="width: 4rem">
-          <li class="nav-item mb-2">
-            <!-- TODO: Incluir link para noticias -->
-            <a href="noticias.html" class="c-side-icon nav-link d-flex flex-column align-items-center m-0 px-3">
-              <img src="imgs/newspaper-solid.svg" alt="" />
-              <span class="c-text-grey-300">Noticias</span>
-            </a>
-          </li>
 
-          <li class="nav-item mb-2">
-            <!-- TODO: Incluir link para jogadores -->
-            <a href="jogadores.html" class="c-side-icon nav-link d-flex flex-column align-items-center m-0 px-3">
-              <img src="imgs/user-solid.svg" alt="" />
-              <span class="c-text-grey-300">Jogadores</span>
-            </a>
-          </li>
-
-          <li class="nav-item mb-2">
-            <!-- TODO: Incluir link para vagas -->
-            <a href="vagas_equipes.html" class="c-side-icon nav-link d-flex flex-column align-items-center m-0 px-3">
-              <img src="imgs/address-card-solid.svg" alt="" />
-              <span class="c-text-grey-300">Vagas</span>
-            </a>
-          </li>
-
-          <li class="nav-item mb-2">
-            <!-- TODO: Incluir link para equipes -->
-            <a href="equipes.html" class="c-side-icon nav-link d-flex flex-column align-items-center m-0 px-3">
-              <img src="imgs/users-solid.svg" alt="" />
-              <span class="c-text-grey-300">Equipes</span>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <!-- TODO: Incluir link para torneios -->
-            <a href="torneios.html" class="c-side-icon nav-link d-flex flex-column align-items-center m-0 px-3">
-              <img src="imgs/handshake-angle-solid.svg" alt="" />
-              <span class="c-text-grey-300">Torneios</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <!-- SideBar Component -->
+      <div data-component="sidebar"></div>
 
       <!-- Container de conteudo -->
       <div class="flex-fill overflow-auto c-bg-primary">
@@ -109,7 +69,7 @@
             <hr style="color: white" />
           </div>
           <div id="teamsContainer"></div>
-          <a href="Criar_equipes.html"><button type="button" id="buttonCreateTeam">Criar equipe</button></a>
+          <a href="Criar_equipes.html" id="buttonCreateTeam">Criar equipe</a>
 
 
 
@@ -215,12 +175,12 @@
 
     <!-- Inicialização do controlador -->
     <script type="module">
-      import { minhasEquipesController } from './js/controllers/minhas_equipes.js'
+      import { MinhasEquipesController } from './js/controllers/minhas_equipes.js'
       import { initializeController } from './js/framework/controller.js'
 
       // Inicia o controlador da pagina.
-      const baseController = new minhasEquipesController()
-      initializeController(baseController)
+      const minhasEquipesController = new MinhasEquipesController()
+      initializeController(minhasEquipesController)
     </script>
 
     <!-- Parte lógica da página -->

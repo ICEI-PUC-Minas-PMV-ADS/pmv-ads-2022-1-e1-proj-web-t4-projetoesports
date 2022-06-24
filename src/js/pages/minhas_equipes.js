@@ -372,7 +372,3 @@ function removeTeams() {
   }
 };
 
-//Configuração botão de criar equipe
-var buttonCreateTeam = document.getElementById(buttonCreateTeam);
-buttonCreateTeam.setAttribute('window.location.href', 'Criar_equipes.html')
-
