@@ -362,6 +362,26 @@ Após digitar o texto de filtro e apertar "enter" a lista irá atualizar.
 
 <img src="img/evidencias_testes/vitor/ct-45_002.jpg" />
 
+## CT-46
+
+Neste teste a exclusão do membro da equipe não é confirmada.
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-delecao-membro-confirmacao.png">  
+
+Após clicar em "Cancelar" o membro não é deletado.
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-nao-delecao-membro.png">  
+
+## CT-47
+
+Neste teste a exclusão do membro da equipe é confirmada.
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-delecao-membro-confirmacao.png">  
+
+Após clicar em "Ok" o membro é deletado.
+
+<img src= "img/CT_Pedro/Evidencias/evidencia-delecao-membro.png">  
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.

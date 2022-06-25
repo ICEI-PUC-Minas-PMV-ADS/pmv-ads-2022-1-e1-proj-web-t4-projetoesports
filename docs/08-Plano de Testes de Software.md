@@ -189,3 +189,11 @@ Tabela de teste CT-44
 Tabela de teste CT-45
 
 <img src="img/tabela_testes/vitor/ct-45.jpg" />
+
+Tabela de teste CT-46
+
+<img src="img/CT_Pedro/CT-46.png" />
+
+Tabela de teste CT-47
+
+<img src="img/CT_Pedro/CT-47.png" />

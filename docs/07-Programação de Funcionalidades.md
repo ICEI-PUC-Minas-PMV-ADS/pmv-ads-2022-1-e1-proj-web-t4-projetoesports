@@ -232,13 +232,18 @@ A tela de buscas por vagas em equipes lista todas as vagas em aberto do site de 
 
 A tela de Informações sobre Equipe permitirá que o usuário se atualize sobre o time, tendo acesso a informações gerais ou informações de contato.
 
-<img src="img/informacoes_gerais_equipe.png" />
-<img src="img/contato_equipe.png" />
+<img src="img/sobre_informacoes_gerais_equipe.png" /> 
+<img src="img/sobre_contato_equipe.png" />
+<img src="img/time_principal_equipe.png" />
+<img src="img/time_reserva_equipe.png" />
+<img src="img/vagas_equipe.png" />
+<img src="img/painel_alteracoes_equipe.png" />
 
 ### Requisitos atendidos
 
 - RF-02
 - RF-09
+- RF-11	
 
 ### Artefatos da funcionalidade
 
