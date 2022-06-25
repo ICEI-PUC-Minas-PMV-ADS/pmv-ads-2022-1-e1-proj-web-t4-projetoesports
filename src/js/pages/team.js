@@ -75,18 +75,18 @@ export class TeamPage extends Component
     this.team = this.teamRepository.get(this.ctrl.params?.id);
 
     this.vacancies = [];
-    this.team?.vacancies.forEach((vacancyId) => {
+    this.team?.vacancies?.forEach((vacancyId) => {
       this.vacancies.push(this.vacancyRepository.get(vacancyId));
     });
 
     this.active_players = [];
     this.reserves = [];
 
-    this.team?.active_players.forEach((playerId) => {
+    this.team?.active_players?.forEach((playerId) => {
       this.active_players.push(this.userRepository.get(playerId));
     });
 
-    this.team?.reserves.forEach((playerId) => {
+    this.team?.reserves?.forEach((playerId) => {
       this.reserves.push(this.userRepository.get(playerId));
     });
 
