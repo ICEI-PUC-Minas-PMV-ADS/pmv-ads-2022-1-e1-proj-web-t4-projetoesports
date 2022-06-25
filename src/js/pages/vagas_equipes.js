@@ -15,6 +15,7 @@ function gamesInitialize() {
     icon_url: 'imgs/league_of_legends.jpg',
   });
 };
+
 function rolesInitialize() {
   const roleRepository = new RoleRepository();
 
