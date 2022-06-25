@@ -277,6 +277,7 @@ vacancys.reverse();
 document.addEventListener('DOMContentLoaded', initializeLocalStorage);
 
 function initializeLocalStorage() {
+  /*
   if (!localStorage.primeiraVisita) {
     localStorage.primeiraVisita = 1
     for (let i = 0; i < 3; i++) {
@@ -288,6 +289,7 @@ function initializeLocalStorage() {
     }
     document.location.reload(true);
   }
+  */
 };
 
 //Configuração da paginação

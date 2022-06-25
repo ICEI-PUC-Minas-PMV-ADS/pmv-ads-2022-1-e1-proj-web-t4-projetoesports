@@ -47,9 +47,10 @@ export class HomeController extends Controller
 
   initializeSystem()
   {
-    if (!this.newsRepository.getAll().length)
+    //if (!window.localStorage.getItem('populate_data_base'))
     {
       initializeDatabase();
+      window.localStorage.setItem('populate_data_base', 'true');
     }
   }
 
