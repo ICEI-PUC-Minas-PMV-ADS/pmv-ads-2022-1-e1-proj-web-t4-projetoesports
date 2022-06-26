@@ -382,6 +382,16 @@ Após clicar em "Ok" o membro é deletado.
 
 <img src= "img/CT_Pedro/Evidencias/evidencia-delecao-membro.png">  
 
+## CT-48
+
+Este teste consiste em analisar se as equipes estão sendo exibidas de forma paginada e se sua navegação é eficiente e fluida.
+<img src= "img/CT-vagasEquipes/Evidencia CT-48.png">
+
+## CT-49
+
+Este teste consiste em analisar se as equipes estão sendo filtradas corretamente de acordo com o que o usuário digitar.
+<img src= "img/CT-vagasEquipes/Evidencia CT-49.png">
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.

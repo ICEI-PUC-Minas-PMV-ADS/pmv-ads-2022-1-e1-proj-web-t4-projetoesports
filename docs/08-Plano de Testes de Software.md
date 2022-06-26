@@ -124,11 +124,11 @@ Tabela de teste CT-28
 
 Tabela de teste CT-29
 
-<img src="img/CT-vagasEquipes/CT-29.png" width="580" height="320">
+<img src="img/CT-vagasEquipes/CT-29.png">
 
 Tabela de teste CT-30
 
-<img src="img/CT-vagasEquipes/CT-30.png" width="580" height="320">
+<img src="img/CT-vagasEquipes/CT-30.png">
 
 Tabela de teste CT-31
 
@@ -197,3 +197,11 @@ Tabela de teste CT-46
 Tabela de teste CT-47
 
 <img src="img/CT_Pedro/CT-47.png" />
+
+Tabela de teste CT-48
+
+<img src="img/CT-vagasEquipes/CT-48.png">
+
+Tabela de teste CT-49
+
+<img src="img/CT-vagasEquipes/CT-49.png">
