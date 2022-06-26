@@ -240,30 +240,35 @@ export function initializeGames()
  
    roleRepository.create({
     name: 'Top lane',
+    tag: 'Top lane Topo',
     game_id: 1,
     icon_url: 'imgs/role_lane_icons/TOP.png',
    });
 
    roleRepository.create({
     name: 'Jungle',
+    tag: 'Jungle Caçador Cacador JG',
     game_id: 1,
     icon_url: 'imgs/role_lane_icons/JUNGLE.png',
    });
 
    roleRepository.create({
     name: 'Mid lane',
+    tag: 'Mid lane Meio',    
     game_id: 1,
     icon_url: 'imgs/role_lane_icons/MIDDLE.png',
    });
 
    roleRepository.create({
     name: 'Ad carry',
+    tag: 'Ad Carry ADC Atirador',
     game_id: 1,
     icon_url: 'imgs/role_lane_icons/ADC.png',
    });
 
    roleRepository.create({
     name: 'Support',
+    tag: 'Support Suporte',
     game_id: 1,
     icon_url: 'imgs/role_lane_icons/SUPPORT.png',
    });

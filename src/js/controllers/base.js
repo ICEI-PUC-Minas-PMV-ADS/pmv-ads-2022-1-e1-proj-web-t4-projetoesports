@@ -37,12 +37,6 @@ export class BaseController extends Controller
             }
             break;
 
-          case 'notificações':
-            {
-              // TODO: Implementar recurso de notificações.
-            }
-            break;
-
           case 'minha equipe':
             {
               redirectTo(MY_TEAMS_ROUTE);
