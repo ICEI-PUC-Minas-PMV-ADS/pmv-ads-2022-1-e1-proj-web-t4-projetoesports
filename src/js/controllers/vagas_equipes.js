@@ -1,11 +1,12 @@
-import { Controller } from '../framework/controller.js'
-import { UserRepository } from '../repositories/user_repository.js'
-import { Navbar } from '../components/navbar.js'
-import { Sidebar } from '../components/sidebar.js'
-import { User } from '../models/user.js'
-import { Sha256 } from '../helpers/crypto.js'
-import { USER_INFO } from '../framework/state.js'
-import { PROFILE_ROUTE, redirectTo } from '../helpers/routes.js'
+import { Controller } from '../framework/controller.js';
+import { Navbar } from '../components/navbar.js';
+import { Sidebar } from '../components/sidebar.js';
+import { User } from '../models/user.js';
+import { Sha256 } from '../helpers/crypto.js';
+import { USER_INFO } from '../framework/state.js';
+import { MY_TEAMS_ROUTE, PROFILE_ROUTE, redirectTo } from '../helpers/routes.js';
+
+import { UserRepository } from '../repositories/user_repository.js';
 
 /***
  * BaseController
@@ -41,21 +42,21 @@ export class VagasEquipesController extends Controller {
         switch (action) {
           case 'entrar':
             {
-              this.loginModal.toggle()
+              this.loginModal.toggle();
             }
-            break
+            break;
 
           case 'minha equipe':
             {
-              // TODO: Redirecionar para minha equipe.
+              redirectTo(MY_TEAMS_ROUTE);
             }
-            break
+            break;
 
           case 'perfil':
             {
               redirectTo(PROFILE_ROUTE);
             }
-            break
+            break;
 
           case 'sair':
             {
@@ -66,7 +67,7 @@ export class VagasEquipesController extends Controller {
                 window.location.reload();
               }
             }
-            break
+            break;
         }
       },
       onClickNovoPerfil: function () {
