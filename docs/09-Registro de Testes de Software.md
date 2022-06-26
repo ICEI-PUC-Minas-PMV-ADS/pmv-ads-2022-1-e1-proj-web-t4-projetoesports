@@ -385,12 +385,12 @@ Após clicar em "Ok" o membro é deletado.
 ## CT-48
 
 Este teste consiste em analisar se as equipes estão sendo exibidas de forma paginada e se sua navegação é eficiente e fluida.
-<img src= "img/CT-vagasEquipes/Evidencia CT-48.png">
+<img src= "img/CT-vagasEquipes/Evidencia CT-49.png">
 
 ## CT-49
 
 Este teste consiste em analisar se as equipes estão sendo filtradas corretamente de acordo com o que o usuário digitar.
-<img src= "img/CT-vagasEquipes/Evidencia CT-49.png">
+<img src= "img/CT-vagasEquipes/Evidencia CT-48.png">
 
 ## Avaliação
 
