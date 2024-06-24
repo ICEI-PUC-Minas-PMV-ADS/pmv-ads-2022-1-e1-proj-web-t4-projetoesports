@@ -1,0 +1,27 @@
+message: Please cite this software using these metadata.
+title: Projeto Esports
+authors:
+  - family-names: Favilla Lobo
+    given-names: Carlos Eduardo
+  - family-names: Chagas
+    given-names: Italo Sousa
+  - family-names: Pereira
+    given-names: Jéssica Serqueira
+  - family-names: Pinheiro Torres
+    given-names: João Lucas
+  - family-names: Gomes Pinto
+    given-names: Vitor Alexandre 
+  - family-names: De Freitas Santos
+    given-names: Pedro Henrique
+  - name-suffix: Professora
+    affiliation: PUC Minas
+    family-names: Maria Silveira
+    given-names: Sandra
+   
+keywords:
+  - Esports
+  - Games
+
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-projetoesports
+version: 1.0.0
+date-released: 2022-11-27
